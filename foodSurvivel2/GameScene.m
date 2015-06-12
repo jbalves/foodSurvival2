@@ -15,6 +15,8 @@
 #define NODENAME_RESTART        @"restart"
 #define NODENAME_PAUSE          @"pauseNode"
 #define NODENAME_LEVEL1         @"Level1"
+#define NODENAME_SCORE          @"score"
+
 
 #define ACTION_JUMP         @"Jump"
 
@@ -22,6 +24,9 @@
     BOOL jumping;
     SKNode *mainCameraNode;
     SKSpriteNode *background;
+    int *countScore;
+    SKLabelNode *score;
+
 }
 
 @end
@@ -48,7 +53,7 @@
 
 -(void)didMoveToView:(SKView *)view {
     jumping = NO;
-    
+    countScore = 0;
     NSArray *nodes = self.children;
     for (SKNode *node in nodes) {
         if ([node.name isEqualToString:@"mainCamera"]) {
@@ -61,16 +66,20 @@
     [mainCameraNode childNodeWithName:@"background"].hidden = YES;
     
     self.physicsWorld.contactDelegate = self;
+
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [touches anyObject];
     CGPoint location = [touch locationInNode:self];
     SKNode *node = [self nodeAtPoint:location];
+    score =(SKLabelNode *)[mainCameraNode childNodeWithName:@"score"];
     
     if (!jumping) {
         jumping = YES;
         [[node childNodeWithName:NODENAME_JACK] runAction:[SKAction actionNamed:ACTION_JUMP]];
+        countScore = countScore+1;
+        score.text = [NSString stringWithFormat:@"Score: %d",(int)countScore];
     }
     
     if ([node.name isEqualToString:NODENAME_PAUSEBUTTON]) {
@@ -114,5 +123,6 @@
         jumping = NO;
     }
 }
+
 
 @end
