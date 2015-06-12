@@ -1,0 +1,586 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A924DDD91B2A0E6E00A25F13 /* FoodInfoScene.m in Sources */ = {isa = PBXBuildFile; fileRef = A924DDD81B2A0E6E00A25F13 /* FoodInfoScene.m */; };
+		A924DDDB1B2A0F1200A25F13 /* FoodInfoScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A924DDDA1B2A0F1200A25F13 /* FoodInfoScene.sks */; };
+		A9BF14211B29C2D9002041F3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BF14201B29C2D9002041F3 /* main.m */; };
+		A9BF14241B29C2D9002041F3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BF14231B29C2D9002041F3 /* AppDelegate.m */; };
+		A9BF14271B29C2D9002041F3 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BF14261B29C2D9002041F3 /* GameScene.m */; };
+		A9BF14291B29C2D9002041F3 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A9BF14281B29C2D9002041F3 /* GameScene.sks */; };
+		A9BF142C1B29C2D9002041F3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BF142B1B29C2D9002041F3 /* ViewController.m */; };
+		A9BF142F1B29C2D9002041F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9BF142D1B29C2D9002041F3 /* Main.storyboard */; };
+		A9BF14311B29C2D9002041F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9BF14301B29C2D9002041F3 /* Assets.xcassets */; };
+		A9BF14341B29C2D9002041F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9BF14321B29C2D9002041F3 /* LaunchScreen.storyboard */; };
+		A9BF143F1B29C2D9002041F3 /* foodSurvivel2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BF143E1B29C2D9002041F3 /* foodSurvivel2Tests.m */; };
+		A9BF144A1B29C2D9002041F3 /* foodSurvivel2UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BF14491B29C2D9002041F3 /* foodSurvivel2UITests.m */; };
+		A9BF145B1B29E159002041F3 /* Masks.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BF145A1B29E159002041F3 /* Masks.m */; };
+		A9BF145D1B29F145002041F3 /* JackActions.sks in Resources */ = {isa = PBXBuildFile; fileRef = A9BF145C1B29F145002041F3 /* JackActions.sks */; };
+		A9BF14601B29F8E5002041F3 /* StartScene.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BF145F1B29F8E5002041F3 /* StartScene.m */; };
+		A9BF14621B29F90B002041F3 /* StartScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A9BF14611B29F90B002041F3 /* StartScene.sks */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A9BF143B1B29C2D9002041F3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A9BF14141B29C2D9002041F3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A9BF141B1B29C2D9002041F3;
+			remoteInfo = foodSurvivel2;
+		};
+		A9BF14461B29C2D9002041F3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A9BF14141B29C2D9002041F3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A9BF141B1B29C2D9002041F3;
+			remoteInfo = foodSurvivel2;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A924DDD71B2A0E6E00A25F13 /* FoodInfoScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodInfoScene.h; sourceTree = "<group>"; };
+		A924DDD81B2A0E6E00A25F13 /* FoodInfoScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodInfoScene.m; sourceTree = "<group>"; };
+		A924DDDA1B2A0F1200A25F13 /* FoodInfoScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FoodInfoScene.sks; sourceTree = "<group>"; };
+		A9BF141C1B29C2D9002041F3 /* foodSurvivel2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = foodSurvivel2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9BF14201B29C2D9002041F3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A9BF14221B29C2D9002041F3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A9BF14231B29C2D9002041F3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A9BF14251B29C2D9002041F3 /* GameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
+		A9BF14261B29C2D9002041F3 /* GameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
+		A9BF14281B29C2D9002041F3 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		A9BF142A1B29C2D9002041F3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		A9BF142B1B29C2D9002041F3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A9BF142E1B29C2D9002041F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A9BF14301B29C2D9002041F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A9BF14331B29C2D9002041F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A9BF14351B29C2D9002041F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9BF143A1B29C2D9002041F3 /* foodSurvivel2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = foodSurvivel2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9BF143E1B29C2D9002041F3 /* foodSurvivel2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = foodSurvivel2Tests.m; sourceTree = "<group>"; };
+		A9BF14401B29C2D9002041F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9BF14451B29C2D9002041F3 /* foodSurvivel2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = foodSurvivel2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9BF14491B29C2D9002041F3 /* foodSurvivel2UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = foodSurvivel2UITests.m; sourceTree = "<group>"; };
+		A9BF144B1B29C2D9002041F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9BF14591B29E159002041F3 /* Masks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Masks.h; sourceTree = "<group>"; };
+		A9BF145A1B29E159002041F3 /* Masks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Masks.m; sourceTree = "<group>"; };
+		A9BF145C1B29F145002041F3 /* JackActions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = JackActions.sks; sourceTree = "<group>"; };
+		A9BF145E1B29F8E5002041F3 /* StartScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartScene.h; sourceTree = "<group>"; };
+		A9BF145F1B29F8E5002041F3 /* StartScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartScene.m; sourceTree = "<group>"; };
+		A9BF14611B29F90B002041F3 /* StartScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StartScene.sks; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A9BF14191B29C2D9002041F3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A9BF14371B29C2D9002041F3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A9BF14421B29C2D9002041F3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A924DDD41B2A012500A25F13 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				A9BF14591B29E159002041F3 /* Masks.h */,
+				A9BF145A1B29E159002041F3 /* Masks.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		A924DDD51B2A013300A25F13 /* Sk's */ = {
+			isa = PBXGroup;
+			children = (
+				A9BF14281B29C2D9002041F3 /* GameScene.sks */,
+				A9BF14611B29F90B002041F3 /* StartScene.sks */,
+				A924DDDA1B2A0F1200A25F13 /* FoodInfoScene.sks */,
+				A9BF145C1B29F145002041F3 /* JackActions.sks */,
+			);
+			name = "Sk's";
+			sourceTree = "<group>";
+		};
+		A924DDD61B2A014600A25F13 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				A9BF14251B29C2D9002041F3 /* GameScene.h */,
+				A9BF14261B29C2D9002041F3 /* GameScene.m */,
+				A9BF145E1B29F8E5002041F3 /* StartScene.h */,
+				A9BF145F1B29F8E5002041F3 /* StartScene.m */,
+				A924DDD71B2A0E6E00A25F13 /* FoodInfoScene.h */,
+				A924DDD81B2A0E6E00A25F13 /* FoodInfoScene.m */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
+		A9BF14131B29C2D9002041F3 = {
+			isa = PBXGroup;
+			children = (
+				A9BF141E1B29C2D9002041F3 /* foodSurvivel2 */,
+				A9BF143D1B29C2D9002041F3 /* foodSurvivel2Tests */,
+				A9BF14481B29C2D9002041F3 /* foodSurvivel2UITests */,
+				A9BF141D1B29C2D9002041F3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A9BF141D1B29C2D9002041F3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A9BF141C1B29C2D9002041F3 /* foodSurvivel2.app */,
+				A9BF143A1B29C2D9002041F3 /* foodSurvivel2Tests.xctest */,
+				A9BF14451B29C2D9002041F3 /* foodSurvivel2UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A9BF141E1B29C2D9002041F3 /* foodSurvivel2 */ = {
+			isa = PBXGroup;
+			children = (
+				A9BF14221B29C2D9002041F3 /* AppDelegate.h */,
+				A9BF14231B29C2D9002041F3 /* AppDelegate.m */,
+				A9BF142A1B29C2D9002041F3 /* ViewController.h */,
+				A9BF142B1B29C2D9002041F3 /* ViewController.m */,
+				A924DDD61B2A014600A25F13 /* Scenes */,
+				A924DDD51B2A013300A25F13 /* Sk's */,
+				A924DDD41B2A012500A25F13 /* Classes */,
+				A9BF142D1B29C2D9002041F3 /* Main.storyboard */,
+				A9BF14301B29C2D9002041F3 /* Assets.xcassets */,
+				A9BF141F1B29C2D9002041F3 /* Supporting Files */,
+			);
+			path = foodSurvivel2;
+			sourceTree = "<group>";
+		};
+		A9BF141F1B29C2D9002041F3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A9BF14321B29C2D9002041F3 /* LaunchScreen.storyboard */,
+				A9BF14351B29C2D9002041F3 /* Info.plist */,
+				A9BF14201B29C2D9002041F3 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A9BF143D1B29C2D9002041F3 /* foodSurvivel2Tests */ = {
+			isa = PBXGroup;
+			children = (
+				A9BF143E1B29C2D9002041F3 /* foodSurvivel2Tests.m */,
+				A9BF14401B29C2D9002041F3 /* Info.plist */,
+			);
+			path = foodSurvivel2Tests;
+			sourceTree = "<group>";
+		};
+		A9BF14481B29C2D9002041F3 /* foodSurvivel2UITests */ = {
+			isa = PBXGroup;
+			children = (
+				A9BF14491B29C2D9002041F3 /* foodSurvivel2UITests.m */,
+				A9BF144B1B29C2D9002041F3 /* Info.plist */,
+			);
+			path = foodSurvivel2UITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A9BF141B1B29C2D9002041F3 /* foodSurvivel2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A9BF144E1B29C2D9002041F3 /* Build configuration list for PBXNativeTarget "foodSurvivel2" */;
+			buildPhases = (
+				A9BF14181B29C2D9002041F3 /* Sources */,
+				A9BF14191B29C2D9002041F3 /* Frameworks */,
+				A9BF141A1B29C2D9002041F3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = foodSurvivel2;
+			productName = foodSurvivel2;
+			productReference = A9BF141C1B29C2D9002041F3 /* foodSurvivel2.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A9BF14391B29C2D9002041F3 /* foodSurvivel2Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A9BF14511B29C2D9002041F3 /* Build configuration list for PBXNativeTarget "foodSurvivel2Tests" */;
+			buildPhases = (
+				A9BF14361B29C2D9002041F3 /* Sources */,
+				A9BF14371B29C2D9002041F3 /* Frameworks */,
+				A9BF14381B29C2D9002041F3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A9BF143C1B29C2D9002041F3 /* PBXTargetDependency */,
+			);
+			name = foodSurvivel2Tests;
+			productName = foodSurvivel2Tests;
+			productReference = A9BF143A1B29C2D9002041F3 /* foodSurvivel2Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A9BF14441B29C2D9002041F3 /* foodSurvivel2UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A9BF14541B29C2D9002041F3 /* Build configuration list for PBXNativeTarget "foodSurvivel2UITests" */;
+			buildPhases = (
+				A9BF14411B29C2D9002041F3 /* Sources */,
+				A9BF14421B29C2D9002041F3 /* Frameworks */,
+				A9BF14431B29C2D9002041F3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A9BF14471B29C2D9002041F3 /* PBXTargetDependency */,
+			);
+			name = foodSurvivel2UITests;
+			productName = foodSurvivel2UITests;
+			productReference = A9BF14451B29C2D9002041F3 /* foodSurvivel2UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A9BF14141B29C2D9002041F3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "edu FUCAPI";
+				TargetAttributes = {
+					A9BF141B1B29C2D9002041F3 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					A9BF14391B29C2D9002041F3 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = A9BF141B1B29C2D9002041F3;
+					};
+					A9BF14441B29C2D9002041F3 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = A9BF141B1B29C2D9002041F3;
+					};
+				};
+			};
+			buildConfigurationList = A9BF14171B29C2D9002041F3 /* Build configuration list for PBXProject "foodSurvivel2" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A9BF14131B29C2D9002041F3;
+			productRefGroup = A9BF141D1B29C2D9002041F3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A9BF141B1B29C2D9002041F3 /* foodSurvivel2 */,
+				A9BF14391B29C2D9002041F3 /* foodSurvivel2Tests */,
+				A9BF14441B29C2D9002041F3 /* foodSurvivel2UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A9BF141A1B29C2D9002041F3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9BF14291B29C2D9002041F3 /* GameScene.sks in Resources */,
+				A9BF14341B29C2D9002041F3 /* LaunchScreen.storyboard in Resources */,
+				A9BF145D1B29F145002041F3 /* JackActions.sks in Resources */,
+				A924DDDB1B2A0F1200A25F13 /* FoodInfoScene.sks in Resources */,
+				A9BF14621B29F90B002041F3 /* StartScene.sks in Resources */,
+				A9BF14311B29C2D9002041F3 /* Assets.xcassets in Resources */,
+				A9BF142F1B29C2D9002041F3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A9BF14381B29C2D9002041F3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A9BF14431B29C2D9002041F3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A9BF14181B29C2D9002041F3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9BF142C1B29C2D9002041F3 /* ViewController.m in Sources */,
+				A9BF14601B29F8E5002041F3 /* StartScene.m in Sources */,
+				A9BF145B1B29E159002041F3 /* Masks.m in Sources */,
+				A9BF14241B29C2D9002041F3 /* AppDelegate.m in Sources */,
+				A9BF14271B29C2D9002041F3 /* GameScene.m in Sources */,
+				A924DDD91B2A0E6E00A25F13 /* FoodInfoScene.m in Sources */,
+				A9BF14211B29C2D9002041F3 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A9BF14361B29C2D9002041F3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9BF143F1B29C2D9002041F3 /* foodSurvivel2Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A9BF14411B29C2D9002041F3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9BF144A1B29C2D9002041F3 /* foodSurvivel2UITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A9BF143C1B29C2D9002041F3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A9BF141B1B29C2D9002041F3 /* foodSurvivel2 */;
+			targetProxy = A9BF143B1B29C2D9002041F3 /* PBXContainerItemProxy */;
+		};
+		A9BF14471B29C2D9002041F3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A9BF141B1B29C2D9002041F3 /* foodSurvivel2 */;
+			targetProxy = A9BF14461B29C2D9002041F3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A9BF142D1B29C2D9002041F3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A9BF142E1B29C2D9002041F3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A9BF14321B29C2D9002041F3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A9BF14331B29C2D9002041F3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A9BF144C1B29C2D9002041F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		A9BF144D1B29C2D9002041F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A9BF144F1B29C2D9002041F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = foodSurvivel2/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "BEPiD-FUCAPI.foodSurvivel2";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A9BF14501B29C2D9002041F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = foodSurvivel2/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "BEPiD-FUCAPI.foodSurvivel2";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		A9BF14521B29C2D9002041F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = foodSurvivel2Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "BEPiD-FUCAPI.foodSurvivel2Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/foodSurvivel2.app/foodSurvivel2";
+			};
+			name = Debug;
+		};
+		A9BF14531B29C2D9002041F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = foodSurvivel2Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "BEPiD-FUCAPI.foodSurvivel2Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/foodSurvivel2.app/foodSurvivel2";
+			};
+			name = Release;
+		};
+		A9BF14551B29C2D9002041F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = foodSurvivel2UITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "BEPiD-FUCAPI.foodSurvivel2UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = foodSurvivel2;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		A9BF14561B29C2D9002041F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = foodSurvivel2UITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "BEPiD-FUCAPI.foodSurvivel2UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = foodSurvivel2;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A9BF14171B29C2D9002041F3 /* Build configuration list for PBXProject "foodSurvivel2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9BF144C1B29C2D9002041F3 /* Debug */,
+				A9BF144D1B29C2D9002041F3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A9BF144E1B29C2D9002041F3 /* Build configuration list for PBXNativeTarget "foodSurvivel2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9BF144F1B29C2D9002041F3 /* Debug */,
+				A9BF14501B29C2D9002041F3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A9BF14511B29C2D9002041F3 /* Build configuration list for PBXNativeTarget "foodSurvivel2Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9BF14521B29C2D9002041F3 /* Debug */,
+				A9BF14531B29C2D9002041F3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A9BF14541B29C2D9002041F3 /* Build configuration list for PBXNativeTarget "foodSurvivel2UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9BF14551B29C2D9002041F3 /* Debug */,
+				A9BF14561B29C2D9002041F3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A9BF14141B29C2D9002041F3 /* Project object */;
+}
