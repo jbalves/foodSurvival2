@@ -40,7 +40,7 @@
     _tableView = [[UITableView alloc] initWithFrame:CGRectMake(50, 0, self.frame.size.width, self.frame.size.height)];
     _tableView.delegate = self;
     _tableView.dataSource = self;
-    _tableView.hidden = NO;
+//    _tableView.hidden = NO;
     _tableView.scrollEnabled = YES;
     _tableView.allowsMultipleSelectionDuringEditing = NO;
     _tableView.allowsSelection = NO;
