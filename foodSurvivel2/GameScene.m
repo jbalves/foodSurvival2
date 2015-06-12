@@ -15,7 +15,6 @@
 #define NODENAME_RESTART        @"restart"
 #define NODENAME_PAUSE          @"pauseNode"
 #define NODENAME_LEVEL1         @"Level1"
-#define NODENAME_SCORE          @"score"
 
 
 #define ACTION_JUMP         @"Jump"
