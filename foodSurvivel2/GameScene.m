@@ -1,6 +1,6 @@
 //
 //  GameScene.m
-//  foodSurvivel2
+//
 //
 //  Created by Kevin Oliveira on 11/06/15.
 //  Copyright (c) 2015 edu FUCAPI. All rights reserved.
@@ -16,12 +16,14 @@
 #define NODENAME_PAUSE          @"pauseNode"
 #define NODENAME_LEVEL1         @"Level1"
 
-#define ACTION_JUMP         @"Jump"
+#define ACTION_JUMP             @"Jump"
 
 @interface GameScene () {
     BOOL jumping;
     SKNode *mainCameraNode;
     SKSpriteNode *background;
+    int badFood;
+    int goodFood;
 }
 
 @end
@@ -48,17 +50,29 @@
 
 -(void)didMoveToView:(SKView *)view {
     jumping = NO;
-    
+    badFood = 0;
+    goodFood = 0;
+
     NSArray *nodes = self.children;
     for (SKNode *node in nodes) {
         if ([node.name isEqualToString:@"mainCamera"]) {
             mainCameraNode = node;
-            [mainCameraNode childNodeWithName:NODENAME_PAUSE].hidden = YES;
+        } else if ([node.name isEqualToString:@"box"]) {
+            SKSpriteNode *box = (SKSpriteNode *)node;
+            box.texture = [SKTexture textureWithImageNamed:@"box"];
+        } else if ([node.name isEqualToString:@"redBall"]) {
+            SKSpriteNode *redBall = (SKSpriteNode *)node;
+            redBall.texture = [SKTexture textureWithImageNamed:@"bola_vermelha"];
+        } else if ([node.name isEqualToString:@"greenBall"]) {
+            SKSpriteNode *greenBall = (SKSpriteNode *)node;
+            greenBall.texture = [SKTexture textureWithImageNamed:@"bola_verde"];
+        } else if ([node.name isEqualToString:@"jack"]) {
+            SKSpriteNode *jack = (SKSpriteNode *)node;
+            jack.physicsBody.contactTestBitMask = [Masks redBall] | [Masks greenBall];
         }
     }
-    
-    [mainCameraNode addChild:[self background]];
-    [mainCameraNode childNodeWithName:@"background"].hidden = YES;
+
+    [mainCameraNode runAction:[SKAction actionNamed:@"moveCamera"]];
     
     self.physicsWorld.contactDelegate = self;
 }
@@ -75,13 +89,11 @@
     
     if ([node.name isEqualToString:NODENAME_PAUSEBUTTON]) {
         self.scene.paused = YES;
-//        [mainCameraNode childNodeWithName:@"background"].hidden = NO;
         [mainCameraNode childNodeWithName:NODENAME_PAUSE].hidden = NO;
     }
     
     if ([node.name isEqualToString:NODENAME_CONTINUE]) {
         self.scene.paused = NO;
-//        [mainCameraNode childNodeWithName:@"background"].hidden = YES;
         [mainCameraNode childNodeWithName:NODENAME_PAUSE].hidden = YES;
     }
     
@@ -94,24 +106,61 @@
     }
 }
 
-- (SKSpriteNode *) background {
-    background = [SKSpriteNode new];
-    background.name = @"background";
-    background.color = [UIColor grayColor];
-    background.alpha = 0.3;
-    background.size = self.frame.size;
-    background.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/2);
-    background.zPosition = 5;
-    return background;
-}
-
 - (void)didBeginContact:(SKPhysicsContact *)contact {
     int A = contact.bodyA.categoryBitMask;
     int B = contact.bodyB.categoryBitMask;
     
+    int fieldMaskA = contact.bodyA.fieldBitMask;
+    int fieldMaskB = contact.bodyB.fieldBitMask;
+    
+//REDBALL       1 - 50
+//GREENBALL     51-100
+    
+    NSArray *nodes = [self children];
+    
     if ((A == [Masks jack] && B == [Masks ground]) ||
         (A == [Masks ground] && B == [Masks jack])) {
         jumping = NO;
+    }
+    
+    if (A == [Masks jack] && B == [Masks redBall]) {
+        badFood++;
+        NSLog(@"bad: %d", badFood);
+        
+        if ((fieldMaskA >= 1 && fieldMaskA < 50) ||
+            (fieldMaskB >= 1 && fieldMaskB < 50)) {
+            
+            for (SKSpriteNode *node in nodes) {
+                if ((node.physicsBody.fieldBitMask == fieldMaskA) ||
+                    (node.physicsBody.fieldBitMask == fieldMaskB)) {
+                    [node removeFromParent];
+                }
+            }
+        }
+        
+//        [mainCameraNode removeAllActions];
+//        [mainCameraNode runAction:[SKAction actionNamed:@"moveCamera2"]];
+        
+    }
+    
+    
+    NSLog(@"%d; %d", A, B);
+    
+    if (A == [Masks jack] && B == [Masks greenBall]) {
+        goodFood++;
+        NSLog(@"good: %d", goodFood);
+        
+        if ((fieldMaskA > 50 && fieldMaskA <= 100) ||
+            (fieldMaskB > 50 && fieldMaskB <= 100)) {
+            
+            for (SKSpriteNode *node in nodes) {
+                if ((node.physicsBody.fieldBitMask == fieldMaskA) ||
+                    (node.physicsBody.fieldBitMask == fieldMaskB)) {
+                    [node removeFromParent];
+                }
+            }
+        }
+        
     }
 }
 

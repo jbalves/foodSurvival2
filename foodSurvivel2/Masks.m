@@ -10,6 +10,9 @@
 
 #define MASKS_JACK      1
 #define MASKS_GROUND    2
+#define MASKS_REDBALL   3
+#define MASKS_GREENBALL 4
+#define MASKS_BOX       5
 
 @implementation Masks
 
@@ -19,6 +22,18 @@
 
 + (uint32_t) ground {
     return MASKS_GROUND;
+}
+
++ (uint32_t) redBall {
+    return MASKS_REDBALL;
+}
+
++ (uint32_t) greenBall {
+    return MASKS_GREENBALL;
+}
+
++ (uint32_t) box {
+    return MASKS_BOX;
 }
 
 @end
