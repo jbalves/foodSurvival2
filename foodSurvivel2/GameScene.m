@@ -47,7 +47,6 @@
 
 @end
 
-
 @implementation GameScene
 
 -(void)didMoveToView:(SKView *)view {
@@ -64,11 +63,20 @@
             SKSpriteNode *box = (SKSpriteNode *)node;
             box.texture = [SKTexture textureWithImageNamed:@"box"];
             
+        } else if ([node.name isEqualToString:@"ground"]){
+            
+            //AJUSTES GROUND
+            SKSpriteNode *ground = (SKSpriteNode *)node;
+            ground.physicsBody.collisionBitMask = 0;
+            ground.physicsBody.categoryBitMask = [Masks ground];
+            ground.physicsBody.contactTestBitMask = [Masks jack];
+            
         } else if ([node.name isEqualToString:@"redBall"]) {
           
             //AJUSTES DA BADFOOD
             SKSpriteNode *redBall = (SKSpriteNode *)node;
             redBall.texture = [SKTexture textureWithImageNamed:@"bola_vermelha"];
+            redBall.physicsBody.collisionBitMask = 10;
             redBall.physicsBody.categoryBitMask = [Masks redBall];
             redBall.physicsBody.contactTestBitMask = [Masks jack];
 
@@ -77,6 +85,7 @@
             //AJUSTES DA GOODFOOD
             SKSpriteNode *greenBall = (SKSpriteNode *)node;
             greenBall.texture = [SKTexture textureWithImageNamed:@"bola_verde"];
+            greenBall.physicsBody.collisionBitMask = 10;
             greenBall.physicsBody.categoryBitMask = [Masks greenBall];
             greenBall.physicsBody.contactTestBitMask = [Masks jack];
 
@@ -84,11 +93,12 @@
             
             //AJUSTES DO JACK
             SKSpriteNode *jack = (SKSpriteNode *)node;
+            jack.physicsBody.collisionBitMask = 0;
             jack.physicsBody.categoryBitMask = [Masks jack];
             jack.physicsBody.contactTestBitMask = [Masks redBall] | [Masks greenBall] | [Masks ground];
+            
         }
     }
-
     score = (SKLabelNode *)[mainCameraNode childNodeWithName:@"score"];
     score.text = [NSString stringWithFormat:@"Score %d", goodFood];
     [mainCameraNode runAction:[SKAction actionNamed:@"moveCamera"]];
