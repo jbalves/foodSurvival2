@@ -64,9 +64,13 @@
     [mainCameraNode addChild:[self background]];
     [mainCameraNode childNodeWithName:@"background"].hidden = YES;
     
+    //NSLog(@"Posicao Camera: %@",NSStringFromCGPoint([self childNodeWithName:@"mainCamera"].position));
+    mainCameraNode.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:mainCameraNode.frame];
+    //NSLog(@"tamanho da tela: %@",NSStringFromCGSize([self view].bounds.size));
+    //NSLog(@"CGPoint da tela: %@",NSStringFromCGPoint([self view].bounds.origin));
     self.physicsWorld.contactDelegate = self;
 
-}
+    }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [touches anyObject];
@@ -79,6 +83,8 @@
         [[node childNodeWithName:NODENAME_JACK] runAction:[SKAction actionNamed:ACTION_JUMP]];
         countScore = countScore+1;
         score.text = [NSString stringWithFormat:@"Score: %d",(int)countScore];
+      //  NSLog(@"Posicao Jack: %@",NSStringFromCGPoint([node childNodeWithName:NODENAME_JACK].position));
+        
     }
     
     if ([node.name isEqualToString:NODENAME_PAUSEBUTTON]) {
@@ -121,7 +127,21 @@
         (A == [Masks ground] && B == [Masks jack])) {
         jumping = NO;
     }
-}
+    
+    if ((A == [Masks jack] && B == [Masks wall]) ||
+        (A == [Masks wall] && B == [Masks jack])) {
+        NSLog(@"Contato com wall");
+        //chamar metodo gameOver, ao invés da gambiarra abaixo
+        self.scene.paused = YES;
+        [mainCameraNode childNodeWithName:NODENAME_PAUSE].hidden = NO;
 
+
+    }
+}
+//
+//-(void)update:(NSTimeInterval)currentTime {
+//    SKNode *node = [mainCameraNode childNodeWithName:NODENAME_JACK];
+//    NSLog(@"Posicao Jack: %@",NSStringFromCGPoint(node.position) );
+//}
 
 @end

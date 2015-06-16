@@ -10,6 +10,8 @@
 
 #define MASKS_JACK      1
 #define MASKS_GROUND    2
+#define MASKS_WALL      3
+
 
 @implementation Masks
 
@@ -19,6 +21,10 @@
 
 + (uint32_t) ground {
     return MASKS_GROUND;
+}
+
++ (uint32_t) wall {
+    return MASKS_WALL;
 }
 
 @end

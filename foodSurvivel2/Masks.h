@@ -12,5 +12,6 @@
 
 + (uint32_t) jack;
 + (uint32_t) ground;
++ (uint32_t) wall;
 
 @end
