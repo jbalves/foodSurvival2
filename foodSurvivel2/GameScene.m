@@ -17,12 +17,12 @@
 #define NODENAME_TRYAGAIN       @"tryAgain"
 #define NODENAME_LEVEL1         @"Level1"
 
-#define ACTION_JUMP             @"Jump"
-
 @interface GameScene () {
     BOOL jumping;
     SKNode *mainCameraNode;
-    SKSpriteNode *background;
+    NSMutableArray *redBallNodes;
+    NSMutableArray *greenBallNodes;
+    SKSpriteNode *wallNode;
     SKLabelNode *score;
     int badFood;
     int goodFood;
@@ -54,12 +54,16 @@
     badFood = 0;
     goodFood = 0;
     mainCameraNode = [self childNodeWithName:@"mainCamera"];
+    wallNode = [mainCameraNode childNodeWithName:@"wall"];
+    
+    greenBallNodes = [[NSMutableArray alloc] init];
+    redBallNodes = [[NSMutableArray alloc] init];
     
     NSArray *nodes = self.children;
     for (SKNode *node in nodes) {
         if ([node.name isEqualToString:@"box"]) {
             
-            //AJUSTES DA BOX
+            //AJUSTES BOX
             SKSpriteNode *box = (SKSpriteNode *)node;
             box.texture = [SKTexture textureWithImageNamed:@"box"];
             
@@ -67,43 +71,38 @@
             
             //AJUSTES GROUND
             SKSpriteNode *ground = (SKSpriteNode *)node;
-            ground.physicsBody.collisionBitMask = 0;
-            ground.physicsBody.categoryBitMask = [Masks ground];
-            ground.physicsBody.contactTestBitMask = [Masks jack];
+            ground.physicsBody.collisionBitMask = 1 | 3 | 4;
             
         } else if ([node.name isEqualToString:@"redBall"]) {
           
-            //AJUSTES DA BADFOOD
+            //AJUSTES BADFOOD
             SKSpriteNode *redBall = (SKSpriteNode *)node;
             redBall.texture = [SKTexture textureWithImageNamed:@"bola_vermelha"];
-            redBall.physicsBody.collisionBitMask = 10;
-            redBall.physicsBody.categoryBitMask = [Masks redBall];
-            redBall.physicsBody.contactTestBitMask = [Masks jack];
-
+            [redBallNodes addObject:redBall];
+            
         } else if ([node.name isEqualToString:@"greenBall"]) {
             
-            //AJUSTES DA GOODFOOD
+            //AJUSTES GOODFOOD
             SKSpriteNode *greenBall = (SKSpriteNode *)node;
             greenBall.texture = [SKTexture textureWithImageNamed:@"bola_verde"];
-            greenBall.physicsBody.collisionBitMask = 10;
-            greenBall.physicsBody.categoryBitMask = [Masks greenBall];
-            greenBall.physicsBody.contactTestBitMask = [Masks jack];
-
-        } else if ([node.name isEqualToString:@"jack"]) {
-            
-            //AJUSTES DO JACK
-            SKSpriteNode *jack = (SKSpriteNode *)node;
-            jack.physicsBody.collisionBitMask = 0;
-            jack.physicsBody.categoryBitMask = [Masks jack];
-            jack.physicsBody.contactTestBitMask = [Masks redBall] | [Masks greenBall] | [Masks ground];
-            
+            [greenBallNodes addObject:greenBall];
+    
         }
     }
+    
+    //AJUSTE JACK
+    SKSpriteNode *jack = (SKSpriteNode *)[mainCameraNode childNodeWithName:@"jack"];
+    jack.physicsBody.collisionBitMask = 2 | 3;
+    
+    //INITIATE SCORE
     score = (SKLabelNode *)[mainCameraNode childNodeWithName:@"score"];
     score.text = [NSString stringWithFormat:@"Score %d", goodFood];
+    
+    //MOVE CAMERA
     [mainCameraNode runAction:[SKAction actionNamed:@"moveCamera"]];
     
     self.physicsWorld.contactDelegate = self;
+    
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -114,7 +113,7 @@
     //PULO DO JACK
     if (!jumping) {
         jumping = YES;
-        [[node childNodeWithName:NODENAME_JACK] runAction:[SKAction actionNamed:ACTION_JUMP]];
+        [[node childNodeWithName:NODENAME_JACK] runAction:[SKAction actionNamed:@"Jump"]];
     }
     
     //CLICK NO BOTAO DE PAUSE
@@ -146,43 +145,51 @@
 
 }
 
-- (void)didBeginContact:(SKPhysicsContact *)contact {
-    SKPhysicsBody *firstBody = contact.bodyA;
-    SKPhysicsBody *secondBody = contact.bodyB;
+- (void)update:(NSTimeInterval)currentTime {
+    SKNode *jack = [mainCameraNode childNodeWithName:@"jack"];
+    SKNode *ground = [mainCameraNode childNodeWithName:@"ground"];
     
-    //CONTATO COM GROUND
-    if (firstBody.categoryBitMask == [Masks ground] && secondBody.categoryBitMask == [Masks jack]) {
+    //CONTACT WITH GROUND
+    if ([jack intersectsNode:ground]) {
         jumping = NO;
     }
     
-    //CONTATO COM BADFOOD
-    if (firstBody.categoryBitMask == [Masks jack] && secondBody.categoryBitMask == [Masks redBall]) {
-        badFood++;
-        score.text = [NSString stringWithFormat:@"Score %d", goodFood];
-        [secondBody.node removeFromParent];
-        
-        if (badFood == 5) {
-            [self gameOver];
-        } else {
-            [self mainCameraAction];
+    //CONTACT WITH BADFOOD
+    for (SKNode *redBall in redBallNodes) {
+        if ([jack intersectsNode:redBall]) {
+            badFood++;
+            score.text = [NSString stringWithFormat:@"Score %d", goodFood];
+            [redBall removeFromParent];
+            if (badFood == 5) {
+                [self gameOver];
+            } else {
+                [self mainCameraAction];
+            }
         }
     }
     
-    //CONTATO COM GOODFOOD
-    if (firstBody.categoryBitMask == [Masks jack] && secondBody.categoryBitMask == [Masks greenBall]) {
-        goodFood++;
-        score.text = [NSString stringWithFormat:@"Score %d", goodFood];
-        [secondBody.node removeFromParent];
-        
-        if (badFood > 0) {
-            badFood --;
-            [self mainCameraAction];
+    //CONTACT WITH GOODFOOD
+    for (SKNode *greenBall in greenBallNodes) {
+        if ([jack intersectsNode:greenBall]) {
+            goodFood++;
+            score.text = [NSString stringWithFormat:@"Score %d", goodFood];
+            [greenBall removeFromParent];
+            
+            if (badFood > 0) {
+                badFood --;
+                [self mainCameraAction];
+            }
         }
     }
     
+    //JACK RUN OUT FROM EDGE
+    if ([jack intersectsNode:wallNode]) {
+        [self gameOver];
+    }
 }
 
-//AÇÕES DA CAMERA PRINCIPAL (MOVER MAIS RÁPIDO / MAIS LENTO)
+
+//MAIN CAMERA ACTIONS (MOVE FASTER / SLOWER)
 - (void) mainCameraAction {
     switch (badFood) {
         case 1:
@@ -206,7 +213,7 @@
     }
 }
 
-//GAMEOVER
+//GAMEOVER NODE
 - (void) gameOver {
     self.paused = YES;
     [mainCameraNode childNodeWithName:@"gameOverNode"].hidden = NO;

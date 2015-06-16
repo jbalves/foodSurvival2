@@ -17,23 +17,23 @@
 @implementation Masks
 
 + (uint32_t) jack {
-    return MASKS_JACK;
+    return 0x1 << MASKS_JACK;
 }
 
 + (uint32_t) ground {
-    return MASKS_GROUND;
+    return 0x1 << MASKS_GROUND;
 }
 
 + (uint32_t) redBall {
-    return MASKS_REDBALL;
+    return 0x1 << MASKS_REDBALL;
 }
 
 + (uint32_t) greenBall {
-    return MASKS_GREENBALL;
+    return 0x1 << MASKS_GREENBALL;
 }
 
 + (uint32_t) box {
-    return MASKS_BOX;
+    return 0x1 << MASKS_BOX;
 }
 
 @end
