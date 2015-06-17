@@ -64,13 +64,11 @@
     [mainCameraNode addChild:[self background]];
     [mainCameraNode childNodeWithName:@"background"].hidden = YES;
     
-    //NSLog(@"Posicao Camera: %@",NSStringFromCGPoint([self childNodeWithName:@"mainCamera"].position));
     mainCameraNode.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:mainCameraNode.frame];
-    //NSLog(@"tamanho da tela: %@",NSStringFromCGSize([self view].bounds.size));
-    //NSLog(@"CGPoint da tela: %@",NSStringFromCGPoint([self view].bounds.origin));
     self.physicsWorld.contactDelegate = self;
-
-    }
+    
+    [mainCameraNode childNodeWithName:@"gameOver"].hidden = YES;
+}
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [touches anyObject];
@@ -78,13 +76,13 @@
     SKNode *node = [self nodeAtPoint:location];
     score =(SKLabelNode *)[mainCameraNode childNodeWithName:@"score"];
     
+
+    
     if (!jumping) {
         jumping = YES;
         [[node childNodeWithName:NODENAME_JACK] runAction:[SKAction actionNamed:ACTION_JUMP]];
         countScore = countScore+1;
         score.text = [NSString stringWithFormat:@"Score: %d",(int)countScore];
-      //  NSLog(@"Posicao Jack: %@",NSStringFromCGPoint([node childNodeWithName:NODENAME_JACK].position));
-        
     }
     
     if ([node.name isEqualToString:NODENAME_PAUSEBUTTON]) {
@@ -106,6 +104,7 @@
     if ([node.name isEqualToString:NODENAME_RESTART]) {
         [self.scene.view presentScene:[GameScene unarchiveFromFile:@"GameScene"]];
     }
+    
 }
 
 - (SKSpriteNode *) background {
@@ -132,16 +131,18 @@
         (A == [Masks wall] && B == [Masks jack])) {
         NSLog(@"Contato com wall");
         //chamar metodo gameOver, ao invés da gambiarra abaixo
-        self.scene.paused = YES;
-        [mainCameraNode childNodeWithName:NODENAME_PAUSE].hidden = NO;
+        //self.scene.paused = YES;
+        //[mainCameraNode childNodeWithName:NODENAME_PAUSE].hidden = NO;
+        [self gameOver];
 
 
     }
 }
-//
-//-(void)update:(NSTimeInterval)currentTime {
-//    SKNode *node = [mainCameraNode childNodeWithName:NODENAME_JACK];
-//    NSLog(@"Posicao Jack: %@",NSStringFromCGPoint(node.position) );
-//}
+
+- (void) gameOver {
+    self.paused = YES;
+    [mainCameraNode childNodeWithName:@"gameOver"].hidden = NO;
+    [mainCameraNode childNodeWithName:NODENAME_PAUSEBUTTON].hidden = YES;
+}
 
 @end
