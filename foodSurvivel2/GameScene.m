@@ -17,7 +17,6 @@
     SKLabelNode *score;
     int badFood;
     int goodFood;
-    CGPoint jacksDefaultPosition;
 }
 
 @end
@@ -63,9 +62,6 @@
     
     jack = (SKSpriteNode *)[mainCameraNode childNodeWithName:@"jack"];
     jack.physicsBody.collisionBitMask = 2 | 3;
-
-    jacksDefaultPosition.x = -146.440964;
-    jacksDefaultPosition.y = -79.361984;
     
     NSArray *nodes = self.children;
     for (SKNode *node in nodes) {
