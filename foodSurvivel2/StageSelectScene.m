@@ -1,17 +1,14 @@
 //
-//  StartScene.m
+//  StageSelectScene.m
 //  foodSurvivel2
 //
-//  Created by Kevin Oliveira on 11/06/15.
+//  Created by Jeferson Barros Alves on 17/06/15.
 //  Copyright © 2015 edu FUCAPI. All rights reserved.
 //
 
-#import "StartScene.h"
+#import "StageSelectScene.h"
 
-#define NODENAME_FOODINFO       @"foodInfo"
-#define NODENAME_INITGAME       @"initGame"
-#define NODENAME_AVATAR         @"avatar"
-
+#define NODENAME_STAGEGAME      @"stageGame"
 
 @implementation SKScene (Unarchive)
 
@@ -30,22 +27,17 @@
 
 @end
 
-
-@implementation StartScene
+@implementation StageSelectScene
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [touches anyObject];
     CGPoint location = [touch locationInNode:self];
     SKNode *node = [self nodeAtPoint:location];
     
-    if ([node.name isEqualToString:NODENAME_INITGAME]) {
-        [self.scene.view presentScene:[StageSelectScene unarchiveFromFile:@"StageSelectScene"]];
-        //[self.scene.view presentScene:[GameScene unarchiveFromFile:@"GameScene"]];
+    if ([node.name isEqualToString:NODENAME_STAGEGAME]) {
+        [self.scene.view presentScene:[GameScene unarchiveFromFile:@"GameScene"]];
     }
     
-    if ([node.name isEqualToString:NODENAME_FOODINFO]) {
-        [self.scene.view presentScene:[FoodInfoScene unarchiveFromFile:@"FoodInfoScene"]];
-    }
 }
 
 @end

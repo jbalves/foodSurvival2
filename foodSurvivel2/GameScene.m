@@ -145,9 +145,15 @@
     
     //CONTACT WITH GROUND
     if ([jack intersectsNode:groundNode]) {
-//        [jack runAction:[SKAction actionNamed:@"MoveToDefaultPosition"]];
         jumping = NO;
     }
+    
+    //CONTACT WITH BOX
+    [self enumerateChildNodesWithName:@"box" usingBlock:^(SKNode *node, BOOL *stop) {
+        if ([jack intersectsNode:node]) {
+            jumping = NO;
+        }
+    }];
     
     //CONTACT WITH BADFOOD
     [self enumerateChildNodesWithName:@"redBall" usingBlock:^(SKNode *node, BOOL *stop) {
