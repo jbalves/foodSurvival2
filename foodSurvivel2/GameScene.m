@@ -17,6 +17,7 @@
     SKLabelNode *score;
     int badFood;
     int goodFood;
+    CGPoint jacksDefaultPosition;
 }
 
 @end
@@ -62,6 +63,11 @@
     
     jack = (SKSpriteNode *)[mainCameraNode childNodeWithName:@"jack"];
     jack.physicsBody.collisionBitMask = 2 | 3;
+
+    jacksDefaultPosition.x = -146.440964;
+    jacksDefaultPosition.y = -79.361984;
+    
+    NSRange 
     
     NSArray *nodes = self.children;
     for (SKNode *node in nodes) {
@@ -145,6 +151,7 @@
     
     //CONTACT WITH GROUND
     if ([jack intersectsNode:groundNode]) {
+//        [jack runAction:[SKAction actionNamed:@"MoveToDefaultPosition"]];
         jumping = NO;
     }
     
@@ -153,7 +160,7 @@
         if ([node intersectsNode:jack]) {
             [node removeFromParent];
             badFood++;
-            if (badFood == 5) {
+            if (badFood == 3) {
                 [self gameOver];
             } else {
                 [self mainCameraAction];
@@ -184,21 +191,17 @@
 //MAIN CAMERA ACTIONS (MOVE FASTER / SLOWER)
 - (void) mainCameraAction {
     switch (badFood) {
-        case 1:
+        case 0:
             [mainCameraNode removeAllActions];
             [mainCameraNode runAction:[SKAction actionNamed:@"moveCamera"]];
             break;
-        case 2:
+        case 1:
             [mainCameraNode removeAllActions];
             [mainCameraNode runAction:[SKAction actionNamed:@"moveCamera2"]];
             break;
-        case 3:
+        case 2:
             [mainCameraNode removeAllActions];
             [mainCameraNode runAction:[SKAction actionNamed:@"moveCamera3"]];
-            break;
-        case 4:
-            [mainCameraNode removeAllActions];
-            [mainCameraNode runAction:[SKAction actionNamed:@"moveCamera4"]];
             break;
         default:
             break;
