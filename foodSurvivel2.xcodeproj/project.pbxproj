@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A90B67881B2B390100D8EFC8 /* CameraActions.sks in Resources */ = {isa = PBXBuildFile; fileRef = A90B67871B2B390100D8EFC8 /* CameraActions.sks */; };
 		A924DDD91B2A0E6E00A25F13 /* FoodInfoScene.m in Sources */ = {isa = PBXBuildFile; fileRef = A924DDD81B2A0E6E00A25F13 /* FoodInfoScene.m */; };
 		A924DDDB1B2A0F1200A25F13 /* FoodInfoScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A924DDDA1B2A0F1200A25F13 /* FoodInfoScene.sks */; };
 		A9BF14211B29C2D9002041F3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BF14201B29C2D9002041F3 /* main.m */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A90B67871B2B390100D8EFC8 /* CameraActions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = CameraActions.sks; path = ../CameraActions.sks; sourceTree = "<group>"; };
 		A924DDD71B2A0E6E00A25F13 /* FoodInfoScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodInfoScene.h; sourceTree = "<group>"; };
 		A924DDD81B2A0E6E00A25F13 /* FoodInfoScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodInfoScene.m; sourceTree = "<group>"; };
 		A924DDDA1B2A0F1200A25F13 /* FoodInfoScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FoodInfoScene.sks; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				A9BF14611B29F90B002041F3 /* StartScene.sks */,
 				A924DDDA1B2A0F1200A25F13 /* FoodInfoScene.sks */,
 				A9BF145C1B29F145002041F3 /* JackActions.sks */,
+				A90B67871B2B390100D8EFC8 /* CameraActions.sks */,
 			);
 			name = "Sk's";
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 			files = (
 				A9BF14291B29C2D9002041F3 /* GameScene.sks in Resources */,
 				A9BF14341B29C2D9002041F3 /* LaunchScreen.storyboard in Resources */,
+				A90B67881B2B390100D8EFC8 /* CameraActions.sks in Resources */,
 				A9BF145D1B29F145002041F3 /* JackActions.sks in Resources */,
 				A924DDDB1B2A0F1200A25F13 /* FoodInfoScene.sks in Resources */,
 				A9BF14621B29F90B002041F3 /* StartScene.sks in Resources */,

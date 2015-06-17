@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "jack5.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "jack-run-6.png",
       "scale" : "2x"
     },
     {

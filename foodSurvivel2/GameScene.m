@@ -1,6 +1,6 @@
 //
 //  GameScene.m
-//  foodSurvivel2
+//
 //
 //  Created by Kevin Oliveira on 11/06/15.
 //  Copyright (c) 2015 edu FUCAPI. All rights reserved.
@@ -8,20 +8,15 @@
 
 #import "GameScene.h"
 
-#define NODENAME_JACK           @"jack"
-#define NODENAME_PAUSEBUTTON    @"pauseButton"
-#define NODENAME_CONTINUE       @"continue"
-#define NODENAME_MENU           @"menu"
-#define NODENAME_RESTART        @"restart"
-#define NODENAME_PAUSE          @"pauseNode"
-#define NODENAME_LEVEL1         @"Level1"
-
-#define ACTION_JUMP         @"Jump"
-
 @interface GameScene () {
     BOOL jumping;
     SKNode *mainCameraNode;
-    SKSpriteNode *background;
+    SKSpriteNode *wallNode;
+    SKSpriteNode *jack;
+    SKSpriteNode *groundNode;
+    SKLabelNode *score;
+    int badFood;
+    int goodFood;
 }
 
 @end
@@ -43,76 +38,175 @@
 
 @end
 
-
 @implementation GameScene
 
 -(void)didMoveToView:(SKView *)view {
+    
+    //INIT OF BOOLS
     jumping = NO;
+    
+    //INIT OF COUNTERS
+    badFood = 0;
+    goodFood = 0;
+
+
+    //INIT OF NODES
+    mainCameraNode = [self childNodeWithName:@"mainCamera"];
+    
+    groundNode = (SKSpriteNode *)[mainCameraNode childNodeWithName:@"ground"];
+    
+    wallNode = (SKSpriteNode *)[mainCameraNode childNodeWithName:@"wall"];
+    
+    score = (SKLabelNode *)[mainCameraNode childNodeWithName:@"score"];
+    score.text = [NSString stringWithFormat:@"Score %d", goodFood];
+    
+    jack = (SKSpriteNode *)[mainCameraNode childNodeWithName:@"jack"];
+    jack.physicsBody.collisionBitMask = 2 | 3;
     
     NSArray *nodes = self.children;
     for (SKNode *node in nodes) {
-        if ([node.name isEqualToString:@"mainCamera"]) {
-            mainCameraNode = node;
-            [mainCameraNode childNodeWithName:NODENAME_PAUSE].hidden = YES;
+        if ([node.name isEqualToString:@"box"]) {
+            
+            //BOX
+            SKSpriteNode *box = (SKSpriteNode *)node;
+            box.texture = [SKTexture textureWithImageNamed:@"box"];
+            
+        } else if ([node.name isEqualToString:@"ground"]){
+            
+            //GROUND
+            SKSpriteNode *ground = (SKSpriteNode *)node;
+            ground.physicsBody.collisionBitMask = 1 | 3 | 4;
+            
+        } else if ([node.name isEqualToString:@"redBall"]) {
+          
+            //BADFOOD
+            SKSpriteNode *redBall = (SKSpriteNode *)node;
+            redBall.texture = [SKTexture textureWithImageNamed:@"bola_vermelha"];
+            
+        } else if ([node.name isEqualToString:@"greenBall"]) {
+            
+            //GOODFOOD
+            SKSpriteNode *greenBall = (SKSpriteNode *)node;
+            greenBall.texture = [SKTexture textureWithImageNamed:@"bola_verde"];
+    
         }
     }
     
-    [mainCameraNode addChild:[self background]];
-    [mainCameraNode childNodeWithName:@"background"].hidden = YES;
+    //MOVE CAMERA
+    [mainCameraNode runAction:[SKAction actionNamed:@"moveCamera"]];
     
+    //WORLD PHYSICS
     self.physicsWorld.contactDelegate = self;
+    
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    
     UITouch *touch = [touches anyObject];
     CGPoint location = [touch locationInNode:self];
     SKNode *node = [self nodeAtPoint:location];
     
+    //JACK'S JUMP
     if (!jumping) {
         jumping = YES;
-        [[node childNodeWithName:NODENAME_JACK] runAction:[SKAction actionNamed:ACTION_JUMP]];
+        [jack runAction:[SKAction actionNamed:@"Jump"] withKey:@"jumping"];
     }
     
-    if ([node.name isEqualToString:NODENAME_PAUSEBUTTON]) {
+    //PAUSE CLICKED
+    if ([node.name isEqualToString:@"pauseButton"]) {
         self.scene.paused = YES;
-//        [mainCameraNode childNodeWithName:@"background"].hidden = NO;
-        [mainCameraNode childNodeWithName:NODENAME_PAUSE].hidden = NO;
+        [mainCameraNode childNodeWithName:@"pauseNode"].hidden = NO;
     }
     
-    if ([node.name isEqualToString:NODENAME_CONTINUE]) {
+    //CONTINUE CLICKED
+    if ([node.name isEqualToString:@"continue"]) {
         self.scene.paused = NO;
-//        [mainCameraNode childNodeWithName:@"background"].hidden = YES;
-        [mainCameraNode childNodeWithName:NODENAME_PAUSE].hidden = YES;
+        [mainCameraNode childNodeWithName:@"pauseNode"].hidden = YES;
     }
     
-    if ([node.name isEqualToString:NODENAME_MENU]) {
+    //MAIN MENU CLICKED
+    if ([node.name isEqualToString:@"menu"]) {
         [self.scene.view presentScene:[StartScene unarchiveFromFile:@"StartScene"]];
     }
     
-    if ([node.name isEqualToString:NODENAME_RESTART]) {
+    //RESTART CLICKED
+    if ([node.name isEqualToString:@"restart"]) {
         [self.scene.view presentScene:[GameScene unarchiveFromFile:@"GameScene"]];
     }
+
+    //TRY AGAIN CLICED
+    if ([node.name isEqualToString:@"tryAgain"]) {
+        [self.scene.view presentScene:[GameScene unarchiveFromFile:@"GameScene"]];
+    }
+
 }
 
-- (SKSpriteNode *) background {
-    background = [SKSpriteNode new];
-    background.name = @"background";
-    background.color = [UIColor grayColor];
-    background.alpha = 0.3;
-    background.size = self.frame.size;
-    background.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/2);
-    background.zPosition = 5;
-    return background;
-}
-
-- (void)didBeginContact:(SKPhysicsContact *)contact {
-    int A = contact.bodyA.categoryBitMask;
-    int B = contact.bodyB.categoryBitMask;
+- (void)update:(NSTimeInterval)currentTime {
     
-    if ((A == [Masks jack] && B == [Masks ground]) ||
-        (A == [Masks ground] && B == [Masks jack])) {
+    //CONTACT WITH GROUND
+    if ([jack intersectsNode:groundNode]) {
+//        [jack runAction:[SKAction actionNamed:@"MoveToDefaultPosition"]];
         jumping = NO;
     }
+    
+    //CONTACT WITH BADFOOD
+    [self enumerateChildNodesWithName:@"redBall" usingBlock:^(SKNode *node, BOOL *stop) {
+        if ([node intersectsNode:jack]) {
+            [node removeFromParent];
+            badFood++;
+            if (badFood == 3) {
+                [self gameOver];
+            } else {
+                [self mainCameraAction];
+            }
+        }
+    }];
+    
+    //CONTACT WITH GOOD FOOD
+    [self enumerateChildNodesWithName:@"greenBall" usingBlock:^(SKNode *node, BOOL *stop) {
+        if ([node intersectsNode:jack]) {
+            [node removeFromParent];
+            goodFood++;
+            score.text = [NSString stringWithFormat:@"Score %d", goodFood];
+            if (badFood > 0) {
+                badFood --;
+                [self mainCameraAction];
+            }
+        }
+    }];
+    
+    //JACK RUN OUT FROM THE SCENE
+    if ([jack intersectsNode:wallNode]) {
+        [self gameOver];
+    }
+    
+}
+
+//MAIN CAMERA ACTIONS (MOVE FASTER / SLOWER)
+- (void) mainCameraAction {
+    switch (badFood) {
+        case 0:
+            [mainCameraNode removeAllActions];
+            [mainCameraNode runAction:[SKAction actionNamed:@"moveCamera"]];
+            break;
+        case 1:
+            [mainCameraNode removeAllActions];
+            [mainCameraNode runAction:[SKAction actionNamed:@"moveCamera2"]];
+            break;
+        case 2:
+            [mainCameraNode removeAllActions];
+            [mainCameraNode runAction:[SKAction actionNamed:@"moveCamera3"]];
+            break;
+        default:
+            break;
+    }
+}
+
+//GAMEOVER NODE
+- (void) gameOver {
+    self.paused = YES;
+    [mainCameraNode childNodeWithName:@"gameOverNode"].hidden = NO;
+    [mainCameraNode childNodeWithName:@"pauseButton"].hidden = YES;
 }
 
 @end

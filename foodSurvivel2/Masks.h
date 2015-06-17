@@ -12,5 +12,8 @@
 
 + (uint32_t) jack;
 + (uint32_t) ground;
++ (uint32_t) redBall;
++ (uint32_t) greenBall;
++ (uint32_t) box;
 
 @end
