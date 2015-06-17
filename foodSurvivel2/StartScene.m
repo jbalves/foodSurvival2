@@ -39,7 +39,8 @@
     SKNode *node = [self nodeAtPoint:location];
     
     if ([node.name isEqualToString:NODENAME_INITGAME]) {
-        [self.scene.view presentScene:[GameScene unarchiveFromFile:@"GameScene"]];
+        [self.scene.view presentScene:[GameScene unarchiveFromFile:@"StageSelectScene"]];
+        //[self.scene.view presentScene:[GameScene unarchiveFromFile:@"GameScene"]];
     }
     
     if ([node.name isEqualToString:NODENAME_FOODINFO]) {
