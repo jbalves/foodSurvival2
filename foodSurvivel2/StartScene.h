@@ -10,6 +10,7 @@
 #import <SpriteKit/SpriteKit.h>
 #import "GameScene.h"
 #import "FoodInfoScene.h"
+#import "StageSelectScene.h"
 
 @interface StartScene : SKScene
 

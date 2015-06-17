@@ -8,9 +8,7 @@
 
 #import "StageSelectScene.h"
 
-#define NODENAME_FOODINFO       @"foodInfo"
-#define NODENAME_INITGAME       @"initGame"
-#define NODENAME_AVATAR         @"avatar"
+#define NODENAME_STAGEGAME      @"stageGame"
 
 @implementation SKScene (Unarchive)
 
@@ -30,5 +28,16 @@
 @end
 
 @implementation StageSelectScene
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    UITouch *touch = [touches anyObject];
+    CGPoint location = [touch locationInNode:self];
+    SKNode *node = [self nodeAtPoint:location];
+    
+    if ([node.name isEqualToString:NODENAME_STAGEGAME]) {
+        [self.scene.view presentScene:[GameScene unarchiveFromFile:@"GameScene"]];
+    }
+    
+}
 
 @end
