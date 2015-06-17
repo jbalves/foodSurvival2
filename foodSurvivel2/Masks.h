@@ -12,6 +12,12 @@
 
 + (uint32_t) jack;
 + (uint32_t) ground;
+<<<<<<< HEAD
 + (uint32_t) wall;
+=======
++ (uint32_t) redBall;
++ (uint32_t) greenBall;
++ (uint32_t) box;
+>>>>>>> master
 
 @end

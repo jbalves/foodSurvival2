@@ -7,7 +7,6 @@
 //
 
 #import "FoodInfoScene.h"
-#define NODENAME_BACKBUTTON         @"backButton"
 
 @interface FoodInfoScene ()
 
@@ -36,15 +35,23 @@
 @implementation FoodInfoScene
 
 - (void)didMoveToView:(SKView *)view {
-    _title = [[NSMutableArray alloc]initWithObjects:@"Banana", nil];
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(50, 0, self.frame.size.width, self.frame.size.height)];
+    
+    NSString *cenouras = @"Cenouras contém vitamina A, essa vitamina ajuda melhorar a visão noturna.";
+    NSString *doces = @"As vezes doces ou azedas as laranjas contém vitaminas que contribuem para evitar uma série de variedades de câncer e protege contra a gripe.";
+    NSString *brocolis = @"Rico em vitamina C, brocólis ajuda na visão de detalhes, tanto a visão de longe como a visão de perto.";
+    NSString *sanduiche = @"Sanduíches são deliciosos, mas não coma muito pois contém gorduras ruins que pode causar obesidade, doenças no coração e diabetes.";
+    NSString *chocolate = @"Chocolates são deliciosos mas comer muito pode provocar diabetes que é o aumento de açúcar no sangue.";
+    NSString *pirulito = @"Açúcar em excesso é um perigo. Cuidado! pirulitos causam cáries nos dentes.";
+    
+    _title = [[NSMutableArray alloc] initWithObjects: cenouras, doces, brocolis, sanduiche, chocolate, pirulito, nil];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(50, 10, self.frame.size.width, self.frame.size.height)];
     _tableView.delegate = self;
     _tableView.dataSource = self;
-    _tableView.hidden = NO;
+//    _tableView.hidden = NO;
     _tableView.scrollEnabled = YES;
     _tableView.allowsMultipleSelectionDuringEditing = NO;
     _tableView.allowsSelection = NO;
-    _tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:_tableView];
 }
 
@@ -60,8 +67,58 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellidentifier];
     }
     
+    UIImageView *tempImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background1.png"]];
+    [tempImageView setFrame:self.tableView.frame];
+    self.tableView.backgroundView = tempImageView;
+    
     cell.textLabel.text = _title[indexPath.row];
+    
+    cell.textLabel.font=[UIFont fontWithName:@"Courier" size:12];
+    cell.textLabel.numberOfLines = 5;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.backgroundColor = [UIColor colorWithWhite:0 alpha:0.0];
+    
+    UIImage *imageCenoura =     [UIImage imageNamed:@"cenoura"];
+    UIImage *imageLaranja =     [UIImage imageNamed:@"laranja"];
+    UIImage *imageBrocolis =    [UIImage imageNamed:@"brocolis"];
+    UIImage *imageSanduiche =   [UIImage imageNamed:@"sanduiche"];
+    UIImage *imageChocolate =   [UIImage imageNamed:@"chocolate"];
+    UIImage *imagePirulito =    [UIImage imageNamed:@"pirulito"];
+    
+    
+    switch (indexPath.row) {
+            
+        case 0:
+            cell.imageView.image=imageCenoura;
+            break;
+        case 1:
+            cell.imageView.image=imageLaranja;
+            
+            break;
+        case 2:
+            cell.imageView.image=imageBrocolis;
+            
+            break;
+        case 3:
+            cell.imageView.image=imageSanduiche;
+            break;
+            
+        case 4:
+            cell.imageView.image=imageChocolate;
+            break;
+        case 5:
+            cell.imageView.image=imagePirulito;
+            break;
+            
+        default:
+            break;
+            
+    }
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)aTableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 50;
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -69,7 +126,7 @@
     CGPoint location = [touch locationInNode:self];
     SKNode *node = [self nodeAtPoint:location];
     
-    if ([node.name isEqualToString:NODENAME_BACKBUTTON]) {
+    if ([node.name isEqualToString:@"backButton"]) {
         _tableView.hidden = YES;
         [self.scene.view presentScene:[StartScene unarchiveFromFile:@"StartScene"]];
     }
