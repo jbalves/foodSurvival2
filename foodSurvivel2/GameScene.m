@@ -67,8 +67,6 @@
     jacksDefaultPosition.x = -146.440964;
     jacksDefaultPosition.y = -79.361984;
     
-    NSRange 
-    
     NSArray *nodes = self.children;
     for (SKNode *node in nodes) {
         if ([node.name isEqualToString:@"box"]) {
