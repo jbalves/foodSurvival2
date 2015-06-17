@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		715D65B51B31CAD800B4C806 /* StageSelectScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 715D65B41B31CAD800B4C806 /* StageSelectScene.m */; };
+		715D65B71B31CAE100B4C806 /* StageSelectScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 715D65B61B31CAE100B4C806 /* StageSelectScene.sks */; };
 		A90B67881B2B390100D8EFC8 /* CameraActions.sks in Resources */ = {isa = PBXBuildFile; fileRef = A90B67871B2B390100D8EFC8 /* CameraActions.sks */; };
 		A924DDD91B2A0E6E00A25F13 /* FoodInfoScene.m in Sources */ = {isa = PBXBuildFile; fileRef = A924DDD81B2A0E6E00A25F13 /* FoodInfoScene.m */; };
 		A924DDDB1B2A0F1200A25F13 /* FoodInfoScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A924DDDA1B2A0F1200A25F13 /* FoodInfoScene.sks */; };
@@ -44,6 +46,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		715D65B31B31CAD800B4C806 /* StageSelectScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StageSelectScene.h; sourceTree = "<group>"; };
+		715D65B41B31CAD800B4C806 /* StageSelectScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StageSelectScene.m; sourceTree = "<group>"; };
+		715D65B61B31CAE100B4C806 /* StageSelectScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StageSelectScene.sks; sourceTree = "<group>"; };
 		A90B67871B2B390100D8EFC8 /* CameraActions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = CameraActions.sks; path = ../CameraActions.sks; sourceTree = "<group>"; };
 		A924DDD71B2A0E6E00A25F13 /* FoodInfoScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodInfoScene.h; sourceTree = "<group>"; };
 		A924DDD81B2A0E6E00A25F13 /* FoodInfoScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodInfoScene.m; sourceTree = "<group>"; };
@@ -115,6 +120,7 @@
 				A9BF14281B29C2D9002041F3 /* GameScene.sks */,
 				A9BF14611B29F90B002041F3 /* StartScene.sks */,
 				A924DDDA1B2A0F1200A25F13 /* FoodInfoScene.sks */,
+				715D65B61B31CAE100B4C806 /* StageSelectScene.sks */,
 				A9BF145C1B29F145002041F3 /* JackActions.sks */,
 				A90B67871B2B390100D8EFC8 /* CameraActions.sks */,
 			);
@@ -126,6 +132,8 @@
 			children = (
 				A9BF14251B29C2D9002041F3 /* GameScene.h */,
 				A9BF14261B29C2D9002041F3 /* GameScene.m */,
+				715D65B31B31CAD800B4C806 /* StageSelectScene.h */,
+				715D65B41B31CAD800B4C806 /* StageSelectScene.m */,
 				A9BF145E1B29F8E5002041F3 /* StartScene.h */,
 				A9BF145F1B29F8E5002041F3 /* StartScene.m */,
 				A924DDD71B2A0E6E00A25F13 /* FoodInfoScene.h */,
@@ -307,6 +315,7 @@
 				A90B67881B2B390100D8EFC8 /* CameraActions.sks in Resources */,
 				A9BF145D1B29F145002041F3 /* JackActions.sks in Resources */,
 				A924DDDB1B2A0F1200A25F13 /* FoodInfoScene.sks in Resources */,
+				715D65B71B31CAE100B4C806 /* StageSelectScene.sks in Resources */,
 				A9BF14621B29F90B002041F3 /* StartScene.sks in Resources */,
 				A9BF14311B29C2D9002041F3 /* Assets.xcassets in Resources */,
 				A9BF142F1B29C2D9002041F3 /* Main.storyboard in Resources */,
@@ -341,6 +350,7 @@
 				A9BF14271B29C2D9002041F3 /* GameScene.m in Sources */,
 				A924DDD91B2A0E6E00A25F13 /* FoodInfoScene.m in Sources */,
 				A9BF14211B29C2D9002041F3 /* main.m in Sources */,
+				715D65B51B31CAD800B4C806 /* StageSelectScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
