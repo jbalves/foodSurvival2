@@ -35,7 +35,7 @@
 
 - (void)didMoveToView:(nonnull SKView *)view {
     SKLabelNode *scoreLabel = (SKLabelNode *)[self childNodeWithName:@"score"];
-
+    
     //VERIFY IF USER HAVE SCORE, IF NOT SET THE LABEL TEXT TO 0, IF YES SET THE SCORE ON USER DEFAULTS
     NSInteger score = [[NSUserDefaults standardUserDefaults] integerForKey:@"score"];
     if (score) {

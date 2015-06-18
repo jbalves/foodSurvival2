@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 edu FUCAPI. All rights reserved.
 //
 
-#import "GameScene.h"
+#import "Level1Scene.h"
 
-@interface GameScene () {
+@interface Level1Scene () {
     BOOL jumping;
     SKNode *mainCameraNode;
     SKSpriteNode *wallNode;
@@ -38,7 +38,7 @@
 
 @end
 
-@implementation GameScene
+@implementation Level1Scene
 
 -(void)didMoveToView:(SKView *)view {
     
@@ -131,12 +131,12 @@
     
     //RESTART CLICKED
     if ([node.name isEqualToString:@"restart"]) {
-        [self.scene.view presentScene:[GameScene unarchiveFromFile:@"GameScene"]];
+        [self.scene.view presentScene:[Level1Scene unarchiveFromFile:@"Level1Scene"]];
     }
 
     //TRY AGAIN CLICKED
     if ([node.name isEqualToString:@"tryAgain"]) {
-        [self.scene.view presentScene:[GameScene unarchiveFromFile:@"GameScene"]];
+        [self.scene.view presentScene:[Level1Scene unarchiveFromFile:@"Level1Scene"]];
     }
 
 }
@@ -216,16 +216,27 @@
 
 //FINISHED LEVEL
 - (void) finishedLevel {
+    
+    //PAUSE THE GAME AND SET THE PAUSE BUTTON HIDDEN
     self.paused = YES;
     [mainCameraNode childNodeWithName:@"pauseButton"].hidden = YES;
+    
+    //CATCH THE SCORE LABEL ON SCENE AND DISPLAY THE SCORE OF THE PLAYER
     SKSpriteNode *finishNode = (SKSpriteNode *)[mainCameraNode childNodeWithName:@"finishedLevelNode"];
     finishNode.hidden = NO;
     SKLabelNode *finishScore = (SKLabelNode *)[finishNode childNodeWithName:@"finishScoreNode"];
     finishScore.text = [NSString stringWithFormat:@"com %d pontos", goodFood];
+    
+    //SAVE NEW SCORE + PREVIOUS SCORE ON USER DEFAULTS
     NSInteger previousScore = [[NSUserDefaults standardUserDefaults] integerForKey:@"score"];
     NSInteger newScore = previousScore + goodFood;
-    NSLog(@"%ld", newScore);
     [[NSUserDefaults standardUserDefaults] setInteger:newScore forKey:@"score"];
+    
+    //VERIFY IF ACTUAL SCORE IS THE NEW BEST SCORE AND SAVE ON USER DEFAULTS
+    if (goodFood > previousScore) {
+        [[NSUserDefaults standardUserDefaults] setInteger:goodFood forKey:@"bestScoreLevel1"];
+    }
+    
 }
 
 //GAMEOVER NODE
