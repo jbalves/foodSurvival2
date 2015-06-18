@@ -39,9 +39,9 @@
     //VERIFY IF USER HAVE SCORE, IF NOT SET THE LABEL TEXT TO 0, IF YES SET THE SCORE ON USER DEFAULTS
     NSInteger score = [[NSUserDefaults standardUserDefaults] integerForKey:@"score"];
     if (score) {
-        scoreLabel.text = [NSString stringWithFormat:@"Pontos: %ld", (long)score];
+        scoreLabel.text = [NSString stringWithFormat:@"Pontos %ld", (long)score];
     } else {
-        scoreLabel.text = @"Pontos: 0";
+        scoreLabel.text = @"Pontos 0";
     }
 }
 
