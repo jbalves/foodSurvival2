@@ -22,10 +22,10 @@
 		A9BF14341B29C2D9002041F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9BF14321B29C2D9002041F3 /* LaunchScreen.storyboard */; };
 		A9BF143F1B29C2D9002041F3 /* foodSurvivel2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BF143E1B29C2D9002041F3 /* foodSurvivel2Tests.m */; };
 		A9BF144A1B29C2D9002041F3 /* foodSurvivel2UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BF14491B29C2D9002041F3 /* foodSurvivel2UITests.m */; };
-		A9BF145B1B29E159002041F3 /* Masks.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BF145A1B29E159002041F3 /* Masks.m */; };
 		A9BF145D1B29F145002041F3 /* JackActions.sks in Resources */ = {isa = PBXBuildFile; fileRef = A9BF145C1B29F145002041F3 /* JackActions.sks */; };
 		A9BF14601B29F8E5002041F3 /* StartScene.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BF145F1B29F8E5002041F3 /* StartScene.m */; };
 		A9BF14621B29F90B002041F3 /* StartScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A9BF14611B29F90B002041F3 /* StartScene.sks */; };
+		A9F8E5381B32F28A00A1A2BC /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F8E5371B32F28A00A1A2BC /* SpriteKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,12 +72,11 @@
 		A9BF14451B29C2D9002041F3 /* foodSurvivel2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = foodSurvivel2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9BF14491B29C2D9002041F3 /* foodSurvivel2UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = foodSurvivel2UITests.m; sourceTree = "<group>"; };
 		A9BF144B1B29C2D9002041F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A9BF14591B29E159002041F3 /* Masks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Masks.h; sourceTree = "<group>"; };
-		A9BF145A1B29E159002041F3 /* Masks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Masks.m; sourceTree = "<group>"; };
 		A9BF145C1B29F145002041F3 /* JackActions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = JackActions.sks; sourceTree = "<group>"; };
 		A9BF145E1B29F8E5002041F3 /* StartScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartScene.h; sourceTree = "<group>"; };
 		A9BF145F1B29F8E5002041F3 /* StartScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartScene.m; sourceTree = "<group>"; };
 		A9BF14611B29F90B002041F3 /* StartScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StartScene.sks; sourceTree = "<group>"; };
+		A9F8E5371B32F28A00A1A2BC /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9F8E5381B32F28A00A1A2BC /* SpriteKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,15 +105,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A924DDD41B2A012500A25F13 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				A9BF14591B29E159002041F3 /* Masks.h */,
-				A9BF145A1B29E159002041F3 /* Masks.m */,
-			);
-			name = Classes;
-			sourceTree = "<group>";
-		};
 		A924DDD51B2A013300A25F13 /* Sk's */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +140,7 @@
 				A9BF143D1B29C2D9002041F3 /* foodSurvivel2Tests */,
 				A9BF14481B29C2D9002041F3 /* foodSurvivel2UITests */,
 				A9BF141D1B29C2D9002041F3 /* Products */,
+				A9F8E5361B32F26800A1A2BC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -171,7 +163,6 @@
 				A9BF142B1B29C2D9002041F3 /* ViewController.m */,
 				A924DDD61B2A014600A25F13 /* Scenes */,
 				A924DDD51B2A013300A25F13 /* Sk's */,
-				A924DDD41B2A012500A25F13 /* Classes */,
 				A9BF142D1B29C2D9002041F3 /* Main.storyboard */,
 				A9BF14301B29C2D9002041F3 /* Assets.xcassets */,
 				A9BF141F1B29C2D9002041F3 /* Supporting Files */,
@@ -205,6 +196,14 @@
 				A9BF144B1B29C2D9002041F3 /* Info.plist */,
 			);
 			path = foodSurvivel2UITests;
+			sourceTree = "<group>";
+		};
+		A9F8E5361B32F26800A1A2BC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A9F8E5371B32F28A00A1A2BC /* SpriteKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -345,7 +344,6 @@
 			files = (
 				A9BF142C1B29C2D9002041F3 /* ViewController.m in Sources */,
 				A9BF14601B29F8E5002041F3 /* StartScene.m in Sources */,
-				A9BF145B1B29E159002041F3 /* Masks.m in Sources */,
 				A9BF14241B29C2D9002041F3 /* AppDelegate.m in Sources */,
 				A9BF14271B29C2D9002041F3 /* GameScene.m in Sources */,
 				A924DDD91B2A0E6E00A25F13 /* FoodInfoScene.m in Sources */,
@@ -490,6 +488,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = foodSurvivel2/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "BEPiD-FUCAPI.foodSurvivel2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -501,6 +500,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = foodSurvivel2/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "BEPiD-FUCAPI.foodSurvivel2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
