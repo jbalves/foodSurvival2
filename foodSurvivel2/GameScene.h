@@ -7,7 +7,6 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
-#import "Masks.h"
 #import "StartScene.h"
 
 @interface GameScene : SKScene <SKPhysicsContactDelegate>

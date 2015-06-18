@@ -134,7 +134,7 @@
         [self.scene.view presentScene:[GameScene unarchiveFromFile:@"GameScene"]];
     }
 
-    //TRY AGAIN CLICED
+    //TRY AGAIN CLICKED
     if ([node.name isEqualToString:@"tryAgain"]) {
         [self.scene.view presentScene:[GameScene unarchiveFromFile:@"GameScene"]];
     }
@@ -186,6 +186,12 @@
         [self gameOver];
     }
     
+    //FINISHED LEVEL
+    SKSpriteNode *finishingBarrier = (SKSpriteNode *)[self childNodeWithName:@"finishingBarrier"];
+    if ([jack intersectsNode:finishingBarrier]) {
+        [self finishedLevel];
+    }
+    
 }
 
 //MAIN CAMERA ACTIONS (MOVE FASTER / SLOWER)
@@ -206,6 +212,16 @@
         default:
             break;
     }
+}
+
+//FINISHED LEVEL
+- (void) finishedLevel {
+    self.paused = YES;
+    [mainCameraNode childNodeWithName:@"pauseButton"].hidden = YES;
+    SKSpriteNode *finishNode = (SKSpriteNode *)[mainCameraNode childNodeWithName:@"finishedLevelNode"];
+    finishNode.hidden = NO;
+    SKLabelNode *finishScore = (SKLabelNode *)[finishNode childNodeWithName:@"finishScoreNode"];
+    finishScore.text = [NSString stringWithFormat:@"com %d pontos", goodFood];
 }
 
 //GAMEOVER NODE
