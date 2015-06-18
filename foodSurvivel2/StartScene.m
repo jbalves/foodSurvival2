@@ -33,6 +33,16 @@
 
 @implementation StartScene
 
+- (void)didMoveToView:(nonnull SKView *)view {
+    SKLabelNode *scoreLabel = (SKLabelNode *)[self childNodeWithName:@"score"];
+    NSInteger score = [[NSUserDefaults standardUserDefaults] integerForKey:@"score"];
+    if (score) {
+        scoreLabel.text = [NSString stringWithFormat:@"Pontos: %ld", (long)score];
+    } else {
+        scoreLabel.text = @"Pontos: 0";
+    }
+}
+
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [touches anyObject];
     CGPoint location = [touch locationInNode:self];

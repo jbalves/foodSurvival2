@@ -222,6 +222,10 @@
     finishNode.hidden = NO;
     SKLabelNode *finishScore = (SKLabelNode *)[finishNode childNodeWithName:@"finishScoreNode"];
     finishScore.text = [NSString stringWithFormat:@"com %d pontos", goodFood];
+    NSInteger previousScore = [[NSUserDefaults standardUserDefaults] integerForKey:@"score"];
+    NSInteger newScore = previousScore + goodFood;
+    NSLog(@"%ld", newScore);
+    [[NSUserDefaults standardUserDefaults] setInteger:newScore forKey:@"score"];
 }
 
 //GAMEOVER NODE
