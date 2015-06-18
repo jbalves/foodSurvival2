@@ -26,8 +26,25 @@
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    
+    // Este método libera recursos compartilhados, salva dados do usuário, invalida temporizadores
+    //armazena informações sobre o estado atual da aplicação
+    
+    //Este objeto especifica uma notificacão que um aplicativo pode agendar para a apresentação em uma data e hora específica
+    UILocalNotification *note=[[UILocalNotification alloc]init];
+    [note setFireDate:[NSDate dateWithTimeIntervalSinceNow:2]];
+    [note setTimeZone:[NSTimeZone defaultTimeZone]];
+    [note setAlertBody:@"Jack está ficando gordo. Ajude-o a perder peso"];
+    
+    [application setScheduledLocalNotifications:[NSArray arrayWithObject:note]];//método agenda a entrega da notificação
+    
+    //note.soundName=@"mp3"; som de notificação
+    
+    //Essa condição  mostra a exibição de alerta para o usuário para pedir permissão.
+    
+if ([UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)]) { [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeSound|UIUserNotificationTypeBadge categories:nil]];
+
+    }
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
