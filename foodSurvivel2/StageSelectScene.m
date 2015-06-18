@@ -8,7 +8,7 @@
 
 #import "StageSelectScene.h"
 
-#define NODENAME_STAGEGAME      @"stageGame"
+#define NODENAME_STAGEGAME      @"level1"
 
 @implementation SKScene (Unarchive)
 
