@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 edu FUCAPI. All rights reserved.
 //
 
-#import "GameScene.h"
+#import "Level1Scene.h"
 
-@interface GameScene () {
+@interface Level1Scene () {
     BOOL jumping;
     SKNode *mainCameraNode;
     SKSpriteNode *wallNode;
@@ -38,7 +38,7 @@
 
 @end
 
-@implementation GameScene
+@implementation Level1Scene
 
 -(void)didMoveToView:(SKView *)view {
     
@@ -58,7 +58,7 @@
     wallNode = (SKSpriteNode *)[mainCameraNode childNodeWithName:@"wall"];
     
     score = (SKLabelNode *)[mainCameraNode childNodeWithName:@"score"];
-    score.text = [NSString stringWithFormat:@"Score %d", goodFood];
+    score.text = [NSString stringWithFormat:@"Pontos %d", goodFood];
     
     jack = (SKSpriteNode *)[mainCameraNode childNodeWithName:@"jack"];
     jack.physicsBody.collisionBitMask = 2 | 3;
@@ -131,12 +131,12 @@
     
     //RESTART CLICKED
     if ([node.name isEqualToString:@"restart"]) {
-        [self.scene.view presentScene:[GameScene unarchiveFromFile:@"GameScene"]];
+        [self.scene.view presentScene:[Level1Scene unarchiveFromFile:@"Level1Scene"]];
     }
 
     //TRY AGAIN CLICKED
     if ([node.name isEqualToString:@"tryAgain"]) {
-        [self.scene.view presentScene:[GameScene unarchiveFromFile:@"GameScene"]];
+        [self.scene.view presentScene:[Level1Scene unarchiveFromFile:@"Level1Scene"]];
     }
 
 }
@@ -173,7 +173,7 @@
         if ([node intersectsNode:jack]) {
             [node removeFromParent];
             goodFood++;
-            score.text = [NSString stringWithFormat:@"Score %d", goodFood];
+            score.text = [NSString stringWithFormat:@"Pontos %d", goodFood];
             if (badFood > 0) {
                 badFood --;
                 [self mainCameraAction];
@@ -227,10 +227,16 @@
     SKLabelNode *finishScore = (SKLabelNode *)[finishNode childNodeWithName:@"finishScoreNode"];
     finishScore.text = [NSString stringWithFormat:@"com %d pontos", goodFood];
     
-    //SAVE NEW SCORE ON USER DEFAULTS
+    //SAVE NEW SCORE + PREVIOUS SCORE ON USER DEFAULTS
     NSInteger previousScore = [[NSUserDefaults standardUserDefaults] integerForKey:@"score"];
     NSInteger newScore = previousScore + goodFood;
     [[NSUserDefaults standardUserDefaults] setInteger:newScore forKey:@"score"];
+    
+    //VERIFY IF ACTUAL SCORE IS THE NEW BEST SCORE AND SAVE ON USER DEFAULTS
+    if (goodFood > previousScore) {
+        [[NSUserDefaults standardUserDefaults] setInteger:goodFood forKey:@"bestScoreLevel1"];
+    }
+    
 }
 
 //GAMEOVER NODE

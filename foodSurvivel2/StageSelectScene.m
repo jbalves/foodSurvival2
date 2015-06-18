@@ -8,8 +8,6 @@
 
 #import "StageSelectScene.h"
 
-#define NODENAME_STAGEGAME      @"stageGame"
-
 @implementation SKScene (Unarchive)
 
 + (instancetype)unarchiveFromFile:(NSString *)file {
@@ -29,13 +27,33 @@
 
 @implementation StageSelectScene
 
+- (void)didMoveToView:(nonnull SKView *)view {
+    //SET THE BEST SCORE FROM LEVEL 1 AT THE LABEL
+    SKLabelNode *bestScoreLevel1Label = (SKLabelNode *)[self childNodeWithName:@"bestScoreLevel1"];
+    NSInteger bestScoreLevel1 = [[NSUserDefaults standardUserDefaults] integerForKey:@"bestScoreLevel1"];
+
+    //VERIFY IF BEST SCORE OF LEVEL 1 IS NOT NULL, IF NOT SET THE SCORE ON USER DEFAULTS, IF YES PUT SOME DEFAULT TEXT
+    if (bestScoreLevel1) {
+        bestScoreLevel1Label.text = [NSString stringWithFormat:@"Recorde %ld", bestScoreLevel1];
+    } else {
+        bestScoreLevel1Label.text = @"Nenhum recorde";
+        bestScoreLevel1Label.fontSize = 24;
+    }
+}
+
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [touches anyObject];
     CGPoint location = [touch locationInNode:self];
     SKNode *node = [self nodeAtPoint:location];
     
-    if ([node.name isEqualToString:NODENAME_STAGEGAME]) {
-        [self.scene.view presentScene:[GameScene unarchiveFromFile:@"GameScene"]];
+    //LEVEL 1 CLICKED, GO TO LEVEL 1 SCENE
+    if ([node.name isEqualToString:@"Level1"]) {
+        [self.scene.view presentScene:[Level1Scene unarchiveFromFile:@"Level1Scene"] transition:[SKTransition doorsOpenHorizontalWithDuration:1.0]];
+    }
+
+    //BACK CLICKED
+    if ([node.name isEqualToString:@"backButton"]) {
+        [self.scene.view presentScene:[StartScene unarchiveFromFile:@"StartScene"]];
     }
     
 }

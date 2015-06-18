@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <SpriteKit/SpriteKit.h>
-#import "GameScene.h"
+#import "Level1Scene.h"
 #import "FoodInfoScene.h"
 #import "StageSelectScene.h"
 
