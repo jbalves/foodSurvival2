@@ -233,8 +233,11 @@
     [[NSUserDefaults standardUserDefaults] setInteger:newScore forKey:@"score"];
     
     //VERIFY IF ACTUAL SCORE IS THE NEW BEST SCORE AND SAVE ON USER DEFAULTS
-    if (goodFood > previousScore) {
-        [[NSUserDefaults standardUserDefaults] setInteger:goodFood forKey:@"bestScoreLevel1"];
+    NSInteger bestScoreLevel1 = [[NSUserDefaults standardUserDefaults] integerForKey:@"bestScoreLevel1"];
+    if (bestScoreLevel1) {
+        if (bestScoreLevel1 < goodFood) {
+            [[NSUserDefaults standardUserDefaults] setInteger:goodFood forKey:@"bestScoreLevel1"];
+        }
     }
     
 }
