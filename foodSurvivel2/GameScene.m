@@ -216,15 +216,20 @@
 
 //FINISHED LEVEL
 - (void) finishedLevel {
+    
+    //PAUSE THE GAME AND SET THE PAUSE BUTTON HIDDEN
     self.paused = YES;
     [mainCameraNode childNodeWithName:@"pauseButton"].hidden = YES;
+    
+    //CATCH THE SCORE LABEL ON SCENE AND DISPLAY THE SCORE OF THE PLAYER
     SKSpriteNode *finishNode = (SKSpriteNode *)[mainCameraNode childNodeWithName:@"finishedLevelNode"];
     finishNode.hidden = NO;
     SKLabelNode *finishScore = (SKLabelNode *)[finishNode childNodeWithName:@"finishScoreNode"];
     finishScore.text = [NSString stringWithFormat:@"com %d pontos", goodFood];
+    
+    //SAVE NEW SCORE ON USER DEFAULTS
     NSInteger previousScore = [[NSUserDefaults standardUserDefaults] integerForKey:@"score"];
     NSInteger newScore = previousScore + goodFood;
-    NSLog(@"%ld", newScore);
     [[NSUserDefaults standardUserDefaults] setInteger:newScore forKey:@"score"];
 }
 
