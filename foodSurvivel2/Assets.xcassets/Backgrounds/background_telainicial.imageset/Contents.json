@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "background_telainicial.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "background_telainicial.png",
       "scale" : "2x"
     },
     {
