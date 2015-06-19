@@ -75,12 +75,12 @@
     
 
     
-    UIImage *imageCenoura=  [UIImage imageNamed:@"cenoura.png"];
-    UIImage *imageLaranja=  [UIImage imageNamed:@"laranja.png"];
+    UIImage *imageCenoura=  [UIImage imageNamed:@"carrot.png"];
+    UIImage *imageLaranja=  [UIImage imageNamed:@"orange.png"];
     UIImage *imageBrocolis= [UIImage imageNamed:@"brocolis.png"];
-    UIImage *imageSanduiche=[UIImage imageNamed:@"sanduiche.png"];
+    UIImage *imageSanduiche=[UIImage imageNamed:@"sandwich.png"];
     UIImage *imageChocolate=[UIImage imageNamed:@"chocolate"];
-    UIImage *imagePirulito= [UIImage imageNamed:@"pirulito"];
+    UIImage *imagePirulito= [UIImage imageNamed:@"lolipop"];
     
     
 

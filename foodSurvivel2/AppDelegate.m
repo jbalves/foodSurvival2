@@ -30,25 +30,42 @@
     // Este método libera recursos compartilhados, salva dados do usuário, invalida temporizadores
     //armazena informações sobre o estado atual da aplicação
     
-    //Este objeto especifica uma notificacão que um aplicativo pode agendar para a apresentação em uma data e hora específica
-    UILocalNotification *note=[[UILocalNotification alloc]init];
-    [note setFireDate:[NSDate dateWithTimeIntervalSinceNow:2]];
-    [note setTimeZone:[NSTimeZone defaultTimeZone]];
-    [note setAlertBody:@"Jack está ficando gordo. Ajude-o a perder peso"];
-    
-    [application setScheduledLocalNotifications:[NSArray arrayWithObject:note]];//método agenda a entrega da notificação
-    
-    //note.soundName=@"mp3"; som de notificação
     
     //Essa condição  mostra a exibição de alerta para o usuário para pedir permissão.
     
-if ([UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)]) { [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeSound|UIUserNotificationTypeBadge categories:nil]];
-
+    if ([UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)]) { [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeSound|UIUserNotificationTypeBadge categories:nil]];
+        
     }
+
+   NSDate *alarmTime =[[NSDate date]dateByAddingTimeInterval:5.0];
+  UIApplication *app=[UIApplication sharedApplication];
+    //Este objeto especifica uma notificacão que um aplicativo pode agendar para a apresentação em uma data e hora específica
+    UILocalNotification *note=[[UILocalNotification alloc]init];
+    
+    
+    
+        if (note) {
+    
+        note.fireDate=alarmTime;
+        note.timeZone=[NSTimeZone defaultTimeZone];
+        note.repeatInterval=0;
+        note.alertBody=@"Jack está ficando gordo. Ajude-o a perder peso";
+        //note.soundName=@"mp3"; som de notificação
+        [app setScheduledLocalNotifications:[NSArray arrayWithObject:note]];//método agenda a entrega da notificação
+    
+    }
+    
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    
+    UIApplication *app=[UIApplication sharedApplication];
+    NSArray *oldNotifications =[app scheduledLocalNotifications];
+    
+    if ([oldNotifications count]>0) {
+        [app cancelAllLocalNotifications]; //cancelar as notificações anteriores
+    }
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
