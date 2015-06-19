@@ -63,6 +63,9 @@
     jack = (SKSpriteNode *)[mainCameraNode childNodeWithName:@"jack"];
     jack.physicsBody.collisionBitMask = 2 | 3;
     
+    int countBadFood = 0;
+    int countGoodFood = 0;
+    
     NSArray *nodes = self.children;
     for (SKNode *node in nodes) {
         if ([node.name isEqualToString:@"box"]) {
@@ -81,13 +84,28 @@
           
             //BADFOOD
             SKSpriteNode *redBall = (SKSpriteNode *)node;
-            redBall.texture = [SKTexture textureWithImageNamed:@"bola_vermelha"];
+
+            if (countBadFood >= 0 && countBadFood < 3) {
+                redBall.texture = [SKTexture textureWithImageNamed:@"sandwich"];
+                countBadFood++;
+            } else {
+                redBall.texture = [SKTexture textureWithImageNamed:@"lolipop"];
+            }
             
         } else if ([node.name isEqualToString:@"greenBall"]) {
             
             //GOODFOOD
             SKSpriteNode *greenBall = (SKSpriteNode *)node;
-            greenBall.texture = [SKTexture textureWithImageNamed:@"bola_verde"];
+            
+            if (countGoodFood >= 0 && countGoodFood <3) {
+                greenBall.texture = [SKTexture textureWithImageNamed:@"brocolis"];
+                countGoodFood++;
+            } else if (countGoodFood < 8) {
+                greenBall.texture = [SKTexture textureWithImageNamed:@"orange"];
+                countGoodFood++;
+            } else {
+                greenBall.texture = [SKTexture textureWithImageNamed:@"carrot"];
+            }
     
         }
     }
