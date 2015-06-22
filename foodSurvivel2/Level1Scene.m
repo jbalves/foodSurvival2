@@ -256,6 +256,8 @@
         if (bestScoreLevel1 < goodFood) {
             [[NSUserDefaults standardUserDefaults] setInteger:goodFood forKey:@"bestScoreLevel1"];
         }
+    } else {
+        [[NSUserDefaults standardUserDefaults] setInteger:goodFood forKey:@"bestScoreLevel1"];
     }
     
 }
