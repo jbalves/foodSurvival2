@@ -33,15 +33,29 @@
 
 @implementation StartScene
 
+- (void)didMoveToView:(nonnull SKView *)view {
+    SKLabelNode *scoreLabel = (SKLabelNode *)[self childNodeWithName:@"score"];
+
+    //VERIFY IF USER HAVE SCORE, IF NOT SET THE LABEL TEXT TO 0, IF YES SET THE SCORE ON USER DEFAULTS
+    NSInteger score = [[NSUserDefaults standardUserDefaults] integerForKey:@"score"];
+    if (score) {
+        scoreLabel.text = [NSString stringWithFormat:@"Pontos: %ld", (long)score];
+    } else {
+        scoreLabel.text = @"Pontos: 0";
+    }
+}
+
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [touches anyObject];
     CGPoint location = [touch locationInNode:self];
     SKNode *node = [self nodeAtPoint:location];
     
+    //PLAY CLICKED, GO TO STAGE SELECT SCENE
     if ([node.name isEqualToString:NODENAME_INITGAME]) {
-        [self.scene.view presentScene:[GameScene unarchiveFromFile:@"GameScene"]];
+        [self.scene.view presentScene:[StageSelectScene unarchiveFromFile:@"StageSelectScene"]];
     }
     
+    //FOOD INFO CLICKED, GO TO TABLEVIEW SCENE
     if ([node.name isEqualToString:NODENAME_FOODINFO]) {
         [self.scene.view presentScene:[FoodInfoScene unarchiveFromFile:@"FoodInfoScene"]];
     }

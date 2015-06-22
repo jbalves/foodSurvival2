@@ -1,17 +1,15 @@
 //
-//  StartScene.h
+//  StageSelectScene.h
 //  foodSurvivel2
 //
-//  Created by Kevin Oliveira on 11/06/15.
+//  Created by Jeferson Barros Alves on 17/06/15.
 //  Copyright © 2015 edu FUCAPI. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import <SpriteKit/SpriteKit.h>
 #import "GameScene.h"
-#import "FoodInfoScene.h"
-#import "StageSelectScene.h"
 
-@interface StartScene : SKScene
+@interface StageSelectScene : SKScene
 
 @end

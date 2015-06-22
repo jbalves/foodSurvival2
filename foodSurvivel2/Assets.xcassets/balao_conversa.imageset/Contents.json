@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "brocolis.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "balao_conversa.png",
       "scale" : "2x"
     },
     {

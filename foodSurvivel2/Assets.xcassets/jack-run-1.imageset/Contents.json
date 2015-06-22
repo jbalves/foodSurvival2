@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "brocolis.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "jack-run-1.png",
       "scale" : "2x"
     },
     {
