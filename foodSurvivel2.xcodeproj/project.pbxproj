@@ -14,7 +14,6 @@
 		A9BF14291B29C2D9002041F3 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A9BF14281B29C2D9002041F3 /* GameScene.sks */; };
 		A9BF142C1B29C2D9002041F3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BF142B1B29C2D9002041F3 /* ViewController.m */; };
 		A9BF142F1B29C2D9002041F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9BF142D1B29C2D9002041F3 /* Main.storyboard */; };
-		A9BF14311B29C2D9002041F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9BF14301B29C2D9002041F3 /* Assets.xcassets */; };
 		A9BF14341B29C2D9002041F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9BF14321B29C2D9002041F3 /* LaunchScreen.storyboard */; };
 		A9BF143F1B29C2D9002041F3 /* foodSurvivel2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BF143E1B29C2D9002041F3 /* foodSurvivel2Tests.m */; };
 		A9BF144A1B29C2D9002041F3 /* foodSurvivel2UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BF14491B29C2D9002041F3 /* foodSurvivel2UITests.m */; };
@@ -23,6 +22,7 @@
 		A9BF14601B29F8E5002041F3 /* StartScene.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BF145F1B29F8E5002041F3 /* StartScene.m */; };
 		A9BF14621B29F90B002041F3 /* StartScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A9BF14611B29F90B002041F3 /* StartScene.sks */; };
 		EE35BC341B307228007D50B4 /* FoodInfoScene.m in Sources */ = {isa = PBXBuildFile; fileRef = EE35BC331B307228007D50B4 /* FoodInfoScene.m */; };
+		EEB1BDCA1B345E1700AF6F1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEB1BDC91B345E1700AF6F1E /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,7 +55,6 @@
 		A9BF142A1B29C2D9002041F3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		A9BF142B1B29C2D9002041F3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A9BF142E1B29C2D9002041F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A9BF14301B29C2D9002041F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9BF14331B29C2D9002041F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A9BF14351B29C2D9002041F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9BF143A1B29C2D9002041F3 /* foodSurvivel2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = foodSurvivel2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,6 +70,7 @@
 		A9BF145F1B29F8E5002041F3 /* StartScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartScene.m; sourceTree = "<group>"; };
 		A9BF14611B29F90B002041F3 /* StartScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StartScene.sks; sourceTree = "<group>"; };
 		EE35BC331B307228007D50B4 /* FoodInfoScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodInfoScene.m; sourceTree = "<group>"; };
+		EEB1BDC91B345E1700AF6F1E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,7 +162,6 @@
 				A924DDD51B2A013300A25F13 /* Sk's */,
 				A924DDD41B2A012500A25F13 /* Classes */,
 				A9BF142D1B29C2D9002041F3 /* Main.storyboard */,
-				A9BF14301B29C2D9002041F3 /* Assets.xcassets */,
 				A9BF141F1B29C2D9002041F3 /* Supporting Files */,
 			);
 			path = foodSurvivel2;
@@ -174,6 +173,7 @@
 				A9BF14321B29C2D9002041F3 /* LaunchScreen.storyboard */,
 				A9BF14351B29C2D9002041F3 /* Info.plist */,
 				A9BF14201B29C2D9002041F3 /* main.m */,
+				EEB1BDC91B345E1700AF6F1E /* Assets.xcassets */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -309,8 +309,8 @@
 				A9BF14341B29C2D9002041F3 /* LaunchScreen.storyboard in Resources */,
 				A9BF145D1B29F145002041F3 /* JackActions.sks in Resources */,
 				A924DDDB1B2A0F1200A25F13 /* FoodInfoScene.sks in Resources */,
+				EEB1BDCA1B345E1700AF6F1E /* Assets.xcassets in Resources */,
 				A9BF14621B29F90B002041F3 /* StartScene.sks in Resources */,
-				A9BF14311B29C2D9002041F3 /* Assets.xcassets in Resources */,
 				A9BF142F1B29C2D9002041F3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -433,7 +433,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -470,7 +470,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

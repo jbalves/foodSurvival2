@@ -37,7 +37,7 @@
 @implementation FoodInfoScene
 
 - (void)didMoveToView:(SKView *)view {
-    _title = [[NSMutableArray alloc]initWithObjects:@"Cenouras contém vitamina A, essa vitamina ajuda melhorar a visão noturna.",@"As vezes doces ou azedas as laranjas contém vitaminas que contribuem para evitar uma série de variedades de câncer e protege contra a gripe.",@"Rico em vitamina C, brocólis ajuda na visão de detalhes, tanto a visão de longe como a visão de perto.", @"Sanduíches são deliciosos, mas não coma muito pois contém gorduras ruins que pode causar obesidade, doenças no coração e diabetes.",@"Chocolates são deliciosos mas comer muito pode provocar diabetes que é o aumento de açúcar no sangue.",@"Açúcar em excesso é um perigo. Cuidado! pirulitos causam cáries nos dentes.",nil];
+    _title = [[NSMutableArray alloc]initWithObjects:@"Cenouras contém vitamina A, essa vitamina ajuda melhorar a visão noturna.",@"As vezes doces ou azedas as laranjas contém vitaminas que contribuem para evitar uma série de variedades de câncer e protege contra a gripe.",@"Rico em vitamina C, brocólis ajuda na visão de detalhes, tanto a visão de longe como a visão de perto.", @"Sanduíches são deliciosos, mas não coma muito pois contém gorduras ruins que pode causar obesidade, doenças no coração e diabetes.",@"Açúcar em excesso é um perigo. Cuidado! pirulitos causam cáries nos dentes.",nil];
     _tableView = [[UITableView alloc] initWithFrame:CGRectMake(50, 10, self.frame.size.width, self.frame.size.height)];
     _tableView.delegate = self;
     _tableView.dataSource = self;
@@ -65,27 +65,23 @@
     UIImageView *tempImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background1.png"]];
     [tempImageView setFrame:self.tableView.frame];
     self.tableView.backgroundView = tempImageView;
+    self.tableView.backgroundColor=[UIColor clearColor];
     
     cell.textLabel.text = _title[indexPath.row];
     
     cell.textLabel.font=[UIFont fontWithName:@"Courier" size:12];
-    cell.textLabel.numberOfLines=5;
+    cell.textLabel.numberOfLines=2;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.backgroundColor = [UIColor colorWithWhite:0 alpha:0.0];
+    cell.backgroundColor = [UIColor clearColor];
     
-
+    
     
     UIImage *imageCenoura=  [UIImage imageNamed:@"carrot.png"];
     UIImage *imageLaranja=  [UIImage imageNamed:@"orange.png"];
     UIImage *imageBrocolis= [UIImage imageNamed:@"brocolis.png"];
     UIImage *imageSanduiche=[UIImage imageNamed:@"sandwich.png"];
-    UIImage *imageChocolate=[UIImage imageNamed:@"chocolate"];
     UIImage *imagePirulito= [UIImage imageNamed:@"lolipop"];
     
-    
-
-    
-
     
     switch (indexPath.row) {
             
@@ -105,9 +101,6 @@
             break;
             
         case 4:
-            cell.imageView.image=imageChocolate;
-            break;
-        case 5:
             cell.imageView.image=imagePirulito;
             break;
             
@@ -120,26 +113,11 @@
 }
 
 
-
-
 //Mudar o tamanho das células
 - (CGFloat)tableView:(UITableView *)aTableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    CGFloat retVal =0.0f;
-    
-    if(indexPath.section==0 || indexPath.section==1 )
-    {
-        if(indexPath.row==0 || indexPath.row==1)
-        {
-            retVal=50.0f;//the height you want.
-        }
-        else
-            retVal=50.0f;
-    }
-    else
-        retVal=50.0f;
-    
-    return retVal;
+
+    return 50;
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {

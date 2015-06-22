@@ -37,25 +37,25 @@
         
     }
 
-   NSDate *alarmTime =[[NSDate date]dateByAddingTimeInterval:5.0];
-  UIApplication *app=[UIApplication sharedApplication];
+  NSDate *alarmTime =[[NSDate date]dateByAddingTimeInterval:1];
+   UIApplication *app=[UIApplication sharedApplication];
     //Este objeto especifica uma notificacão que um aplicativo pode agendar para a apresentação em uma data e hora específica
     UILocalNotification *note=[[UILocalNotification alloc]init];
     
     
-    
         if (note) {
     
-        note.fireDate=alarmTime;
+        note.fireDate=alarmTime;//especificar quando o sistema deve entregar a notificação.
         note.timeZone=[NSTimeZone defaultTimeZone];
-        note.repeatInterval=0;
-        note.alertBody=@"Jack está ficando gordo. Ajude-o a perder peso";
+        note.repeatInterval=NSCalendarUnitSecond;
+        note.alertBody=@"Jack está ficando gordo. Ajude-o a perder peso";//A notificação é exibida como uma mensagem de alerta que é atribuído usando essa propriedade
         //note.soundName=@"mp3"; som de notificação
         [app setScheduledLocalNotifications:[NSArray arrayWithObject:note]];//método agenda a entrega da notificação
     
     }
     
 }
+
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
