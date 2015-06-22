@@ -48,8 +48,7 @@
     
     //LEVEL 1 CLICKED, GO TO LEVEL 1 SCENE
     if ([node.name isEqualToString:@"Level1"]) {
-        [self.scene.view presentScene:[StageSelectScene unarchiveFromFile:@"CutSceneLevel1"]];
-        //[self.scene.view presentScene:[Level1Scene unarchiveFromFile:@"Level1Scene"] transition:[SKTransition doorsOpenHorizontalWithDuration:1.0]];
+        [self.scene.view presentScene:[Level1Scene unarchiveFromFile:@"Level1Scene"] transition:[SKTransition doorsOpenHorizontalWithDuration:1.0]];
     }
 
     //BACK CLICKED

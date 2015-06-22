@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		715D65B91B346FE000B4C806 /* CutSceneLevel1.sks in Resources */ = {isa = PBXBuildFile; fileRef = 715D65B81B346FE000B4C806 /* CutSceneLevel1.sks */; };
-		715D65BC1B349DCD00B4C806 /* CutSceneLevel1.m in Sources */ = {isa = PBXBuildFile; fileRef = 715D65BB1B349DCD00B4C806 /* CutSceneLevel1.m */; };
 		A90B67881B2B390100D8EFC8 /* CameraActions.sks in Resources */ = {isa = PBXBuildFile; fileRef = A90B67871B2B390100D8EFC8 /* CameraActions.sks */; };
 		A924DDD91B2A0E6E00A25F13 /* FoodInfoScene.m in Sources */ = {isa = PBXBuildFile; fileRef = A924DDD81B2A0E6E00A25F13 /* FoodInfoScene.m */; };
 		A924DDDB1B2A0F1200A25F13 /* FoodInfoScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A924DDDA1B2A0F1200A25F13 /* FoodInfoScene.sks */; };
@@ -49,8 +48,6 @@
 
 /* Begin PBXFileReference section */
 		715D65B81B346FE000B4C806 /* CutSceneLevel1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CutSceneLevel1.sks; sourceTree = "<group>"; };
-		715D65BA1B349DCD00B4C806 /* CutSceneLevel1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CutSceneLevel1.h; sourceTree = "<group>"; };
-		715D65BB1B349DCD00B4C806 /* CutSceneLevel1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CutSceneLevel1.m; sourceTree = "<group>"; };
 		A90B67871B2B390100D8EFC8 /* CameraActions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = CameraActions.sks; path = ../CameraActions.sks; sourceTree = "<group>"; };
 		A924DDD71B2A0E6E00A25F13 /* FoodInfoScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodInfoScene.h; sourceTree = "<group>"; };
 		A924DDD81B2A0E6E00A25F13 /* FoodInfoScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodInfoScene.m; sourceTree = "<group>"; };
@@ -129,8 +126,6 @@
 			children = (
 				A9BF14251B29C2D9002041F3 /* Level1Scene.h */,
 				A9BF14261B29C2D9002041F3 /* Level1Scene.m */,
-				715D65BA1B349DCD00B4C806 /* CutSceneLevel1.h */,
-				715D65BB1B349DCD00B4C806 /* CutSceneLevel1.m */,
 				A9BF145E1B29F8E5002041F3 /* StartScene.h */,
 				A9BF145F1B29F8E5002041F3 /* StartScene.m */,
 				A977F2A21B31CBC400050C2B /* StageSelectScene.h */,
@@ -358,7 +353,6 @@
 				A9BF14271B29C2D9002041F3 /* Level1Scene.m in Sources */,
 				A924DDD91B2A0E6E00A25F13 /* FoodInfoScene.m in Sources */,
 				A9BF14211B29C2D9002041F3 /* main.m in Sources */,
-				715D65BC1B349DCD00B4C806 /* CutSceneLevel1.m in Sources */,
 				A977F2A41B31CBC400050C2B /* StageSelectScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
