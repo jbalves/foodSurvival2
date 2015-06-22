@@ -52,6 +52,7 @@
     
     //PLAY CLICKED, GO TO STAGE SELECT SCENE
     if ([node.name isEqualToString:NODENAME_INITGAME]) {
+        //[self.scene.view presentScene:[StageSelectScene unarchiveFromFile:@"CutSceneLevel1"]];
         [self.scene.view presentScene:[StageSelectScene unarchiveFromFile:@"StageSelectScene"]];
     }
     
