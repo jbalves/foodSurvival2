@@ -14,6 +14,9 @@
     SKSpriteNode *wallNode;
     SKSpriteNode *jack;
     SKSpriteNode *groundNode;
+    SKSpriteNode *chubby1;
+    SKSpriteNode *chubby2;
+    SKSpriteNode *chubby3;
     SKLabelNode *score;
     int badFood;
     int goodFood;
@@ -53,7 +56,16 @@
     //INIT OF NODES
     mainCameraNode = [self childNodeWithName:@"mainCamera"];
     
+    chubby1 = (SKSpriteNode *)[mainCameraNode childNodeWithName:@"gordinho1"];
+    chubby2 = (SKSpriteNode *)[mainCameraNode childNodeWithName:@"gordinho2"];
+    chubby3 = (SKSpriteNode *)[mainCameraNode childNodeWithName:@"gordinho3"];
+    
+    chubby1.hidden = YES;
+    chubby2.hidden = YES;
+    chubby3.hidden = YES;
+    
     groundNode = (SKSpriteNode *)[mainCameraNode childNodeWithName:@"ground"];
+    groundNode.physicsBody.collisionBitMask = 1 | 3 | 4;
     
     wallNode = (SKSpriteNode *)[mainCameraNode childNodeWithName:@"wall"];
     
@@ -74,12 +86,6 @@
             SKSpriteNode *box = (SKSpriteNode *)node;
             box.texture = [SKTexture textureWithImageNamed:@"box"];
             
-        } else if ([node.name isEqualToString:@"ground"]){
-            
-            //GROUND
-            SKSpriteNode *ground = (SKSpriteNode *)node;
-            ground.physicsBody.collisionBitMask = 1 | 3 | 4;
-            
         } else if ([node.name isEqualToString:@"redBall"]) {
           
             //BADFOOD
@@ -97,7 +103,7 @@
             //GOODFOOD
             SKSpriteNode *greenBall = (SKSpriteNode *)node;
             
-            if (countGoodFood >= 0 && countGoodFood <3) {
+            if (countGoodFood >= 0 && countGoodFood < 3) {
                 greenBall.texture = [SKTexture textureWithImageNamed:@"brocolis"];
                 countGoodFood++;
             } else if (countGoodFood < 8) {
@@ -218,14 +224,26 @@
         case 0:
             [mainCameraNode removeAllActions];
             [mainCameraNode runAction:[SKAction actionNamed:@"moveCamera"]];
+
+            chubby1.hidden = YES;
+            chubby2.hidden = YES;
+            
             break;
         case 1:
             [mainCameraNode removeAllActions];
             [mainCameraNode runAction:[SKAction actionNamed:@"moveCamera2"]];
+            
+            chubby1.hidden = NO;
+            chubby2.hidden = YES;
+            
             break;
         case 2:
             [mainCameraNode removeAllActions];
             [mainCameraNode runAction:[SKAction actionNamed:@"moveCamera3"]];
+            
+            chubby1.hidden = NO;
+            chubby2.hidden = NO;
+            
             break;
         default:
             break;
@@ -264,7 +282,13 @@
 
 //GAMEOVER NODE
 - (void) gameOver {
+    
+    chubby1.hidden = NO;
+    chubby2.hidden = NO;
+    chubby3.hidden = NO;
+    
     self.paused = YES;
+    
     [mainCameraNode childNodeWithName:@"gameOverNode"].hidden = NO;
     [mainCameraNode childNodeWithName:@"pauseButton"].hidden = YES;
 }

@@ -44,9 +44,6 @@
 //    scene.scaleMode = SKSceneScaleModeAspectFill;
 //    scene.size = skView.bounds.size;
 //    scene.size = CGSizeMake(667, 335);
-
-    NSLog(@"HEIGHT: %f", skView.bounds.size.height);
-    NSLog(@"WIDHT: %f", skView.bounds.size.width);
     
     [skView presentScene:scene];
 }
