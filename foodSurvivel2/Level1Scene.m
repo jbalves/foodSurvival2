@@ -66,7 +66,6 @@
     
     groundNode = (SKSpriteNode *)[mainCameraNode childNodeWithName:@"ground"];
     groundNode.physicsBody.collisionBitMask = 1 | 3 | 4;
-    NSLog(@"%d", groundNode.physicsBody.collisionBitMask);
     
     wallNode = (SKSpriteNode *)[mainCameraNode childNodeWithName:@"wall"];
     
