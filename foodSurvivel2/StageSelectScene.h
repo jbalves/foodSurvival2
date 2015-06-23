@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <SpriteKit/SpriteKit.h>
 #import "Level1Scene.h"
+#import "CutSceneLevel1.h"
 
 @interface StageSelectScene : SKScene
 

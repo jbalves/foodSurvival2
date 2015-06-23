@@ -28,15 +28,15 @@
 
 @implementation CutSceneLevel1
 
+
+
 -(void)touchesBegan:(nonnull NSSet<UITouch *> *)touches withEvent:(nullable UIEvent *)event {
     
     [self.scene.view presentScene:[StageSelectScene unarchiveFromFile:@"StageSelectScene"]];
 
 }
 
--(void)update:(NSTimeInterval)currentTime {
-    
-}
+
 
 
 @end
