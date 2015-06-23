@@ -8,6 +8,14 @@
 
 #import "CutSceneLevel1.h"
 
+@interface CutSceneLevel1 () {
+    
+    SKNode *mainCameraNode;
+    SKSpriteNode *jack;
+}
+
+@end
+
 @implementation SKScene (Unarchive)
 
 + (instancetype)unarchiveFromFile:(NSString *)file {
@@ -29,14 +37,47 @@
 @implementation CutSceneLevel1
 
 
+-(void)didMoveToView:(SKView *)view {
 
--(void)touchesBegan:(nonnull NSSet<UITouch *> *)touches withEvent:(nullable UIEvent *)event {
+    mainCameraNode = [self childNodeWithName:@"mainCameraNode"];
+    jack = (SKSpriteNode *)[self childNodeWithName:@"jack"];
+
+    SKAction *action = [SKAction sequence:
+                        @[[SKAction runBlock:^{
+        [mainCameraNode runAction:[SKAction actionNamed:@"showFood"]];
+    }],
+                          [SKAction waitForDuration:4.0f],
+                          [SKAction runBlock:^{
+        [jack runAction:[SKAction actionNamed:@"firstMove"]];
+    }]]];
     
-    [self.scene.view presentScene:[StageSelectScene unarchiveFromFile:@"StageSelectScene"]];
-
+    [self runAction:action];
 }
 
+-(void)touchesBegan:(nonnull NSSet<UITouch *> *)touches withEvent:(nullable UIEvent *)event {
+    UITouch *touch = [touches anyObject];
+    CGPoint location = [touch locationInNode:self];
+    SKNode *node = [self nodeAtPoint:location];
+    
+    if ([node.name isEqualToString:@"informationTap"]) {
+        [self childNodeWithName:@"informationTap"].hidden = YES;
+        [self childNodeWithName:@"informationGood"].hidden = YES;
+        [jack runAction:[SKAction actionNamed:@"tapJump"]];
+    }
+}
 
+-(void)update:(NSTimeInterval)currentTime {
+    //CONTACT WITH GOOD FOOD
+    [self enumerateChildNodesWithName:@"greenBall" usingBlock:^(SKNode *node, BOOL *stop) {
+        if ([node intersectsNode:jack]) {
+            [node removeFromParent];
+            [SKAction waitForDuration:2.0f];
+            [self.scene.view presentScene:[Level1Scene unarchiveFromFile:@"Level1Scene"] transition:[SKTransition doorsOpenHorizontalWithDuration:1.0]];
+
+        }
+    }];
+    
+}
 
 
 @end
