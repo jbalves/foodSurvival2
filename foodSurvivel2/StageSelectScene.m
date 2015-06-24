@@ -50,7 +50,8 @@
     if ([node.name isEqualToString:@"Level1"] ||
         [node.name isEqualToString:@"level1Label"] ||
         [node.name isEqualToString:@"bestScoreLevel1"]) {
-        [self.scene.view presentScene:[Level1Scene unarchiveFromFile:@"Level1Scene"] transition:[SKTransition doorsOpenHorizontalWithDuration:1.0]];
+        [self.scene.view presentScene:[CutSceneLevel1 unarchiveFromFile:@"CutSceneLevel1"]
+                           transition:[SKTransition doorsOpenHorizontalWithDuration:1.0]];
     }
 
     //BACK CLICKED
