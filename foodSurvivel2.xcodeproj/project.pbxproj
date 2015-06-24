@@ -27,6 +27,7 @@
 		A9BF145D1B29F145002041F3 /* JackActions.sks in Resources */ = {isa = PBXBuildFile; fileRef = A9BF145C1B29F145002041F3 /* JackActions.sks */; };
 		A9BF14601B29F8E5002041F3 /* StartScene.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BF145F1B29F8E5002041F3 /* StartScene.m */; };
 		A9BF14621B29F90B002041F3 /* StartScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A9BF14611B29F90B002041F3 /* StartScene.sks */; };
+		A9E46AE61B39B5100023D6C5 /* FoodActions.sks in Resources */ = {isa = PBXBuildFile; fileRef = A9E46AE51B39B5100023D6C5 /* FoodActions.sks */; };
 		A9F8E5381B32F28A00A1A2BC /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F8E5371B32F28A00A1A2BC /* SpriteKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +82,7 @@
 		A9BF145E1B29F8E5002041F3 /* StartScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartScene.h; sourceTree = "<group>"; };
 		A9BF145F1B29F8E5002041F3 /* StartScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartScene.m; sourceTree = "<group>"; };
 		A9BF14611B29F90B002041F3 /* StartScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StartScene.sks; sourceTree = "<group>"; };
+		A9E46AE51B39B5100023D6C5 /* FoodActions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = FoodActions.sks; path = ../FoodActions.sks; sourceTree = "<group>"; };
 		A9F8E5371B32F28A00A1A2BC /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -120,6 +122,7 @@
 				715D65B81B346FE000B4C806 /* CutSceneLevel1.sks */,
 				A9BF145C1B29F145002041F3 /* JackActions.sks */,
 				A90B67871B2B390100D8EFC8 /* CameraActions.sks */,
+				A9E46AE51B39B5100023D6C5 /* FoodActions.sks */,
 			);
 			name = "Sk's";
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				A9BF14621B29F90B002041F3 /* StartScene.sks in Resources */,
 				A9BF14311B29C2D9002041F3 /* Assets.xcassets in Resources */,
 				A9BF142F1B29C2D9002041F3 /* Main.storyboard in Resources */,
+				A9E46AE61B39B5100023D6C5 /* FoodActions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
