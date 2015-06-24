@@ -44,7 +44,9 @@
     mainCameraNode = [self childNodeWithName:@"mainCameraNode"];
     jack = (SKSpriteNode *)[self childNodeWithName:@"jack"];
     [self childNodeWithName:@"informationTap"].hidden = YES;
-    [self childNodeWithName:@"chubby"].hidden = YES;
+    [self childNodeWithName:@"face1"].hidden = YES;
+    [self childNodeWithName:@"face2"].hidden = YES;
+    [self childNodeWithName:@"face3"].hidden = YES;
     [self childNodeWithName:@"scoreLabel"].hidden = YES;
     [self childNodeWithName:@"informationGood"].hidden = YES;
     
@@ -54,7 +56,9 @@
     }], [SKAction waitForDuration:4.0f], [SKAction runBlock:^{
         [jack runAction:[SKAction actionNamed:@"moveToBadFoodJack"]];
     }], [SKAction waitForDuration:2.0f] ,[SKAction runBlock:^{
-        [self childNodeWithName:@"chubby"].hidden = NO;
+        [self childNodeWithName:@"face1"].hidden = NO;
+        [self childNodeWithName:@"face2"].hidden = NO;
+        [self childNodeWithName:@"face3"].hidden = NO;
         [self childNodeWithName:@"redBall"].hidden = YES;
         [self childNodeWithName:@"badFoodAnimation"].hidden = YES;
         [self childNodeWithName:@"informationBad"].hidden = YES;
@@ -63,7 +67,8 @@
     }], [SKAction waitForDuration:2.0f], [SKAction runBlock:^{
         [mainCameraNode runAction:[SKAction actionNamed:@"moveCameraToDefault"]];
     }], [SKAction waitForDuration:2.0f], [SKAction runBlock:^{
-        [self childNodeWithName:@"chubby"].hidden = YES;
+        SKSpriteNode *face3 = (SKSpriteNode *)[self childNodeWithName:@"face3"];
+        face3.texture = [SKTexture textureWithImageNamed:@"happyFace"];
     }], [SKAction runBlock:^{
         [jack runAction:[SKAction actionNamed:@"jacksDefaultPosition"]];
         [self childNodeWithName:@"redBall"].hidden = NO;
@@ -84,7 +89,7 @@
     
     goodAction = [SKAction sequence:@[[SKAction runBlock:^{
         [jack runAction:[SKAction actionNamed:@"tapJump"]];
-    }], [SKAction runBlock:^{
+    }], [SKAction waitForDuration:0.5f], [SKAction runBlock:^{
         [self childNodeWithName:@"greenBall"].hidden = YES;
         [self childNodeWithName:@"goodFoodAnimation"].hidden = YES;
         [self childNodeWithName:@"scoreLabel"].hidden = NO;

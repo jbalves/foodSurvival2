@@ -14,9 +14,11 @@
     SKSpriteNode *wallNode;
     SKSpriteNode *jack;
     SKSpriteNode *groundNode;
-    SKSpriteNode *chubby1;
-    SKSpriteNode *chubby2;
-    SKSpriteNode *chubby3;
+    SKSpriteNode *face1;
+    SKSpriteNode *face2;
+    SKSpriteNode *face3;
+    SKTexture *happyFaceTexture;
+    SKTexture *sadFaceTexture;
     SKLabelNode *score;
     int badFood;
     int goodFood;
@@ -56,13 +58,12 @@
     //INIT OF NODES
     mainCameraNode = [self childNodeWithName:@"mainCamera"];
     
-    chubby1 = (SKSpriteNode *)[mainCameraNode childNodeWithName:@"gordinho1"];
-    chubby2 = (SKSpriteNode *)[mainCameraNode childNodeWithName:@"gordinho2"];
-    chubby3 = (SKSpriteNode *)[mainCameraNode childNodeWithName:@"gordinho3"];
+    face1 = (SKSpriteNode *)[mainCameraNode childNodeWithName:@"face1"];
+    face2 = (SKSpriteNode *)[mainCameraNode childNodeWithName:@"face2"];
+    face3 = (SKSpriteNode *)[mainCameraNode childNodeWithName:@"face3"];
     
-    chubby1.hidden = YES;
-    chubby2.hidden = YES;
-    chubby3.hidden = YES;
+    happyFaceTexture = [SKTexture textureWithImageNamed:@"happyFace"];
+    sadFaceTexture = [SKTexture textureWithImageNamed:@"sadFace"];
     
     groundNode = (SKSpriteNode *)[mainCameraNode childNodeWithName:@"ground"];
     groundNode.physicsBody.collisionBitMask = 1 | 3 | 4;
@@ -225,24 +226,24 @@
             [mainCameraNode removeAllActions];
             [mainCameraNode runAction:[SKAction actionNamed:@"moveCamera"]];
 
-            chubby1.hidden = YES;
-            chubby2.hidden = YES;
+            face1.texture = happyFaceTexture;
+            face2.texture = happyFaceTexture;
+            face3.texture = happyFaceTexture;
             
             break;
         case 1:
             [mainCameraNode removeAllActions];
             [mainCameraNode runAction:[SKAction actionNamed:@"moveCamera2"]];
             
-            chubby1.hidden = NO;
-            chubby2.hidden = YES;
+            face2.texture = happyFaceTexture;
+            face3.texture = sadFaceTexture;
             
             break;
         case 2:
             [mainCameraNode removeAllActions];
             [mainCameraNode runAction:[SKAction actionNamed:@"moveCamera3"]];
             
-            chubby1.hidden = NO;
-            chubby2.hidden = NO;
+            face2.texture = sadFaceTexture;
             
             break;
         default:
@@ -283,9 +284,9 @@
 //GAMEOVER NODE
 - (void) gameOver {
     
-    chubby1.hidden = NO;
-    chubby2.hidden = NO;
-    chubby3.hidden = NO;
+    face1.texture = sadFaceTexture;
+    face2.texture = sadFaceTexture;
+    face3.texture = sadFaceTexture;
     
     self.paused = YES;
     
