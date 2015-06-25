@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		A924DDD91B2A0E6E00A25F13 /* FoodInfoScene.m in Sources */ = {isa = PBXBuildFile; fileRef = A924DDD81B2A0E6E00A25F13 /* FoodInfoScene.m */; };
 		A924DDDB1B2A0F1200A25F13 /* FoodInfoScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A924DDDA1B2A0F1200A25F13 /* FoodInfoScene.sks */; };
-		A97345D41B3C3DAA004A5600 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A97345D31B3C3DAA004A5600 /* GameKit.framework */; };
 		A977F2A41B31CBC400050C2B /* StageSelectScene.m in Sources */ = {isa = PBXBuildFile; fileRef = A977F2A31B31CBC400050C2B /* StageSelectScene.m */; };
 		A977F2A61B31CBCC00050C2B /* StageSelectScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A977F2A51B31CBCC00050C2B /* StageSelectScene.sks */; };
+		A9A269E51B3C43F700124FD4 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A269E41B3C43F700124FD4 /* GameKit.framework */; };
 		A9AADBEC1B3B395100A10BB8 /* JackActions.sks in Resources */ = {isa = PBXBuildFile; fileRef = A9AADBE91B3B395100A10BB8 /* JackActions.sks */; };
 		A9AADBED1B3B395100A10BB8 /* CameraActions.sks in Resources */ = {isa = PBXBuildFile; fileRef = A9AADBEA1B3B395100A10BB8 /* CameraActions.sks */; };
 		A9AADBEE1B3B395100A10BB8 /* CutSceneLevel1.sks in Resources */ = {isa = PBXBuildFile; fileRef = A9AADBEB1B3B395100A10BB8 /* CutSceneLevel1.sks */; };
@@ -53,10 +53,10 @@
 		A924DDD71B2A0E6E00A25F13 /* FoodInfoScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodInfoScene.h; sourceTree = "<group>"; };
 		A924DDD81B2A0E6E00A25F13 /* FoodInfoScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodInfoScene.m; sourceTree = "<group>"; };
 		A924DDDA1B2A0F1200A25F13 /* FoodInfoScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FoodInfoScene.sks; sourceTree = "<group>"; };
-		A97345D31B3C3DAA004A5600 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		A977F2A21B31CBC400050C2B /* StageSelectScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StageSelectScene.h; sourceTree = "<group>"; };
 		A977F2A31B31CBC400050C2B /* StageSelectScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StageSelectScene.m; sourceTree = "<group>"; };
 		A977F2A51B31CBCC00050C2B /* StageSelectScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StageSelectScene.sks; sourceTree = "<group>"; };
+		A9A269E41B3C43F700124FD4 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		A9AADBE91B3B395100A10BB8 /* JackActions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = JackActions.sks; sourceTree = "<group>"; };
 		A9AADBEA1B3B395100A10BB8 /* CameraActions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CameraActions.sks; sourceTree = "<group>"; };
 		A9AADBEB1B3B395100A10BB8 /* CutSceneLevel1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CutSceneLevel1.sks; sourceTree = "<group>"; };
@@ -94,7 +94,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9F8E5381B32F28A00A1A2BC /* SpriteKit.framework in Frameworks */,
-				A97345D41B3C3DAA004A5600 /* GameKit.framework in Frameworks */,
+				A9A269E51B3C43F700124FD4 /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,7 +215,7 @@
 		A9F8E5361B32F26800A1A2BC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A97345D31B3C3DAA004A5600 /* GameKit.framework */,
+				A9A269E41B3C43F700124FD4 /* GameKit.framework */,
 				A9F8E5371B32F28A00A1A2BC /* SpriteKit.framework */,
 			);
 			name = Frameworks;
