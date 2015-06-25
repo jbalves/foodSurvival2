@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A924DDD91B2A0E6E00A25F13 /* FoodInfoScene.m in Sources */ = {isa = PBXBuildFile; fileRef = A924DDD81B2A0E6E00A25F13 /* FoodInfoScene.m */; };
 		A924DDDB1B2A0F1200A25F13 /* FoodInfoScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A924DDDA1B2A0F1200A25F13 /* FoodInfoScene.sks */; };
+		A97345D41B3C3DAA004A5600 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A97345D31B3C3DAA004A5600 /* GameKit.framework */; };
 		A977F2A41B31CBC400050C2B /* StageSelectScene.m in Sources */ = {isa = PBXBuildFile; fileRef = A977F2A31B31CBC400050C2B /* StageSelectScene.m */; };
 		A977F2A61B31CBCC00050C2B /* StageSelectScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A977F2A51B31CBCC00050C2B /* StageSelectScene.sks */; };
 		A9AADBEC1B3B395100A10BB8 /* JackActions.sks in Resources */ = {isa = PBXBuildFile; fileRef = A9AADBE91B3B395100A10BB8 /* JackActions.sks */; };
@@ -52,6 +53,7 @@
 		A924DDD71B2A0E6E00A25F13 /* FoodInfoScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodInfoScene.h; sourceTree = "<group>"; };
 		A924DDD81B2A0E6E00A25F13 /* FoodInfoScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodInfoScene.m; sourceTree = "<group>"; };
 		A924DDDA1B2A0F1200A25F13 /* FoodInfoScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FoodInfoScene.sks; sourceTree = "<group>"; };
+		A97345D31B3C3DAA004A5600 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		A977F2A21B31CBC400050C2B /* StageSelectScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StageSelectScene.h; sourceTree = "<group>"; };
 		A977F2A31B31CBC400050C2B /* StageSelectScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StageSelectScene.m; sourceTree = "<group>"; };
 		A977F2A51B31CBCC00050C2B /* StageSelectScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StageSelectScene.sks; sourceTree = "<group>"; };
@@ -60,7 +62,7 @@
 		A9AADBEB1B3B395100A10BB8 /* CutSceneLevel1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CutSceneLevel1.sks; sourceTree = "<group>"; };
 		A9AADBEF1B3B395D00A10BB8 /* CutSceneLevel1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CutSceneLevel1.h; sourceTree = "<group>"; };
 		A9AADBF01B3B395D00A10BB8 /* CutSceneLevel1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CutSceneLevel1.m; sourceTree = "<group>"; };
-		A9BF141C1B29C2D9002041F3 /* foodSurvivel2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = foodSurvivel2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9BF141C1B29C2D9002041F3 /* JumpJack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JumpJack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9BF14201B29C2D9002041F3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A9BF14221B29C2D9002041F3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A9BF14231B29C2D9002041F3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -73,10 +75,10 @@
 		A9BF14301B29C2D9002041F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9BF14331B29C2D9002041F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A9BF14351B29C2D9002041F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A9BF143A1B29C2D9002041F3 /* foodSurvivel2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = foodSurvivel2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9BF143A1B29C2D9002041F3 /* JumpJack.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JumpJack.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9BF143E1B29C2D9002041F3 /* foodSurvivel2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = foodSurvivel2Tests.m; sourceTree = "<group>"; };
 		A9BF14401B29C2D9002041F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A9BF14451B29C2D9002041F3 /* foodSurvivel2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = foodSurvivel2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9BF14451B29C2D9002041F3 /* JumpJack.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JumpJack.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9BF14491B29C2D9002041F3 /* foodSurvivel2UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = foodSurvivel2UITests.m; sourceTree = "<group>"; };
 		A9BF144B1B29C2D9002041F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9BF145E1B29F8E5002041F3 /* StartScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartScene.h; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9F8E5381B32F28A00A1A2BC /* SpriteKit.framework in Frameworks */,
+				A97345D41B3C3DAA004A5600 /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,9 +161,9 @@
 		A9BF141D1B29C2D9002041F3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A9BF141C1B29C2D9002041F3 /* foodSurvivel2.app */,
-				A9BF143A1B29C2D9002041F3 /* foodSurvivel2Tests.xctest */,
-				A9BF14451B29C2D9002041F3 /* foodSurvivel2UITests.xctest */,
+				A9BF141C1B29C2D9002041F3 /* JumpJack.app */,
+				A9BF143A1B29C2D9002041F3 /* JumpJack.xctest */,
+				A9BF14451B29C2D9002041F3 /* JumpJack.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 		A9F8E5361B32F26800A1A2BC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A97345D31B3C3DAA004A5600 /* GameKit.framework */,
 				A9F8E5371B32F28A00A1A2BC /* SpriteKit.framework */,
 			);
 			name = Frameworks;
@@ -220,9 +224,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A9BF141B1B29C2D9002041F3 /* foodSurvivel2 */ = {
+		A9BF141B1B29C2D9002041F3 /* JumpJack */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A9BF144E1B29C2D9002041F3 /* Build configuration list for PBXNativeTarget "foodSurvivel2" */;
+			buildConfigurationList = A9BF144E1B29C2D9002041F3 /* Build configuration list for PBXNativeTarget "JumpJack" */;
 			buildPhases = (
 				A9BF14181B29C2D9002041F3 /* Sources */,
 				A9BF14191B29C2D9002041F3 /* Frameworks */,
@@ -232,14 +236,14 @@
 			);
 			dependencies = (
 			);
-			name = foodSurvivel2;
+			name = JumpJack;
 			productName = foodSurvivel2;
-			productReference = A9BF141C1B29C2D9002041F3 /* foodSurvivel2.app */;
+			productReference = A9BF141C1B29C2D9002041F3 /* JumpJack.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A9BF14391B29C2D9002041F3 /* foodSurvivel2Tests */ = {
+		A9BF14391B29C2D9002041F3 /* JumpJackTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A9BF14511B29C2D9002041F3 /* Build configuration list for PBXNativeTarget "foodSurvivel2Tests" */;
+			buildConfigurationList = A9BF14511B29C2D9002041F3 /* Build configuration list for PBXNativeTarget "JumpJackTests" */;
 			buildPhases = (
 				A9BF14361B29C2D9002041F3 /* Sources */,
 				A9BF14371B29C2D9002041F3 /* Frameworks */,
@@ -250,14 +254,14 @@
 			dependencies = (
 				A9BF143C1B29C2D9002041F3 /* PBXTargetDependency */,
 			);
-			name = foodSurvivel2Tests;
+			name = JumpJackTests;
 			productName = foodSurvivel2Tests;
-			productReference = A9BF143A1B29C2D9002041F3 /* foodSurvivel2Tests.xctest */;
+			productReference = A9BF143A1B29C2D9002041F3 /* JumpJack.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		A9BF14441B29C2D9002041F3 /* foodSurvivel2UITests */ = {
+		A9BF14441B29C2D9002041F3 /* JumpJackUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A9BF14541B29C2D9002041F3 /* Build configuration list for PBXNativeTarget "foodSurvivel2UITests" */;
+			buildConfigurationList = A9BF14541B29C2D9002041F3 /* Build configuration list for PBXNativeTarget "JumpJackUITests" */;
 			buildPhases = (
 				A9BF14411B29C2D9002041F3 /* Sources */,
 				A9BF14421B29C2D9002041F3 /* Frameworks */,
@@ -268,9 +272,9 @@
 			dependencies = (
 				A9BF14471B29C2D9002041F3 /* PBXTargetDependency */,
 			);
-			name = foodSurvivel2UITests;
+			name = JumpJackUITests;
 			productName = foodSurvivel2UITests;
-			productReference = A9BF14451B29C2D9002041F3 /* foodSurvivel2UITests.xctest */;
+			productReference = A9BF14451B29C2D9002041F3 /* JumpJack.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -285,6 +289,11 @@
 					A9BF141B1B29C2D9002041F3 = {
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = 27N5ZB77NM;
+						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 1;
+							};
+						};
 					};
 					A9BF14391B29C2D9002041F3 = {
 						CreatedOnToolsVersion = 7.0;
@@ -296,7 +305,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A9BF14171B29C2D9002041F3 /* Build configuration list for PBXProject "foodSurvivel2" */;
+			buildConfigurationList = A9BF14171B29C2D9002041F3 /* Build configuration list for PBXProject "JumpJack" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -309,9 +318,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A9BF141B1B29C2D9002041F3 /* foodSurvivel2 */,
-				A9BF14391B29C2D9002041F3 /* foodSurvivel2Tests */,
-				A9BF14441B29C2D9002041F3 /* foodSurvivel2UITests */,
+				A9BF141B1B29C2D9002041F3 /* JumpJack */,
+				A9BF14391B29C2D9002041F3 /* JumpJackTests */,
+				A9BF14441B29C2D9002041F3 /* JumpJackUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -388,12 +397,12 @@
 /* Begin PBXTargetDependency section */
 		A9BF143C1B29C2D9002041F3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A9BF141B1B29C2D9002041F3 /* foodSurvivel2 */;
+			target = A9BF141B1B29C2D9002041F3 /* JumpJack */;
 			targetProxy = A9BF143B1B29C2D9002041F3 /* PBXContainerItemProxy */;
 		};
 		A9BF14471B29C2D9002041F3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A9BF141B1B29C2D9002041F3 /* foodSurvivel2 */;
+			target = A9BF141B1B29C2D9002041F3 /* JumpJack */;
 			targetProxy = A9BF14461B29C2D9002041F3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -508,7 +517,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "BEPiD-FUCAPI.foodSurvivel2";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = JumpJack;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
@@ -523,7 +532,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "BEPiD-FUCAPI.foodSurvivel2";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = JumpJack;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
@@ -535,8 +544,8 @@
 				INFOPLIST_FILE = foodSurvivel2Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "BEPiD-FUCAPI.foodSurvivel2Tests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/foodSurvivel2.app/foodSurvivel2";
+				PRODUCT_NAME = JumpJack;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JumpJack.app/JumpJack";
 			};
 			name = Debug;
 		};
@@ -547,8 +556,8 @@
 				INFOPLIST_FILE = foodSurvivel2Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "BEPiD-FUCAPI.foodSurvivel2Tests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/foodSurvivel2.app/foodSurvivel2";
+				PRODUCT_NAME = JumpJack;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JumpJack.app/JumpJack";
 			};
 			name = Release;
 		};
@@ -558,7 +567,7 @@
 				INFOPLIST_FILE = foodSurvivel2UITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "BEPiD-FUCAPI.foodSurvivel2UITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = JumpJack;
 				TEST_TARGET_NAME = foodSurvivel2;
 				USES_XCTRUNNER = YES;
 			};
@@ -570,7 +579,7 @@
 				INFOPLIST_FILE = foodSurvivel2UITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "BEPiD-FUCAPI.foodSurvivel2UITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = JumpJack;
 				TEST_TARGET_NAME = foodSurvivel2;
 				USES_XCTRUNNER = YES;
 			};
@@ -579,7 +588,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A9BF14171B29C2D9002041F3 /* Build configuration list for PBXProject "foodSurvivel2" */ = {
+		A9BF14171B29C2D9002041F3 /* Build configuration list for PBXProject "JumpJack" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A9BF144C1B29C2D9002041F3 /* Debug */,
@@ -588,7 +597,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A9BF144E1B29C2D9002041F3 /* Build configuration list for PBXNativeTarget "foodSurvivel2" */ = {
+		A9BF144E1B29C2D9002041F3 /* Build configuration list for PBXNativeTarget "JumpJack" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A9BF144F1B29C2D9002041F3 /* Debug */,
@@ -597,7 +606,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A9BF14511B29C2D9002041F3 /* Build configuration list for PBXNativeTarget "foodSurvivel2Tests" */ = {
+		A9BF14511B29C2D9002041F3 /* Build configuration list for PBXNativeTarget "JumpJackTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A9BF14521B29C2D9002041F3 /* Debug */,
@@ -606,7 +615,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A9BF14541B29C2D9002041F3 /* Build configuration list for PBXNativeTarget "foodSurvivel2UITests" */ = {
+		A9BF14541B29C2D9002041F3 /* Build configuration list for PBXNativeTarget "JumpJackUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A9BF14551B29C2D9002041F3 /* Debug */,
