@@ -14,6 +14,7 @@
     SKNode *mainCameraNode;
     SKSpriteNode *jack;
     BOOL endMove;
+    BOOL didJump;
 }
 
 @end
@@ -40,7 +41,7 @@
 
 
 -(void)didMoveToView:(SKView *)view {
-
+    didJump = NO;
     mainCameraNode = [self childNodeWithName:@"mainCameraNode"];
     jack = (SKSpriteNode *)[self childNodeWithName:@"jack"];
     [self childNodeWithName:@"informationTap"].hidden = YES;
@@ -106,7 +107,8 @@
 }
 
 -(void)touchesBegan:(nonnull NSSet<UITouch *> *)touches withEvent:(nullable UIEvent *)event {
-    if (endMove) {
+    if (endMove && !didJump) {
+        didJump = YES;
         [self runAction:goodAction];
     }
 }
