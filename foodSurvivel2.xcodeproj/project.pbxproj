@@ -7,20 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-<<<<<<< HEAD
 		715D65B91B346FE000B4C806 /* CutSceneLevel1.sks in Resources */ = {isa = PBXBuildFile; fileRef = 715D65B81B346FE000B4C806 /* CutSceneLevel1.sks */; };
 		715D65BC1B349DCD00B4C806 /* CutSceneLevel1.m in Sources */ = {isa = PBXBuildFile; fileRef = 715D65BB1B349DCD00B4C806 /* CutSceneLevel1.m */; };
 		A90B67881B2B390100D8EFC8 /* CameraActions.sks in Resources */ = {isa = PBXBuildFile; fileRef = A90B67871B2B390100D8EFC8 /* CameraActions.sks */; };
-=======
->>>>>>> master
 		A924DDD91B2A0E6E00A25F13 /* FoodInfoScene.m in Sources */ = {isa = PBXBuildFile; fileRef = A924DDD81B2A0E6E00A25F13 /* FoodInfoScene.m */; };
 		A924DDDB1B2A0F1200A25F13 /* FoodInfoScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A924DDDA1B2A0F1200A25F13 /* FoodInfoScene.sks */; };
 		A977F2A41B31CBC400050C2B /* StageSelectScene.m in Sources */ = {isa = PBXBuildFile; fileRef = A977F2A31B31CBC400050C2B /* StageSelectScene.m */; };
 		A977F2A61B31CBCC00050C2B /* StageSelectScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A977F2A51B31CBCC00050C2B /* StageSelectScene.sks */; };
-		A9AADBEC1B3B395100A10BB8 /* JackActions.sks in Resources */ = {isa = PBXBuildFile; fileRef = A9AADBE91B3B395100A10BB8 /* JackActions.sks */; };
-		A9AADBED1B3B395100A10BB8 /* CameraActions.sks in Resources */ = {isa = PBXBuildFile; fileRef = A9AADBEA1B3B395100A10BB8 /* CameraActions.sks */; };
-		A9AADBEE1B3B395100A10BB8 /* CutSceneLevel1.sks in Resources */ = {isa = PBXBuildFile; fileRef = A9AADBEB1B3B395100A10BB8 /* CutSceneLevel1.sks */; };
-		A9AADBF11B3B395D00A10BB8 /* CutSceneLevel1.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AADBF01B3B395D00A10BB8 /* CutSceneLevel1.m */; };
 		A9BF14211B29C2D9002041F3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BF14201B29C2D9002041F3 /* main.m */; };
 		A9BF14241B29C2D9002041F3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BF14231B29C2D9002041F3 /* AppDelegate.m */; };
 		A9BF14271B29C2D9002041F3 /* Level1Scene.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BF14261B29C2D9002041F3 /* Level1Scene.m */; };
@@ -31,6 +24,7 @@
 		A9BF14341B29C2D9002041F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9BF14321B29C2D9002041F3 /* LaunchScreen.storyboard */; };
 		A9BF143F1B29C2D9002041F3 /* foodSurvivel2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BF143E1B29C2D9002041F3 /* foodSurvivel2Tests.m */; };
 		A9BF144A1B29C2D9002041F3 /* foodSurvivel2UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BF14491B29C2D9002041F3 /* foodSurvivel2UITests.m */; };
+		A9BF145D1B29F145002041F3 /* JackActions.sks in Resources */ = {isa = PBXBuildFile; fileRef = A9BF145C1B29F145002041F3 /* JackActions.sks */; };
 		A9BF14601B29F8E5002041F3 /* StartScene.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BF145F1B29F8E5002041F3 /* StartScene.m */; };
 		A9BF14621B29F90B002041F3 /* StartScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A9BF14611B29F90B002041F3 /* StartScene.sks */; };
 		A9E46AE61B39B5100023D6C5 /* FoodActions.sks in Resources */ = {isa = PBXBuildFile; fileRef = A9E46AE51B39B5100023D6C5 /* FoodActions.sks */; };
@@ -55,24 +49,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-<<<<<<< HEAD
 		715D65B81B346FE000B4C806 /* CutSceneLevel1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CutSceneLevel1.sks; sourceTree = "<group>"; };
 		715D65BA1B349DCD00B4C806 /* CutSceneLevel1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CutSceneLevel1.h; sourceTree = "<group>"; };
 		715D65BB1B349DCD00B4C806 /* CutSceneLevel1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CutSceneLevel1.m; sourceTree = "<group>"; };
 		A90B67871B2B390100D8EFC8 /* CameraActions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = CameraActions.sks; path = ../CameraActions.sks; sourceTree = "<group>"; };
-=======
->>>>>>> master
 		A924DDD71B2A0E6E00A25F13 /* FoodInfoScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodInfoScene.h; sourceTree = "<group>"; };
 		A924DDD81B2A0E6E00A25F13 /* FoodInfoScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodInfoScene.m; sourceTree = "<group>"; };
 		A924DDDA1B2A0F1200A25F13 /* FoodInfoScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FoodInfoScene.sks; sourceTree = "<group>"; };
 		A977F2A21B31CBC400050C2B /* StageSelectScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StageSelectScene.h; sourceTree = "<group>"; };
 		A977F2A31B31CBC400050C2B /* StageSelectScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StageSelectScene.m; sourceTree = "<group>"; };
 		A977F2A51B31CBCC00050C2B /* StageSelectScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StageSelectScene.sks; sourceTree = "<group>"; };
-		A9AADBE91B3B395100A10BB8 /* JackActions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = JackActions.sks; sourceTree = "<group>"; };
-		A9AADBEA1B3B395100A10BB8 /* CameraActions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CameraActions.sks; sourceTree = "<group>"; };
-		A9AADBEB1B3B395100A10BB8 /* CutSceneLevel1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CutSceneLevel1.sks; sourceTree = "<group>"; };
-		A9AADBEF1B3B395D00A10BB8 /* CutSceneLevel1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CutSceneLevel1.h; sourceTree = "<group>"; };
-		A9AADBF01B3B395D00A10BB8 /* CutSceneLevel1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CutSceneLevel1.m; sourceTree = "<group>"; };
 		A9BF141C1B29C2D9002041F3 /* foodSurvivel2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = foodSurvivel2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9BF14201B29C2D9002041F3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A9BF14221B29C2D9002041F3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -92,6 +78,7 @@
 		A9BF14451B29C2D9002041F3 /* foodSurvivel2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = foodSurvivel2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9BF14491B29C2D9002041F3 /* foodSurvivel2UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = foodSurvivel2UITests.m; sourceTree = "<group>"; };
 		A9BF144B1B29C2D9002041F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9BF145C1B29F145002041F3 /* JackActions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = JackActions.sks; sourceTree = "<group>"; };
 		A9BF145E1B29F8E5002041F3 /* StartScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartScene.h; sourceTree = "<group>"; };
 		A9BF145F1B29F8E5002041F3 /* StartScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartScene.m; sourceTree = "<group>"; };
 		A9BF14611B29F90B002041F3 /* StartScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StartScene.sks; sourceTree = "<group>"; };
@@ -128,19 +115,13 @@
 		A924DDD51B2A013300A25F13 /* Sk's */ = {
 			isa = PBXGroup;
 			children = (
-				A9AADBE91B3B395100A10BB8 /* JackActions.sks */,
-				A9AADBEA1B3B395100A10BB8 /* CameraActions.sks */,
-				A9AADBEB1B3B395100A10BB8 /* CutSceneLevel1.sks */,
 				A9BF14281B29C2D9002041F3 /* Level1Scene.sks */,
 				A9BF14611B29F90B002041F3 /* StartScene.sks */,
 				A977F2A51B31CBCC00050C2B /* StageSelectScene.sks */,
 				A924DDDA1B2A0F1200A25F13 /* FoodInfoScene.sks */,
-<<<<<<< HEAD
 				715D65B81B346FE000B4C806 /* CutSceneLevel1.sks */,
 				A9BF145C1B29F145002041F3 /* JackActions.sks */,
 				A90B67871B2B390100D8EFC8 /* CameraActions.sks */,
-=======
->>>>>>> master
 				A9E46AE51B39B5100023D6C5 /* FoodActions.sks */,
 			);
 			name = "Sk's";
@@ -159,8 +140,6 @@
 				A977F2A31B31CBC400050C2B /* StageSelectScene.m */,
 				A924DDD71B2A0E6E00A25F13 /* FoodInfoScene.h */,
 				A924DDD81B2A0E6E00A25F13 /* FoodInfoScene.m */,
-				A9AADBEF1B3B395D00A10BB8 /* CutSceneLevel1.h */,
-				A9AADBF01B3B395D00A10BB8 /* CutSceneLevel1.m */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -342,17 +321,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9AADBED1B3B395100A10BB8 /* CameraActions.sks in Resources */,
 				A9BF14291B29C2D9002041F3 /* Level1Scene.sks in Resources */,
 				A9BF14341B29C2D9002041F3 /* LaunchScreen.storyboard in Resources */,
-<<<<<<< HEAD
 				715D65B91B346FE000B4C806 /* CutSceneLevel1.sks in Resources */,
 				A90B67881B2B390100D8EFC8 /* CameraActions.sks in Resources */,
 				A9BF145D1B29F145002041F3 /* JackActions.sks in Resources */,
-=======
-				A9AADBEE1B3B395100A10BB8 /* CutSceneLevel1.sks in Resources */,
-				A9AADBEC1B3B395100A10BB8 /* JackActions.sks in Resources */,
->>>>>>> master
 				A924DDDB1B2A0F1200A25F13 /* FoodInfoScene.sks in Resources */,
 				A977F2A61B31CBCC00050C2B /* StageSelectScene.sks in Resources */,
 				A9BF14621B29F90B002041F3 /* StartScene.sks in Resources */,
@@ -389,11 +362,7 @@
 				A9BF14271B29C2D9002041F3 /* Level1Scene.m in Sources */,
 				A924DDD91B2A0E6E00A25F13 /* FoodInfoScene.m in Sources */,
 				A9BF14211B29C2D9002041F3 /* main.m in Sources */,
-<<<<<<< HEAD
 				715D65BC1B349DCD00B4C806 /* CutSceneLevel1.m in Sources */,
-=======
-				A9AADBF11B3B395D00A10BB8 /* CutSceneLevel1.m in Sources */,
->>>>>>> master
 				A977F2A41B31CBC400050C2B /* StageSelectScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
