@@ -107,9 +107,19 @@
 }
 
 -(void)touchesBegan:(nonnull NSSet<UITouch *> *)touches withEvent:(nullable UIEvent *)event {
+
+    UITouch *touch = [touches anyObject];
+    CGPoint location = [touch locationInNode:self];
+    SKNode *node = [self nodeAtPoint:location];
+    
     if (endMove && !didJump) {
         didJump = YES;
         [self runAction:goodAction];
+    }
+    
+    if ([node.name isEqualToString:@"skipTutorial"]) {
+        [self.scene.view presentScene:[Level1Scene unarchiveFromFile:@"Level1Scene"]
+                           transition:[SKTransition doorsOpenHorizontalWithDuration:1.0]];        
     }
 }
 

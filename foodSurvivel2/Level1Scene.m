@@ -75,6 +75,7 @@
     
     jack = (SKSpriteNode *)[mainCameraNode childNodeWithName:@"jack"];
     jack.physicsBody.collisionBitMask = 2 | 3;
+    jack.physicsBody.density = 20;
     
     int countBadFood = 0;
     int countGoodFood = 0;
