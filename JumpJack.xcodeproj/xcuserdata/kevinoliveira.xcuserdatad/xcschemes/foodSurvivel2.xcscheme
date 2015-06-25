@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A9BF141B1B29C2D9002041F3"
-               BuildableName = "foodSurvivel2.app"
-               BlueprintName = "foodSurvivel2"
-               ReferencedContainer = "container:foodSurvivel2.xcodeproj">
+               BuildableName = "JumpJack.app"
+               BlueprintName = "JumpJack"
+               ReferencedContainer = "container:JumpJack.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A9BF14391B29C2D9002041F3"
-               BuildableName = "foodSurvivel2Tests.xctest"
-               BlueprintName = "foodSurvivel2Tests"
-               ReferencedContainer = "container:foodSurvivel2.xcodeproj">
+               BuildableName = "JumpJack.xctest"
+               BlueprintName = "JumpJackTests"
+               ReferencedContainer = "container:JumpJack.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A9BF14441B29C2D9002041F3"
-               BuildableName = "foodSurvivel2UITests.xctest"
-               BlueprintName = "foodSurvivel2UITests"
-               ReferencedContainer = "container:foodSurvivel2.xcodeproj">
+               BuildableName = "JumpJack.xctest"
+               BlueprintName = "JumpJackUITests"
+               ReferencedContainer = "container:JumpJack.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -53,9 +53,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A9BF141B1B29C2D9002041F3"
-            BuildableName = "foodSurvivel2.app"
-            BlueprintName = "foodSurvivel2"
-            ReferencedContainer = "container:foodSurvivel2.xcodeproj">
+            BuildableName = "JumpJack.app"
+            BlueprintName = "JumpJack"
+            ReferencedContainer = "container:JumpJack.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A9BF141B1B29C2D9002041F3"
-            BuildableName = "foodSurvivel2.app"
-            BlueprintName = "foodSurvivel2"
-            ReferencedContainer = "container:foodSurvivel2.xcodeproj">
+            BuildableName = "JumpJack.app"
+            BlueprintName = "JumpJack"
+            ReferencedContainer = "container:JumpJack.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,9 +95,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A9BF141B1B29C2D9002041F3"
-            BuildableName = "foodSurvivel2.app"
-            BlueprintName = "foodSurvivel2"
-            ReferencedContainer = "container:foodSurvivel2.xcodeproj">
+            BuildableName = "JumpJack.app"
+            BlueprintName = "JumpJack"
+            ReferencedContainer = "container:JumpJack.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

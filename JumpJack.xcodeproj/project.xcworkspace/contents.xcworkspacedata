@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:foodSurvivel2.xcodeproj">
+      location = "self:/Users/kevinoliveira/Documents/XCode Projects/foodSurvivel2/JumpJack.xcodeproj">
    </FileRef>
 </Workspace>
