@@ -39,7 +39,7 @@
 @end
 
 @implementation ViewController{
-    BOOL _gameCenterEnabled;
+    BOOL _gameCenterEnable;
 }
 
 - (void)viewDidLoad {
@@ -56,7 +56,6 @@
 //    scene.size = CGSizeMake(667, 335);
     
     [skView presentScene:scene];
-    
     
     [self authenticateLocalPlayer];
 }
@@ -81,9 +80,7 @@
     return YES;
 }
 
-
-
-//Conexao com o game center
+//conexao ao game center
 -(void)authenticateLocalPlayer{
     GKLocalPlayer *localPlayer=[GKLocalPlayer localPlayer];
     
@@ -95,7 +92,7 @@
     else{
     if ([GKLocalPlayer localPlayer].authenticated) {
     
-        _gameCenterEnabled = YES;
+        _gameCenterEnable = YES;
             
     // Get the default leaderboard identifier.
      [[GKLocalPlayer localPlayer] loadDefaultLeaderboardIdentifierWithCompletionHandler:^(NSString *leaderboardIdentifier, NSError *error) {
@@ -109,16 +106,12 @@
         }
     
     else{
-        _gameCenterEnabled = NO;
+        _gameCenterEnable = NO;
     }
-    
     }
  
 };
-
-
-
-
+    
 }
 
 
