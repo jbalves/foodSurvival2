@@ -66,6 +66,7 @@
     sadFaceTexture = [SKTexture textureWithImageNamed:@"sadFace"];
     
     groundNode = (SKSpriteNode *)[mainCameraNode childNodeWithName:@"ground"];
+    groundNode.physicsBody.mass = 100;
     
     wallNode = (SKSpriteNode *)[mainCameraNode childNodeWithName:@"wall"];
     
@@ -86,6 +87,7 @@
             //BOX
             SKSpriteNode *box = (SKSpriteNode *)node;
             box.texture = [SKTexture textureWithImageNamed:@"box"];
+            box.physicsBody.mass = 100;
             
         } else if ([node.name isEqualToString:@"redBall"]) {
           
@@ -122,7 +124,7 @@
     
     //WORLD PHYSICS
     self.physicsWorld.contactDelegate = self;
-    self.physicsWorld.gravity = CGVectorMake(0, -40);
+    self.physicsWorld.gravity = CGVectorMake(0, -5);
     
 }
 
@@ -172,6 +174,9 @@
     //CONTACT WITH GROUND
     if ([jack intersectsNode:groundNode]) {
         jumping = NO;
+
+        NSLog(@"MASS %f", jack.physicsBody.mass);
+        
     }
     
     //CONTACT WITH BOX
