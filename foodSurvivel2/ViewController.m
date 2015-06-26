@@ -8,6 +8,12 @@
 
 #import "ViewController.h"
 #import "Level1Scene.h"
+#import "GameCenter.h"
+
+
+@interface ViewController()
+
+@end
 
 @implementation SKScene (Unarchive)
 
@@ -28,8 +34,9 @@
     return scene;
 }
 
-@end
 
+
+@end
 @implementation ViewController
 
 - (void)viewDidLoad {
@@ -46,6 +53,7 @@
 //    scene.size = CGSizeMake(667, 335);
     
     [skView presentScene:scene];
+    
 }
 
 - (BOOL)shouldAutorotate {
@@ -67,5 +75,34 @@
 - (BOOL)prefersStatusBarHidden {
     return YES;
 }
+
+
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showAuthenticationViewController) name:PresentAuthenticationViewController object:nil];
+    
+    [[GameCenter sharedGameCenter]
+     authenticateLocalPlayer];
+}
+
+- (void)showAuthenticationViewController
+{
+    GameCenter *gameKitCenter = [GameCenter sharedGameCenter];
+    
+    [self presentViewController: gameKitCenter.authenticationViewController animated:YES
+completion:nil];
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+
+
+
+
 
 @end

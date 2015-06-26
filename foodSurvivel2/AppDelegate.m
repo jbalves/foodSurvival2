@@ -10,13 +10,15 @@
 
 @interface AppDelegate ()
 
+
 @end
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    
+
     //PERMISSION TO SHOW NOTIFICATION
 //    if ([UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)]) {
 //        [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings
@@ -25,8 +27,12 @@
 //                                                                             UIUserNotificationTypeBadge categories:nil]];
 //    }
     
+    //[self authenticateLocalPlayer];
+    
     return YES;
 }
+
+
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     
@@ -53,5 +59,9 @@
 //        [app cancelAllLocalNotifications];
 //    }
 }
+
+
+
+
 
 @end
