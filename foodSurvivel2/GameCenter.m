@@ -10,57 +10,73 @@
 #import "ViewController.h"
 
 
-@interface ViewController()
+NSString *const PresentAuthenticationViewController = @"present_authentication_view_controller";
 
--(void)authenticateLocalPlayer;
-
-
-@end
-
-@implementation ViewController{
-     BOOL _gameCenterEnable;
-}
-
-
-- (void)viewDidLoad {
-    
-    [self authenticateLocalPlayer];
-    
+@implementation GameCenter{
+    BOOL _enableGameCenter;
     
 }
-//conexao ao game center
--(void)authenticateLocalPlayer{
-    GKLocalPlayer *localPlayer=[GKLocalPlayer localPlayer];
-    
-    localPlayer.authenticateHandler = ^(UIViewController *viewController, NSError *error){
-        if (viewController != nil) {
 
-            [self presentViewController:viewController animated:YES completion:nil];
-        }
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        _enableGameCenter = YES;
+    }
+    return self;
+}
+
+- (void)authenticateLocalPlayer
+{
+    //1
+    GKLocalPlayer *localPlayer = [GKLocalPlayer localPlayer];
+    
+    //2
+    localPlayer.authenticateHandler  =
+    ^(UIViewController *viewController, NSError *error) {
         
-        else{
-            if ([GKLocalPlayer localPlayer].authenticated) {
-                
-                _gameCenterEnable = YES;
-                
-                // Get the default leaderboard identifier.
-                [[GKLocalPlayer localPlayer] loadDefaultLeaderboardIdentifierWithCompletionHandler:^(NSString *leaderboardIdentifier, NSError *error) {
-                    if (error != nil) {
-                        NSLog(@"%@", [error localizedDescription]);
-                    }
-                    else{
-                        leaderboardIdentifier = leaderboardIdentifier;
-                    }
-                }];
-            }
-            
-            else{
-                _gameCenterEnable = NO;
-            }
-        }
+        [self setLastError:error];
         
+        if(viewController != nil) {
+            //4
+            [self setAuthenticationViewController:viewController];
+        } else if([GKLocalPlayer localPlayer].isAuthenticated) {
+            //5
+            _enableGameCenter = YES;
+        } else {
+            //6
+            _enableGameCenter = NO;
+        }
     };
-    
+}
+
+- (void)setAuthenticationViewController:(UIViewController *)authenticationViewController
+{
+    if (authenticationViewController != nil) {
+        _authenticationViewController = authenticationViewController;
+        [[NSNotificationCenter defaultCenter]postNotificationName:PresentAuthenticationViewController object:self];
+    }
+}
+
+- (void)setLastError:(NSError *)error
+{
+    _lastError = [error copy];
+    if (_lastError) {
+        NSLog(@"GameKitHelper ERROR: %@",
+              [[_lastError userInfo] description]);
+    }
+}
+
+
+
++ (instancetype)sharedGameCenter
+{
+    static GameCenter *sharedGK;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedGK = [[GameCenter alloc] init];
+    });
+    return sharedGK;
 }
 
 @end

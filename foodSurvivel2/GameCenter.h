@@ -9,6 +9,19 @@
 #import <Foundation/Foundation.h>
 #import <GameKit/GameKit.h>
 
+
+
 @interface GameCenter : NSObject
 
+-(void) authenticateLocalPlayer;
+extern NSString *const PresentAuthenticationViewController;
+
+@property (nonatomic, readonly) UIViewController *authenticationViewController;
+@property (nonatomic, readonly) NSError *lastError;
+
++(instancetype)sharedGameCenter;
+
+
+
 @end
+

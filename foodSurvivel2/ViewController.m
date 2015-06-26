@@ -8,10 +8,10 @@
 
 #import "ViewController.h"
 #import "Level1Scene.h"
+#import "GameCenter.h"
+
 
 @interface ViewController()
-
--(void)authenticateLocalPlayer;
 
 @end
 
@@ -34,11 +34,10 @@
     return scene;
 }
 
-@end
 
-@implementation ViewController{
-    BOOL _gameCenterEnable;
-}
+
+@end
+@implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -55,7 +54,6 @@
     
     [skView presentScene:scene];
     
-    [self authenticateLocalPlayer];
 }
 
 - (BOOL)shouldAutorotate {
@@ -78,41 +76,30 @@
     return YES;
 }
 
-//conexao ao game cente
 
--(void)authenticateLocalPlayer{
-    GKLocalPlayer *localPlayer=[GKLocalPlayer localPlayer];//Instaciando o objeto GKLocalPlayer
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     
-   //view controller de visulaização do login que aparecerá automaticamente se o usuário não estiver logado
-   localPlayer.authenticateHandler = ^(UIViewController *viewController, NSError *error){
-    if (viewController != nil) {
-            [self presentViewController:viewController animated:YES completion:nil];
-        }
-       
-    else{
-    if ([GKLocalPlayer localPlayer].authenticated) {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showAuthenticationViewController) name:PresentAuthenticationViewController object:nil];
     
-        _gameCenterEnable = YES;
-    // A classe GKlocalPlayer fornece informaões sobre o ID do jogador, nome, amigo. Fornece também autenticação do jogador
-     [[GKLocalPlayer localPlayer] loadDefaultLeaderboardIdentifierWithCompletionHandler:^(NSString *leaderboardIdentifier, NSError *error) {
-         if (error != nil) {
-             NSLog(@"%@", [error localizedDescription]);
-         }
-         else{
-             leaderboardIdentifier = leaderboardIdentifier;
-                }
-            }];
-        }
-    
-    else{
-        _gameCenterEnable = NO;
-    }
-    }
- 
-};
-    
+    [[GameCenter sharedGameCenter]
+     authenticateLocalPlayer];
 }
- 
+
+- (void)showAuthenticationViewController
+{
+    GameCenter *gameKitCenter = [GameCenter sharedGameCenter];
+    
+    [self presentViewController: gameKitCenter.authenticationViewController animated:YES
+completion:nil];
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 
 
 
