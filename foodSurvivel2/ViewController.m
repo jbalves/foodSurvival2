@@ -17,8 +17,6 @@
 
 @implementation SKScene (Unarchive)
 
-
-
 + (instancetype)unarchiveFromFile:(NSString *)file {
     /* Retrieve scene file path from the application bundle */
     NSString *nodePath = [[NSBundle mainBundle] pathForResource:file ofType:@"sks"];
@@ -80,10 +78,12 @@
     return YES;
 }
 
-//conexao ao game center
+//conexao ao game cente
+
 -(void)authenticateLocalPlayer{
-    GKLocalPlayer *localPlayer=[GKLocalPlayer localPlayer];
+    GKLocalPlayer *localPlayer=[GKLocalPlayer localPlayer];//Instaciando o objeto GKLocalPlayer
     
+   //view controller de visulaização do login que aparecerá automaticamente se o usuário não estiver logado
    localPlayer.authenticateHandler = ^(UIViewController *viewController, NSError *error){
     if (viewController != nil) {
             [self presentViewController:viewController animated:YES completion:nil];
@@ -93,8 +93,7 @@
     if ([GKLocalPlayer localPlayer].authenticated) {
     
         _gameCenterEnable = YES;
-            
-    // Get the default leaderboard identifier.
+    // A classe GKlocalPlayer fornece informaões sobre o ID do jogador, nome, amigo. Fornece também autenticação do jogador
      [[GKLocalPlayer localPlayer] loadDefaultLeaderboardIdentifierWithCompletionHandler:^(NSString *leaderboardIdentifier, NSError *error) {
          if (error != nil) {
              NSLog(@"%@", [error localizedDescription]);
@@ -113,6 +112,7 @@
 };
     
 }
+ 
 
 
 

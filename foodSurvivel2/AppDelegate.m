@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 
-
 @interface AppDelegate ()
 
 
@@ -18,6 +17,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    
+
     //PERMISSION TO SHOW NOTIFICATION
 //    if ([UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)]) {
 //        [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings
