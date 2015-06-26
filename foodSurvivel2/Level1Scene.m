@@ -66,7 +66,6 @@
     sadFaceTexture = [SKTexture textureWithImageNamed:@"sadFace"];
     
     groundNode = (SKSpriteNode *)[mainCameraNode childNodeWithName:@"ground"];
-    groundNode.physicsBody.collisionBitMask = 1 | 3 | 4;
     
     wallNode = (SKSpriteNode *)[mainCameraNode childNodeWithName:@"wall"];
     
@@ -74,8 +73,8 @@
     score.text = [NSString stringWithFormat:@"Pontos %d", goodFood];
     
     jack = (SKSpriteNode *)[mainCameraNode childNodeWithName:@"jack"];
-    jack.physicsBody.collisionBitMask = 2 | 3;
-    jack.physicsBody.density = 20;
+    jack.physicsBody.contactTestBitMask = 2 | 3;
+    jack.physicsBody.mass = 0.7;
     
     int countBadFood = 0;
     int countGoodFood = 0;
@@ -123,6 +122,7 @@
     
     //WORLD PHYSICS
     self.physicsWorld.contactDelegate = self;
+    self.physicsWorld.gravity = CGVectorMake(0, -8);
     
 }
 
@@ -132,37 +132,21 @@
     CGPoint location = [touch locationInNode:self];
     SKNode *node = [self nodeAtPoint:location];
     
-    //JACK'S JUMP
-    if (!jumping) {
-        jumping = YES;
-        [jack runAction:[SKAction actionNamed:@"Jump"] withKey:@"jumping"];
-    }
-    
-    //PAUSE CLICKED
     if ([node.name isEqualToString:@"pauseButton"]) {
         self.scene.paused = YES;
         [mainCameraNode childNodeWithName:@"pauseNode"].hidden = NO;
-    }
-    
-    //CONTINUE CLICKED
-    if ([node.name isEqualToString:@"continue"]) {
+    } else if ([node.name isEqualToString:@"continue"]) {
         self.scene.paused = NO;
         [mainCameraNode childNodeWithName:@"pauseNode"].hidden = YES;
-    }
-    
-    //MAIN MENU CLICKED
-    if ([node.name isEqualToString:@"menu"]) {
+    } else if ([node.name isEqualToString:@"menu"]) {
         [self.scene.view presentScene:[StartScene unarchiveFromFile:@"StartScene"]];
-    }
-    
-    //RESTART CLICKED
-    if ([node.name isEqualToString:@"restart"]) {
+    } else if ([node.name isEqualToString:@"restart"]) {
         [self.scene.view presentScene:[Level1Scene unarchiveFromFile:@"Level1Scene"]];
-    }
-
-    //TRY AGAIN CLICKED
-    if ([node.name isEqualToString:@"tryAgain"]) {
+    } else if ([node.name isEqualToString:@"tryAgain"]) {
         [self.scene.view presentScene:[Level1Scene unarchiveFromFile:@"Level1Scene"]];
+    } else if (!jumping) {
+        jumping = YES;
+        [jack.physicsBody applyImpulse:CGVectorMake(0, 330)];
     }
 
 }
