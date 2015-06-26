@@ -144,7 +144,7 @@
         [self.scene.view presentScene:[Level1Scene unarchiveFromFile:@"Level1Scene"]];
     } else if ([node.name isEqualToString:@"tryAgain"]) {
         [self.scene.view presentScene:[Level1Scene unarchiveFromFile:@"Level1Scene"]];
-    } else if (!jumping && !self.scene.isPaused) {
+    } else if (!jumping) {
         jumping = YES;
         [jack.physicsBody applyImpulse:CGVectorMake(0, 330)];
     }
