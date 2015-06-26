@@ -74,7 +74,7 @@
     
     jack = (SKSpriteNode *)[mainCameraNode childNodeWithName:@"jack"];
     jack.physicsBody.contactTestBitMask = 2 | 3;
-//    jack.physicsBody.mass = 0.3;
+    jack.physicsBody.mass = 0.3;
     
     int countBadFood = 0;
     int countGoodFood = 0;
@@ -122,6 +122,7 @@
     
     //WORLD PHYSICS
     self.physicsWorld.contactDelegate = self;
+    self.physicsWorld.gravity = CGVectorMake(0, -40);
     
 }
 
