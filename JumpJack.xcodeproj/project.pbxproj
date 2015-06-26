@@ -190,6 +190,7 @@
 				A9BF14321B29C2D9002041F3 /* LaunchScreen.storyboard */,
 				A9BF14351B29C2D9002041F3 /* Info.plist */,
 				A9BF14201B29C2D9002041F3 /* main.m */,
+				EE3F65F91B3C484D00FE05A1 /* GameCenter */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -219,6 +220,13 @@
 				A9F8E5371B32F28A00A1A2BC /* SpriteKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EE3F65F91B3C484D00FE05A1 /* GameCenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = GameCenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -9,7 +9,15 @@
 #import "ViewController.h"
 #import "Level1Scene.h"
 
+@interface ViewController()
+
+-(void)authenticateLocalPlayer;
+
+@end
+
 @implementation SKScene (Unarchive)
+
+
 
 + (instancetype)unarchiveFromFile:(NSString *)file {
     /* Retrieve scene file path from the application bundle */
@@ -30,7 +38,9 @@
 
 @end
 
-@implementation ViewController
+@implementation ViewController{
+    BOOL _gameCenterEnabled;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -46,6 +56,9 @@
 //    scene.size = CGSizeMake(667, 335);
     
     [skView presentScene:scene];
+    
+    
+    [self authenticateLocalPlayer];
 }
 
 - (BOOL)shouldAutorotate {
@@ -67,5 +80,49 @@
 - (BOOL)prefersStatusBarHidden {
     return YES;
 }
+
+
+
+//Conexao com o game center
+-(void)authenticateLocalPlayer{
+    GKLocalPlayer *localPlayer=[GKLocalPlayer localPlayer];
+    
+   localPlayer.authenticateHandler = ^(UIViewController *viewController, NSError *error){
+    if (viewController != nil) {
+            [self presentViewController:viewController animated:YES completion:nil];
+        }
+       
+    else{
+    if ([GKLocalPlayer localPlayer].authenticated) {
+    
+        _gameCenterEnabled = YES;
+            
+    // Get the default leaderboard identifier.
+     [[GKLocalPlayer localPlayer] loadDefaultLeaderboardIdentifierWithCompletionHandler:^(NSString *leaderboardIdentifier, NSError *error) {
+         if (error != nil) {
+             NSLog(@"%@", [error localizedDescription]);
+         }
+         else{
+             leaderboardIdentifier = leaderboardIdentifier;
+                }
+            }];
+        }
+    
+    else{
+        _gameCenterEnabled = NO;
+    }
+    
+    }
+ 
+};
+
+
+
+
+}
+
+
+
+
 
 @end
