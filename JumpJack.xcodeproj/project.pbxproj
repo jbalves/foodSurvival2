@@ -30,6 +30,7 @@
 		A9BF14621B29F90B002041F3 /* StartScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A9BF14611B29F90B002041F3 /* StartScene.sks */; };
 		A9E46AE61B39B5100023D6C5 /* FoodActions.sks in Resources */ = {isa = PBXBuildFile; fileRef = A9E46AE51B39B5100023D6C5 /* FoodActions.sks */; };
 		A9F8E5381B32F28A00A1A2BC /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F8E5371B32F28A00A1A2BC /* SpriteKit.framework */; };
+		EE3F66041B3D883D00FE05A1 /* GameCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3F66031B3D883D00FE05A1 /* GameCenter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,8 @@
 		A9BF14611B29F90B002041F3 /* StartScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StartScene.sks; sourceTree = "<group>"; };
 		A9E46AE51B39B5100023D6C5 /* FoodActions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = FoodActions.sks; path = ../FoodActions.sks; sourceTree = "<group>"; };
 		A9F8E5371B32F28A00A1A2BC /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		EE3F66021B3D883D00FE05A1 /* GameCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameCenter.h; sourceTree = "<group>"; };
+		EE3F66031B3D883D00FE05A1 /* GameCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameCenter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +146,8 @@
 				A924DDD81B2A0E6E00A25F13 /* FoodInfoScene.m */,
 				A9AADBEF1B3B395D00A10BB8 /* CutSceneLevel1.h */,
 				A9AADBF01B3B395D00A10BB8 /* CutSceneLevel1.m */,
+				EE3F66021B3D883D00FE05A1 /* GameCenter.h */,
+				EE3F66031B3D883D00FE05A1 /* GameCenter.m */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -190,6 +195,7 @@
 				A9BF14321B29C2D9002041F3 /* LaunchScreen.storyboard */,
 				A9BF14351B29C2D9002041F3 /* Info.plist */,
 				A9BF14201B29C2D9002041F3 /* main.m */,
+				EE3F65F91B3C484D00FE05A1 /* GameCenter */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -219,6 +225,13 @@
 				A9F8E5371B32F28A00A1A2BC /* SpriteKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EE3F65F91B3C484D00FE05A1 /* GameCenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = GameCenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -373,6 +386,7 @@
 				A9BF14211B29C2D9002041F3 /* main.m in Sources */,
 				A9AADBF11B3B395D00A10BB8 /* CutSceneLevel1.m in Sources */,
 				A977F2A41B31CBC400050C2B /* StageSelectScene.m in Sources */,
+				EE3F66041B3D883D00FE05A1 /* GameCenter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
