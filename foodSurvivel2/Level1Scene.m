@@ -66,7 +66,6 @@
     sadFaceTexture = [SKTexture textureWithImageNamed:@"sadFace"];
     
     groundNode = (SKSpriteNode *)[mainCameraNode childNodeWithName:@"ground"];
-    groundNode.physicsBody.collisionBitMask = 1 | 3 | 4;
     
     wallNode = (SKSpriteNode *)[mainCameraNode childNodeWithName:@"wall"];
     
@@ -74,8 +73,8 @@
     score.text = [NSString stringWithFormat:@"Pontos %d", goodFood];
     
     jack = (SKSpriteNode *)[mainCameraNode childNodeWithName:@"jack"];
-    jack.physicsBody.collisionBitMask = 2 | 3;
-    jack.physicsBody.density = 20;
+    jack.physicsBody.contactTestBitMask = 2 | 3;
+//    jack.physicsBody.mass = 0.3;
     
     int countBadFood = 0;
     int countGoodFood = 0;
