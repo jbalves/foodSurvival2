@@ -66,7 +66,6 @@
     sadFaceTexture = [SKTexture textureWithImageNamed:@"sadFace"];
     
     groundNode = (SKSpriteNode *)[mainCameraNode childNodeWithName:@"ground"];
-//    groundNode.physicsBody.mass = 0.1;
     
     wallNode = (SKSpriteNode *)[mainCameraNode childNodeWithName:@"wall"];
     
@@ -75,7 +74,7 @@
     
     jack = (SKSpriteNode *)[mainCameraNode childNodeWithName:@"jack"];
     jack.physicsBody.contactTestBitMask = 2 | 3;
-    jack.physicsBody.mass = 0.5;
+    jack.physicsBody.mass = 0.7;
     
     int countBadFood = 0;
     int countGoodFood = 0;
@@ -87,7 +86,6 @@
             //BOX
             SKSpriteNode *box = (SKSpriteNode *)node;
             box.texture = [SKTexture textureWithImageNamed:@"box"];
-//            box.physicsBody.mass = 0.1;
             
         } else if ([node.name isEqualToString:@"redBall"]) {
           
@@ -124,7 +122,7 @@
     
     //WORLD PHYSICS
     self.physicsWorld.contactDelegate = self;
-    self.physicsWorld.gravity = CGVectorMake(0, -40);
+    self.physicsWorld.gravity = CGVectorMake(0, -8);
     
 }
 
@@ -148,7 +146,7 @@
         [self.scene.view presentScene:[Level1Scene unarchiveFromFile:@"Level1Scene"]];
     } else if (!jumping && !self.scene.isPaused) {
         jumping = YES;
-        [jack.physicsBody applyImpulse:CGVectorMake(0, 500)];
+        [jack.physicsBody applyImpulse:CGVectorMake(0, 330)];
     }
 
 }
