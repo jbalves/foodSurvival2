@@ -66,7 +66,7 @@
     sadFaceTexture = [SKTexture textureWithImageNamed:@"sadFace"];
     
     groundNode = (SKSpriteNode *)[mainCameraNode childNodeWithName:@"ground"];
-    groundNode.physicsBody.mass = 100;
+//    groundNode.physicsBody.mass = 0.1;
     
     wallNode = (SKSpriteNode *)[mainCameraNode childNodeWithName:@"wall"];
     
@@ -75,7 +75,7 @@
     
     jack = (SKSpriteNode *)[mainCameraNode childNodeWithName:@"jack"];
     jack.physicsBody.contactTestBitMask = 2 | 3;
-    jack.physicsBody.mass = 0.3;
+    jack.physicsBody.mass = 0.5;
     
     int countBadFood = 0;
     int countGoodFood = 0;
@@ -87,7 +87,7 @@
             //BOX
             SKSpriteNode *box = (SKSpriteNode *)node;
             box.texture = [SKTexture textureWithImageNamed:@"box"];
-            box.physicsBody.mass = 100;
+//            box.physicsBody.mass = 0.1;
             
         } else if ([node.name isEqualToString:@"redBall"]) {
           
@@ -124,7 +124,7 @@
     
     //WORLD PHYSICS
     self.physicsWorld.contactDelegate = self;
-    self.physicsWorld.gravity = CGVectorMake(0, -5);
+    self.physicsWorld.gravity = CGVectorMake(0, -40);
     
 }
 
@@ -134,37 +134,21 @@
     CGPoint location = [touch locationInNode:self];
     SKNode *node = [self nodeAtPoint:location];
     
-    //JACK'S JUMP
-    if (!jumping) {
-        jumping = YES;
-        [jack runAction:[SKAction actionNamed:@"Jump"] withKey:@"jumping"];
-    }
-    
-    //PAUSE CLICKED
     if ([node.name isEqualToString:@"pauseButton"]) {
         self.scene.paused = YES;
         [mainCameraNode childNodeWithName:@"pauseNode"].hidden = NO;
-    }
-    
-    //CONTINUE CLICKED
-    if ([node.name isEqualToString:@"continue"]) {
+    } else if ([node.name isEqualToString:@"continue"]) {
         self.scene.paused = NO;
         [mainCameraNode childNodeWithName:@"pauseNode"].hidden = YES;
-    }
-    
-    //MAIN MENU CLICKED
-    if ([node.name isEqualToString:@"menu"]) {
+    } else if ([node.name isEqualToString:@"menu"]) {
         [self.scene.view presentScene:[StartScene unarchiveFromFile:@"StartScene"]];
-    }
-    
-    //RESTART CLICKED
-    if ([node.name isEqualToString:@"restart"]) {
+    } else if ([node.name isEqualToString:@"restart"]) {
         [self.scene.view presentScene:[Level1Scene unarchiveFromFile:@"Level1Scene"]];
-    }
-
-    //TRY AGAIN CLICKED
-    if ([node.name isEqualToString:@"tryAgain"]) {
+    } else if ([node.name isEqualToString:@"tryAgain"]) {
         [self.scene.view presentScene:[Level1Scene unarchiveFromFile:@"Level1Scene"]];
+    } else if (!jumping && !self.scene.isPaused) {
+        jumping = YES;
+        [jack.physicsBody applyImpulse:CGVectorMake(0, 500)];
     }
 
 }
@@ -174,9 +158,6 @@
     //CONTACT WITH GROUND
     if ([jack intersectsNode:groundNode]) {
         jumping = NO;
-
-        NSLog(@"MASS %f", jack.physicsBody.mass);
-        
     }
     
     //CONTACT WITH BOX
