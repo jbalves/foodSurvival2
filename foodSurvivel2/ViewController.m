@@ -18,9 +18,7 @@
 @implementation SKScene (Unarchive)
 
 + (instancetype)unarchiveFromFile:(NSString *)file {
-    /* Retrieve scene file path from the application bundle */
     NSString *nodePath = [[NSBundle mainBundle] pathForResource:file ofType:@"sks"];
-    /* Unarchive the file to an SKScene object */
     NSData *data = [NSData dataWithContentsOfFile:nodePath
                                           options:NSDataReadingMappedIfSafe
                                             error:nil];
@@ -34,9 +32,8 @@
     return scene;
 }
 
-
-
 @end
+
 @implementation ViewController
 
 - (void)viewDidLoad {
@@ -48,9 +45,6 @@
     skView.ignoresSiblingOrder = YES;
     
     StartScene *scene = [StartScene unarchiveFromFile:@"StartScene"];
-//    scene.scaleMode = SKSceneScaleModeAspectFill;
-//    scene.size = skView.bounds.size;
-//    scene.size = CGSizeMake(667, 335);
     
     [skView presentScene:scene];
     
@@ -78,31 +72,26 @@
 
 
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showAuthenticationViewController) name:PresentAuthenticationViewController object:nil];
-    
-    [[GameCenter sharedGameCenter]
-     authenticateLocalPlayer];
-}
-
-- (void)showAuthenticationViewController
-{
-    GameCenter *gameKitCenter = [GameCenter sharedGameCenter];
-    
-    [self presentViewController: gameKitCenter.authenticationViewController animated:YES
-completion:nil];
-}
-
-- (void)dealloc
-{
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
-
-
-
-
-
+//- (void)viewDidAppear:(BOOL)animated {
+//    [super viewDidAppear:animated];
+//    
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showAuthenticationViewController) name:PresentAuthenticationViewController object:nil];
+//    
+//    [[GameCenter sharedGameCenter]
+//     authenticateLocalPlayer];
+//}
+//
+//- (void)showAuthenticationViewController
+//{
+//    GameCenter *gameKitCenter = [GameCenter sharedGameCenter];
+//    
+//    [self presentViewController: gameKitCenter.authenticationViewController animated:YES
+//completion:nil];
+//}
+//
+//- (void)dealloc
+//{
+//    [[NSNotificationCenter defaultCenter] removeObserver:self];
+//}
 
 @end
