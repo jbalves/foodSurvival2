@@ -11,16 +11,19 @@
 #import "GameCenter.h"
 
 
-@interface ViewController()
+@interface ViewController() {
+    BOOL _gameCenterEnabled;
+    NSString *_leaderboardIdentifier;
+}
+
+-(void)authenticateLocalPlayer;
 
 @end
 
 @implementation SKScene (Unarchive)
 
 + (instancetype)unarchiveFromFile:(NSString *)file {
-    /* Retrieve scene file path from the application bundle */
     NSString *nodePath = [[NSBundle mainBundle] pathForResource:file ofType:@"sks"];
-    /* Unarchive the file to an SKScene object */
     NSData *data = [NSData dataWithContentsOfFile:nodePath
                                           options:NSDataReadingMappedIfSafe
                                             error:nil];
@@ -34,13 +37,13 @@
     return scene;
 }
 
-
-
 @end
+
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+//    [self authenticateLocalPlayer];
 
     SKView * skView = (SKView *)self.view;
     skView.showsFPS = YES;
@@ -56,50 +59,79 @@
     
 }
 
-- (BOOL)shouldAutorotate {
-    return YES;
-}
-
-- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        return UIInterfaceOrientationMaskAllButUpsideDown;
-    } else {
-        return UIInterfaceOrientationMaskAll;
-    }
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-}
-
-- (BOOL)prefersStatusBarHidden {
-    return YES;
-}
-
-
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showAuthenticationViewController) name:PresentAuthenticationViewController object:nil];
-    
-    [[GameCenter sharedGameCenter]
-     authenticateLocalPlayer];
-}
-
-- (void)showAuthenticationViewController
-{
-    GameCenter *gameKitCenter = [GameCenter sharedGameCenter];
-    
-    [self presentViewController: gameKitCenter.authenticationViewController animated:YES
-completion:nil];
-}
-
-- (void)dealloc
-{
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
-
+//- (BOOL)shouldAutorotate {
+//    return YES;
+//}
+//
+//- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+//    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+//        return UIInterfaceOrientationMaskAllButUpsideDown;
+//    } else {
+//        return UIInterfaceOrientationMaskAll;
+//    }
+//}
+//
+//- (void)didReceiveMemoryWarning {
+//    [super didReceiveMemoryWarning];
+//}
+//
+//- (BOOL)prefersStatusBarHidden {
+//    return YES;
+//}
+//
+//
+//
+//- (void)viewDidAppear:(BOOL)animated {
+//    [super viewDidAppear:animated];
+//    
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showAuthenticationViewController) name:PresentAuthenticationViewController object:nil];
+//    
+//    [[GameCenter sharedGameCenter]
+//     authenticateLocalPlayer];
+//}
+//
+//- (void)showAuthenticationViewController
+//{
+//    GameCenter *gameKitCenter = [GameCenter sharedGameCenter];
+//    
+//    [self presentViewController: gameKitCenter.authenticationViewController animated:YES
+//completion:nil];
+//}
+//
+//- (void)dealloc
+//{
+//    [[NSNotificationCenter defaultCenter] removeObserver:self];
+//}
+//
+//-(void)authenticateLocalPlayer{
+//    GKLocalPlayer *localPlayer = [GKLocalPlayer localPlayer];
+//    
+//    localPlayer.authenticateHandler = ^(UIViewController *viewController, NSError *error){
+//        if (viewController != nil) {
+//            [self presentViewController:viewController animated:YES completion:nil];
+//        }
+//        else{
+//            if ([GKLocalPlayer localPlayer].authenticated) {
+//                _gameCenterEnabled = YES;
+//                
+//                // Get the default leaderboard identifier.
+//                [[GKLocalPlayer localPlayer] loadDefaultLeaderboardIdentifierWithCompletionHandler:^(NSString *leaderboardIdentifier, NSError *error) {
+//                    
+//                    if (error != nil) {
+//                        NSLog(@"%@", [error localizedDescription]);
+//                    }
+//                    else{
+//                        _leaderboardIdentifier = leaderboardIdentifier;
+//                    }
+//                }];
+//            }
+//            
+//            else{
+//                _gameCenterEnabled = NO;
+//            }
+//        }
+//    };
+//}
 
 
 
