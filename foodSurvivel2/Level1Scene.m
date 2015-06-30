@@ -255,7 +255,7 @@
     finishNode.hidden = NO;
     SKSpriteNode *finishScreen = (SKSpriteNode *)[finishNode childNodeWithName:@"finishedLevelScreen"];
     SKLabelNode *finishScore = (SKLabelNode *)[finishScreen childNodeWithName:@"finishScoreNode"];
-    finishScore.text = [NSString stringWithFormat:@"com %d pontos", goodFood];
+    finishScore.text = [NSString stringWithFormat:@"com %d pontos.", goodFood];
     
     //SAVE NEW SCORE + PREVIOUS SCORE ON USER DEFAULTS
     NSInteger previousScore = [[NSUserDefaults standardUserDefaults] integerForKey:@"score"];
