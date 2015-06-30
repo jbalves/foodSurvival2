@@ -12,9 +12,7 @@
 @implementation SKScene (Unarchive)
 
 + (instancetype)unarchiveFromFile:(NSString *)file {
-    /* Retrieve scene file path from the application bundle */
     NSString *nodePath = [[NSBundle mainBundle] pathForResource:file ofType:@"sks"];
-    /* Unarchive the file to an SKScene object */
     NSData *data = [NSData dataWithContentsOfFile:nodePath
                                           options:NSDataReadingMappedIfSafe
                                             error:nil];
@@ -48,24 +46,24 @@
     [skView presentScene:scene];
 }
 
-- (BOOL)shouldAutorotate {
-    return YES;
-}
-
-- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        return UIInterfaceOrientationMaskAllButUpsideDown;
-    } else {
-        return UIInterfaceOrientationMaskAll;
-    }
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-}
-
-- (BOOL)prefersStatusBarHidden {
-    return YES;
-}
+//- (BOOL)shouldAutorotate {
+//    return YES;
+//}
+//
+//- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+//    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+//        return UIInterfaceOrientationMaskAllButUpsideDown;
+//    } else {
+//        return UIInterfaceOrientationMaskAll;
+//    }
+//}
+//
+//- (void)didReceiveMemoryWarning {
+//    [super didReceiveMemoryWarning];
+//}
+//
+//- (BOOL)prefersStatusBarHidden {
+//    return YES;
+//}
 
 @end
