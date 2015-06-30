@@ -46,7 +46,6 @@
 @implementation Level1Scene
 
 -(void)didMoveToView:(SKView *)view {
-    
     //INIT OF BOOLS
     jumping = NO;
     
@@ -113,7 +112,7 @@
             } else {
                 greenBall.texture = [SKTexture textureWithImageNamed:@"carrot"];
             }
-    
+            
         }
     }
     
@@ -246,7 +245,8 @@
     //CATCH THE SCORE LABEL ON SCENE AND DISPLAY THE SCORE OF THE PLAYER
     SKSpriteNode *finishNode = (SKSpriteNode *)[mainCameraNode childNodeWithName:@"finishedLevelNode"];
     finishNode.hidden = NO;
-    SKLabelNode *finishScore = (SKLabelNode *)[finishNode childNodeWithName:@"finishScoreNode"];
+    SKSpriteNode *finishScreen = (SKSpriteNode *)[finishNode childNodeWithName:@"finishedLevelScreen"];
+    SKLabelNode *finishScore = (SKLabelNode *)[finishScreen childNodeWithName:@"finishScoreNode"];
     finishScore.text = [NSString stringWithFormat:@"com %d pontos", goodFood];
     
     //SAVE NEW SCORE + PREVIOUS SCORE ON USER DEFAULTS
