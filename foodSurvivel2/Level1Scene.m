@@ -131,6 +131,10 @@
     CGPoint location = [touch locationInNode:self];
     SKNode *node = [self nodeAtPoint:location];
     
+    if ([jack intersectsNode:groundNode]) {
+        jumping = NO;
+    }
+    
     if ([node.name isEqualToString:@"pauseButton"]) {
         self.scene.paused = YES;
         [mainCameraNode childNodeWithName:@"pauseNode"].hidden = NO;
@@ -148,6 +152,10 @@
         [jack.physicsBody applyImpulse:CGVectorMake(0, 330)];
     }
 
+}
+
+-(void)touchesEnded:(nonnull NSSet<UITouch *> *)touches withEvent:(nullable UIEvent *)event {
+    jumping = YES;
 }
 
 - (void)update:(NSTimeInterval)currentTime {
