@@ -40,7 +40,7 @@
     [super viewDidLoad];
 
     SKView * skView = (SKView *)self.view;
-    skView.showsFPS = YES;
+//    skView.showsFPS = YES;
     skView.showsNodeCount = YES;
     skView.ignoresSiblingOrder = YES;
     
@@ -50,25 +50,25 @@
     
 }
 
-- (BOOL)shouldAutorotate {
-    return YES;
-}
-
-- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        return UIInterfaceOrientationMaskAllButUpsideDown;
-    } else {
-        return UIInterfaceOrientationMaskAll;
-    }
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-}
-
-- (BOOL)prefersStatusBarHidden {
-    return YES;
-}
+//- (BOOL)shouldAutorotate {
+//    return YES;
+//}
+//
+//- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+//    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+//        return UIInterfaceOrientationMaskAllButUpsideDown;
+//    } else {
+//        return UIInterfaceOrientationMaskAll;
+//    }
+//}
+//
+//- (void)didReceiveMemoryWarning {
+//    [super didReceiveMemoryWarning];
+//}
+//
+//- (BOOL)prefersStatusBarHidden {
+//    return YES;
+//}
 
 
 

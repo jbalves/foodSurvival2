@@ -16,6 +16,9 @@
 		A9AADBED1B3B395100A10BB8 /* CameraActions.sks in Resources */ = {isa = PBXBuildFile; fileRef = A9AADBEA1B3B395100A10BB8 /* CameraActions.sks */; };
 		A9AADBEE1B3B395100A10BB8 /* CutSceneLevel1.sks in Resources */ = {isa = PBXBuildFile; fileRef = A9AADBEB1B3B395100A10BB8 /* CutSceneLevel1.sks */; };
 		A9AADBF11B3B395D00A10BB8 /* CutSceneLevel1.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AADBF01B3B395D00A10BB8 /* CutSceneLevel1.m */; };
+		A9B099781B42D79F00012BB2 /* playtime.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9B099761B42D4CE00012BB2 /* playtime.ttf */; };
+		A9B099791B42D79F00012BB2 /* Sansita-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A9B099771B42D4CE00012BB2 /* Sansita-Bold.otf */; };
+		A9BB676F1B42BE660039C4FC /* FoodActions.sks in Resources */ = {isa = PBXBuildFile; fileRef = A9BB676E1B42BE660039C4FC /* FoodActions.sks */; };
 		A9BF14211B29C2D9002041F3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BF14201B29C2D9002041F3 /* main.m */; };
 		A9BF14241B29C2D9002041F3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BF14231B29C2D9002041F3 /* AppDelegate.m */; };
 		A9BF14271B29C2D9002041F3 /* Level1Scene.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BF14261B29C2D9002041F3 /* Level1Scene.m */; };
@@ -28,7 +31,6 @@
 		A9BF144A1B29C2D9002041F3 /* foodSurvivel2UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BF14491B29C2D9002041F3 /* foodSurvivel2UITests.m */; };
 		A9BF14601B29F8E5002041F3 /* StartScene.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BF145F1B29F8E5002041F3 /* StartScene.m */; };
 		A9BF14621B29F90B002041F3 /* StartScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A9BF14611B29F90B002041F3 /* StartScene.sks */; };
-		A9E46AE61B39B5100023D6C5 /* FoodActions.sks in Resources */ = {isa = PBXBuildFile; fileRef = A9E46AE51B39B5100023D6C5 /* FoodActions.sks */; };
 		A9F8E5381B32F28A00A1A2BC /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F8E5371B32F28A00A1A2BC /* SpriteKit.framework */; };
 		EE3F66041B3D883D00FE05A1 /* GameCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3F66031B3D883D00FE05A1 /* GameCenter.m */; };
 /* End PBXBuildFile section */
@@ -63,6 +65,9 @@
 		A9AADBEB1B3B395100A10BB8 /* CutSceneLevel1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CutSceneLevel1.sks; sourceTree = "<group>"; };
 		A9AADBEF1B3B395D00A10BB8 /* CutSceneLevel1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CutSceneLevel1.h; sourceTree = "<group>"; };
 		A9AADBF01B3B395D00A10BB8 /* CutSceneLevel1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CutSceneLevel1.m; sourceTree = "<group>"; };
+		A9B099761B42D4CE00012BB2 /* playtime.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = playtime.ttf; sourceTree = "<group>"; };
+		A9B099771B42D4CE00012BB2 /* Sansita-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sansita-Bold.otf"; sourceTree = "<group>"; };
+		A9BB676E1B42BE660039C4FC /* FoodActions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FoodActions.sks; sourceTree = "<group>"; };
 		A9BF141C1B29C2D9002041F3 /* JumpJack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JumpJack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9BF14201B29C2D9002041F3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A9BF14221B29C2D9002041F3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -85,7 +90,6 @@
 		A9BF145E1B29F8E5002041F3 /* StartScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartScene.h; sourceTree = "<group>"; };
 		A9BF145F1B29F8E5002041F3 /* StartScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartScene.m; sourceTree = "<group>"; };
 		A9BF14611B29F90B002041F3 /* StartScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StartScene.sks; sourceTree = "<group>"; };
-		A9E46AE51B39B5100023D6C5 /* FoodActions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = FoodActions.sks; path = ../FoodActions.sks; sourceTree = "<group>"; };
 		A9F8E5371B32F28A00A1A2BC /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 		EE3F66021B3D883D00FE05A1 /* GameCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameCenter.h; sourceTree = "<group>"; };
 		EE3F66031B3D883D00FE05A1 /* GameCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameCenter.m; sourceTree = "<group>"; };
@@ -128,7 +132,7 @@
 				A9BF14611B29F90B002041F3 /* StartScene.sks */,
 				A977F2A51B31CBCC00050C2B /* StageSelectScene.sks */,
 				A924DDDA1B2A0F1200A25F13 /* FoodInfoScene.sks */,
-				A9E46AE51B39B5100023D6C5 /* FoodActions.sks */,
+				A9BB676E1B42BE660039C4FC /* FoodActions.sks */,
 			);
 			name = "Sk's";
 			sourceTree = "<group>";
@@ -192,6 +196,8 @@
 		A9BF141F1B29C2D9002041F3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A9B099761B42D4CE00012BB2 /* playtime.ttf */,
+				A9B099771B42D4CE00012BB2 /* Sansita-Bold.otf */,
 				A9BF14321B29C2D9002041F3 /* LaunchScreen.storyboard */,
 				A9BF14351B29C2D9002041F3 /* Info.plist */,
 				A9BF14201B29C2D9002041F3 /* main.m */,
@@ -343,6 +349,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9B099781B42D79F00012BB2 /* playtime.ttf in Resources */,
+				A9B099791B42D79F00012BB2 /* Sansita-Bold.otf in Resources */,
 				A9AADBED1B3B395100A10BB8 /* CameraActions.sks in Resources */,
 				A9BF14291B29C2D9002041F3 /* Level1Scene.sks in Resources */,
 				A9BF14341B29C2D9002041F3 /* LaunchScreen.storyboard in Resources */,
@@ -353,7 +361,7 @@
 				A9BF14621B29F90B002041F3 /* StartScene.sks in Resources */,
 				A9BF14311B29C2D9002041F3 /* Assets.xcassets in Resources */,
 				A9BF142F1B29C2D9002041F3 /* Main.storyboard in Resources */,
-				A9E46AE61B39B5100023D6C5 /* FoodActions.sks in Resources */,
+				A9BB676F1B42BE660039C4FC /* FoodActions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
