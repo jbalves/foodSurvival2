@@ -40,7 +40,7 @@
     NSString *doces = @"As vezes doces ou azedas as laranjas contém vitaminas que contribuem para evitar uma série de variedades de câncer e protege contra a gripe.";
     NSString *brocolis = @"Rico em vitamina C, brocólis ajuda na visão de detalhes, tanto a visão de longe como a visão de perto.";
     NSString *sanduiche = @"Sanduíches são deliciosos, mas não coma muito pois contém gorduras ruins que pode causar obesidade, doenças no coração e diabetes.";
-    NSString *pirulito = @"Açúcar em excesso é um perigo. Cuidado! pirulitos causam cáries nos dentes.";
+    NSString *pirulito = @"Açúcar em excesso é um perigo. Cuidado! Pirulitos causam cáries nos dentes.";
     
     _title = [[NSMutableArray alloc] initWithObjects: cenouras, doces, brocolis, sanduiche, pirulito, nil];
     _tableView = [[UITableView alloc] initWithFrame:CGRectMake(30, 30, 460, 300)];
