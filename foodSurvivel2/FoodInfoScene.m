@@ -43,7 +43,7 @@
     NSString *pirulito = @"Açúcar em excesso é um perigo. Cuidado! pirulitos causam cáries nos dentes.";
     
     _title = [[NSMutableArray alloc] initWithObjects: cenouras, doces, brocolis, sanduiche, pirulito, nil];
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(50, 10, self.frame.size.width, self.frame.size.height)];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(30, 30, 460, 300)];
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _tableView.backgroundColor = [UIColor clearColor];
@@ -68,7 +68,7 @@
     
     cell.textLabel.text = _title[indexPath.row];
     
-    cell.textLabel.font = [UIFont fontWithName:@"Courier" size:12];
+    cell.textLabel.font = [UIFont fontWithName:@"Playtime With Hot Toddies" size:12];
     cell.textLabel.numberOfLines = 0;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.backgroundColor = [UIColor clearColor];
