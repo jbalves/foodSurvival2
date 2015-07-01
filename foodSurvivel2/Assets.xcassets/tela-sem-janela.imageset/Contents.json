@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "tela-sem-janela@2x-1.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "nova-tela2@2x.png",
       "scale" : "2x"
     },
     {
