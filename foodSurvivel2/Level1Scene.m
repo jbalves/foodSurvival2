@@ -138,9 +138,11 @@
     if ([node.name isEqualToString:@"pauseButton"]) {
         self.scene.paused = YES;
         [mainCameraNode childNodeWithName:@"pauseNode"].hidden = NO;
+        [mainCameraNode childNodeWithName:@"pauseButton"].hidden = YES;
     } else if ([node.name isEqualToString:@"continue"]) {
         self.scene.paused = NO;
         [mainCameraNode childNodeWithName:@"pauseNode"].hidden = YES;
+        [mainCameraNode childNodeWithName:@"pauseButton"].hidden = NO;
     } else if ([node.name isEqualToString:@"menu"]) {
         [self.scene.view presentScene:[StartScene unarchiveFromFile:@"StartScene"]];
     } else if ([node.name isEqualToString:@"restart"]) {
