@@ -37,7 +37,7 @@
         bestScoreLevel1Label.text = [NSString stringWithFormat:@"Recorde %ld", bestScoreLevel1];
     } else {
         bestScoreLevel1Label.text = @"Nenhum recorde";
-        bestScoreLevel1Label.fontSize = 13;
+        bestScoreLevel1Label.fontSize = 8;
     }
 }
 
