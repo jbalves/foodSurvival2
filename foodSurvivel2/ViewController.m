@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 edu FUCAPI. All rights reserved.
 //
 
+#import <GameKit/GameKit.h>
 #import "ViewController.h"
 #import "Level1Scene.h"
 
@@ -28,42 +29,48 @@
 
 @end
 
-@implementation ViewController
+@implementation ViewController {
+    BOOL _gameCenterEnabled;
+    GKLocalPlayer *_localPlayer;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     SKView * skView = (SKView *)self.view;
-//    skView.showsFPS = YES;
     skView.showsNodeCount = YES;
     skView.ignoresSiblingOrder = YES;
     
     StartScene *scene = [StartScene unarchiveFromFile:@"StartScene"];
-//    scene.scaleMode = SKSceneScaleModeAspectFill;
-//    scene.size = skView.bounds.size;
-//    scene.size = CGSizeMake(667, 335);
     
     [skView presentScene:scene];
 }
 
-//- (BOOL)shouldAutorotate {
-//    return YES;
-//}
-//
-//- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
-//    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-//        return UIInterfaceOrientationMaskAllButUpsideDown;
-//    } else {
-//        return UIInterfaceOrientationMaskAll;
-//    }
-//}
-//
-//- (void)didReceiveMemoryWarning {
-//    [super didReceiveMemoryWarning];
-//}
-//
-//- (BOOL)prefersStatusBarHidden {
-//    return YES;
-//}
+- (void)viewWillAppear:(BOOL)animated {
+    [self authenticateLocalPlayer];
+}
+
+-(void)authenticateLocalPlayer{
+    
+    _localPlayer = [GKLocalPlayer localPlayer];
+    _localPlayer.authenticateHandler = ^(UIViewController *viewController, NSError *error){
+        
+        if (viewController != nil) {
+//            [self presentViewController:viewController animated:YES completion:nil];
+            NSLog(@"user NOT logged in Game Center");
+        } else {
+            NSLog(@"user logged in Game Center");
+            if ([GKLocalPlayer localPlayer].authenticated) {
+                _gameCenterEnabled = YES;
+                NSLog(@"user authenticated");
+            } else {
+                _gameCenterEnabled = NO;
+                NSLog(@"user NOT authenticated");
+            }
+        }
+        
+    };
+    
+}
 
 @end
