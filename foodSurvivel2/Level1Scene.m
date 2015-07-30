@@ -178,7 +178,7 @@
     [self enumerateChildNodesWithName:@"box" usingBlock:^(SKNode *node, BOOL *stop) {
         
         node.physicsBody = nil;
-        
+
         //criando node CAIXA para usar o size
         SKSpriteNode *caixa = (SKSpriteNode *)node;
         caixa.texture = [SKTexture textureWithImageNamed:@"box"];
@@ -189,17 +189,22 @@
         
         
         if (newPosition.y > node.position.y) {
+            if (newPosition.x <= node.position.x) {
+            
                             node.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:caixa.size];
                             node.physicsBody.dynamic = NO;
                             node.physicsBody.allowsRotation = NO;
                             node.physicsBody.categoryBitMask= 3;
                             node.physicsBody.collisionBitMask = 1;
                             node.physicsBody.contactTestBitMask = 0;
+                }
         }
        
         
         if ([jack intersectsNode:node]) {
             jumping = NO;
+        } else {
+            node.physicsBody = nil;
         }
     }];
     
