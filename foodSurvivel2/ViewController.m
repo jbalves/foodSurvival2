@@ -9,6 +9,12 @@
 #import <GameKit/GameKit.h>
 #import "ViewController.h"
 #import "Level1Scene.h"
+#import "GameCenter.h"
+
+
+@interface ViewController()
+
+@end
 
 @implementation SKScene (Unarchive)
 
@@ -44,6 +50,7 @@
     StartScene *scene = [StartScene unarchiveFromFile:@"StartScene"];
     
     [skView presentScene:scene];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
