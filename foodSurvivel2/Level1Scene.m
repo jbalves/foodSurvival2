@@ -164,6 +164,7 @@
 }
 
 
+
 - (void)update:(NSTimeInterval)currentTime {
     
     //CONTACT WITH GROUND
@@ -176,6 +177,8 @@
     //CONTACT WITH BOX
     [self enumerateChildNodesWithName:@"box" usingBlock:^(SKNode *node, BOOL *stop) {
         
+        node.physicsBody = nil;
+        
         //criando node CAIXA para usar o size
         SKSpriteNode *caixa = (SKSpriteNode *)node;
         caixa.texture = [SKTexture textureWithImageNamed:@"box"];
@@ -183,6 +186,8 @@
         //Converting Between Coordinate Spaces
         CGPoint newPosition = [jack convertPoint:jack.position toNode:node.parent];
         //Aply Physics in BOX
+        
+        
         if (newPosition.y > node.position.y) {
                             node.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:caixa.size];
                             node.physicsBody.dynamic = NO;
@@ -191,6 +196,7 @@
                             node.physicsBody.collisionBitMask = 1;
                             node.physicsBody.contactTestBitMask = 0;
         }
+       
         
         if ([jack intersectsNode:node]) {
             jumping = NO;
