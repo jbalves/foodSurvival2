@@ -50,7 +50,7 @@
     [self authenticateLocalPlayer];
 }
 
--(void)authenticateLocalPlayer{
+- (void)authenticateLocalPlayer{
     
     _localPlayer = [GKLocalPlayer localPlayer];
     _localPlayer.authenticateHandler = ^(UIViewController *viewController, NSError *error){
