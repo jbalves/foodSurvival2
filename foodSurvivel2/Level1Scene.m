@@ -109,6 +109,7 @@
                 redBall.texture = [SKTexture textureWithImageNamed:@"sandwich"];
                 countBadFood++;
             } else {
+                
                 redBall.texture = [SKTexture textureWithImageNamed:@"lolipop"];
             }
             
@@ -158,14 +159,18 @@
         self.scene.paused = YES;
         [mainCameraNode childNodeWithName:@"pauseNode"].hidden = NO;
         [mainCameraNode childNodeWithName:@"pauseButton"].hidden = YES;
+        
         somDeJogo.numberOfLoops = 0;
         [somDeJogo pause];
+        
     } else if ([node.name isEqualToString:@"continue"]) {
         self.scene.paused = NO;
         [mainCameraNode childNodeWithName:@"pauseNode"].hidden = YES;
         [mainCameraNode childNodeWithName:@"pauseButton"].hidden = NO;
+        
         somDeJogo.numberOfLoops = 100;
         [somDeJogo play];
+        
     } else if ([node.name isEqualToString:@"menu"]) {
         [self.scene.view presentScene:[StartScene unarchiveFromFile:@"StartScene"]];
     } else if ([node.name isEqualToString:@"restart"]) {
@@ -218,6 +223,9 @@
     [self enumerateChildNodesWithName:@"greenBall" usingBlock:^(SKNode *node, BOOL *stop) {
         if ([node intersectsNode:jack]) {
             [node removeFromParent];
+
+            //Som contato
+            [[Sound alloc] PLAY:@"button1" :@"mp3"];
             goodFood++;
             score.text = [NSString stringWithFormat:@"Pontos %d", goodFood];
             if (badFood > 0) {
@@ -304,12 +312,17 @@
         [[NSUserDefaults standardUserDefaults] setInteger:goodFood forKey:@"bestScoreLevel1"];
     }
     
+    somDeJogo.numberOfLoops = 0;
+    [somDeJogo pause];
     
 }
 
 
 //GAMEOVER NODE
 - (void) gameOver {
+    
+    somDeJogo.numberOfLoops = 0;
+    [somDeJogo pause];
     
     face1.texture = sadFaceTexture;
     face2.texture = sadFaceTexture;

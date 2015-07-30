@@ -73,6 +73,7 @@
         [[Sound alloc] PLAY:@"button1" :@"mp3"];
         
         [self.scene.view presentScene:[FoodInfoScene unarchiveFromFile:@"FoodInfoScene"]];
+       
     }
 }
 
