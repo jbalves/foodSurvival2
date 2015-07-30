@@ -7,6 +7,7 @@
 //
 
 #import "StageSelectScene.h"
+#import "Sound.h"
 
 @implementation SKScene (Unarchive)
 
@@ -55,12 +56,23 @@
         
 //        [self.scene.view presentScene:[Level1Scene unarchiveFromFile:@"Level1Scene"]
 //                           transition:[SKTransition doorsOpenHorizontalWithDuration:1.0]];
-
+        //som Nível 1
+     //    _som = [[Sound alloc] playSound:@"button1" :@"mp3"];
+      //  [_som play];
+        
+        [[Sound alloc] PLAY:@"button1" :@"mp3"];
     }
 
     //BACK CLICKED
     if ([node.name isEqualToString:@"backButton"]) {
+        
+        [[Sound alloc] PLAY:@"button1" :@"mp3"];
+     // _som = [[Sound alloc] playSound:@"button1" :@"mp3"];
+        
+     //   [_som play];
         [self.scene.view presentScene:[StartScene unarchiveFromFile:@"StartScene"]];
+                //[[Sound alloc] playSound:@"music" :@"mp3"];
+      
     }
     
 }

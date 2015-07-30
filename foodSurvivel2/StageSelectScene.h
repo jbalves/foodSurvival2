@@ -10,7 +10,8 @@
 #import <SpriteKit/SpriteKit.h>
 #import "Level1Scene.h"
 #import "CutSceneLevel1.h"
+@import AVFoundation;
 
 @interface StageSelectScene : SKScene
-
+@property (nonnull) AVAudioPlayer *som;
 @end

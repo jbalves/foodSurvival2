@@ -7,6 +7,9 @@
 //
 
 #import "StartScene.h"
+@import AVFoundation;
+#import "Sound.h"
+
 
 #define NODENAME_FOODINFO       @"foodInfo"
 #define NODENAME_INITGAME       @"initGame"
@@ -30,7 +33,6 @@
 
 @end
 
-
 @implementation StartScene
 
 - (void)didMoveToView:(nonnull SKView *)view {
@@ -43,6 +45,7 @@
     } else {
         scoreLabel.text = @"Pontos 0";
     }
+    
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -52,13 +55,28 @@
     
     //PLAY CLICKED, GO TO STAGE SELECT SCENE
     if ([node.name isEqualToString:NODENAME_INITGAME]) {
+        //Som Start
+        
+        [[Sound alloc] PLAY:@"button1" :@"mp3"];
+       // _somdobutton =  [[Sound alloc] playSound:@"button1" :@"mp3"];
+      //  [_somdobutton play];
         [self.scene.view presentScene:[StageSelectScene unarchiveFromFile:@"StageSelectScene"]];
     }
     
+    
     //FOOD INFO CLICKED, GO TO TABLEVIEW SCENE
     if ([node.name isEqualToString:NODENAME_FOODINFO]) {
+        //_somdobutton = [[Sound alloc] playSound:@"jogo" :@"mp3"];
+        //_somdobutton.numberOfLoops = 1;
+        //_somdobutton.volume = 100;
+        
+        [[Sound alloc] PLAY:@"button1" :@"mp3"];
+        
         [self.scene.view presentScene:[FoodInfoScene unarchiveFromFile:@"FoodInfoScene"]];
     }
 }
+
+
+
 
 @end
