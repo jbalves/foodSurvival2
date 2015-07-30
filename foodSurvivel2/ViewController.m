@@ -80,28 +80,4 @@
     
 }
 
-
-
-//- (void)viewDidAppear:(BOOL)animated {
-//    [super viewDidAppear:animated];
-//    
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showAuthenticationViewController) name:PresentAuthenticationViewController object:nil];
-//    
-//    [[GameCenter sharedGameCenter]
-//     authenticateLocalPlayer];
-//}
-//
-//- (void)showAuthenticationViewController
-//{
-//    GameCenter *gameKitCenter = [GameCenter sharedGameCenter];
-//    
-//    [self presentViewController: gameKitCenter.authenticationViewController animated:YES
-//completion:nil];
-//}
-//
-//- (void)dealloc
-//{
-//    [[NSNotificationCenter defaultCenter] removeObserver:self];
-//}
-
 @end
