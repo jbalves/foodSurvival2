@@ -15,6 +15,7 @@
     BOOL jumping;
     
     SKNode *mainCameraNode;
+    SKNode *level1Node;
     SKSpriteNode *wallNode;
     SKSpriteNode *jack;
     SKSpriteNode *groundNode;
@@ -71,6 +72,8 @@
 
     //INIT OF NODES
     mainCameraNode = [self childNodeWithName:@"mainCamera"];
+    level1Node = [self childNodeWithName:@"Level1"];
+
     
     face1 = (SKSpriteNode *)[mainCameraNode childNodeWithName:@"face1"];
     face2 = (SKSpriteNode *)[mainCameraNode childNodeWithName:@"face2"];
@@ -193,6 +196,8 @@
     jumping = YES;
 }
 
+
+
 - (void)update:(NSTimeInterval)currentTime {
     
     
@@ -201,12 +206,43 @@
         jumping = NO;
     }
     
+    
+    
     //CONTACT WITH BOX
     [self enumerateChildNodesWithName:@"box" usingBlock:^(SKNode *node, BOOL *stop) {
+        
+        node.physicsBody = nil;
+
+        //criando node CAIXA para usar o size
+        SKSpriteNode *caixa = (SKSpriteNode *)node;
+        caixa.texture = [SKTexture textureWithImageNamed:@"box"];
+        //verificar se a posicao do jack ultrapassou o Box
+        //Converting Between Coordinate Spaces
+        CGPoint newPosition = [jack convertPoint:jack.position toNode:node.parent];
+        //Aply Physics in BOX
+        
+        
+        if (newPosition.y > node.position.y) {
+            if (newPosition.x <= node.position.x) {
+            
+                            node.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:caixa.size];
+                            node.physicsBody.dynamic = NO;
+                            node.physicsBody.allowsRotation = NO;
+                            node.physicsBody.categoryBitMask= 3;
+                            node.physicsBody.collisionBitMask = 1;
+                            node.physicsBody.contactTestBitMask = 0;
+                }
+        }
+       
+        
         if ([jack intersectsNode:node]) {
             jumping = NO;
+        } else {
+            node.physicsBody = nil;
         }
     }];
+    
+    
     
     //CONTACT WITH BADFOOD
     [self enumerateChildNodesWithName:@"redBall" usingBlock:^(SKNode *node, BOOL *stop) {

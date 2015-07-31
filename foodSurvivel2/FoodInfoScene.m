@@ -48,7 +48,7 @@
     NSString *pirulito = @"Açúcar em excesso é um perigo. Cuidado! Pirulitos causam cáries nos dentes.";
     
     _title = [[NSMutableArray alloc] initWithObjects: cenouras, doces, brocolis, sanduiche, pirulito, nil];
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(30, 30, 460, 300)];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(70, 0, 330, 300)];
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _tableView.backgroundColor = [UIColor clearColor];
@@ -77,6 +77,7 @@
     cell.textLabel.numberOfLines = 0;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.backgroundColor = [UIColor clearColor];
+    cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"prateleira-fundo"]];
     
     UIImage *imageCenoura = [UIImage imageNamed:@"carrot.png"];
     UIImage *imageLaranja = [UIImage imageNamed:@"orange.png"];
@@ -108,7 +109,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)aTableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 50;
+    return 90;
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {

@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 edu FUCAPI. All rights reserved.
 //
 
+#import <GameKit/GameKit.h>
 #import "ViewController.h"
 #import "Level1Scene.h"
 #import "GameCenter.h"
@@ -34,13 +35,15 @@
 
 @end
 
-@implementation ViewController
+@implementation ViewController {
+    BOOL _gameCenterEnabled;
+    GKLocalPlayer *_localPlayer;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     SKView * skView = (SKView *)self.view;
-//    skView.showsFPS = YES;
     skView.showsNodeCount = YES;
     skView.ignoresSiblingOrder = YES;
     
@@ -50,48 +53,31 @@
     
 }
 
-//- (BOOL)shouldAutorotate {
-//    return YES;
-//}
-//
-//- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
-//    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-//        return UIInterfaceOrientationMaskAllButUpsideDown;
-//    } else {
-//        return UIInterfaceOrientationMaskAll;
-//    }
-//}
-//
-//- (void)didReceiveMemoryWarning {
-//    [super didReceiveMemoryWarning];
-//}
-//
-//- (BOOL)prefersStatusBarHidden {
-//    return YES;
-//}
+- (void)viewWillAppear:(BOOL)animated {
+    [self authenticateLocalPlayer];
+}
 
-
-
-//- (void)viewDidAppear:(BOOL)animated {
-//    [super viewDidAppear:animated];
-//    
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showAuthenticationViewController) name:PresentAuthenticationViewController object:nil];
-//    
-//    [[GameCenter sharedGameCenter]
-//     authenticateLocalPlayer];
-//}
-//
-//- (void)showAuthenticationViewController
-//{
-//    GameCenter *gameKitCenter = [GameCenter sharedGameCenter];
-//    
-//    [self presentViewController: gameKitCenter.authenticationViewController animated:YES
-//completion:nil];
-//}
-//
-//- (void)dealloc
-//{
-//    [[NSNotificationCenter defaultCenter] removeObserver:self];
-//}
+- (void)authenticateLocalPlayer{
+    
+    _localPlayer = [GKLocalPlayer localPlayer];
+    _localPlayer.authenticateHandler = ^(UIViewController *viewController, NSError *error){
+        
+        if (viewController != nil) {
+//            [self presentViewController:viewController animated:YES completion:nil];
+            NSLog(@"user NOT logged in Game Center");
+        } else {
+            NSLog(@"user logged in Game Center");
+            if ([GKLocalPlayer localPlayer].authenticated) {
+                _gameCenterEnabled = YES;
+                NSLog(@"user authenticated");
+            } else {
+                _gameCenterEnabled = NO;
+                NSLog(@"user NOT authenticated");
+            }
+        }
+        
+    };
+    
+}
 
 @end
