@@ -7,6 +7,7 @@
 //
 
 #import "CutSceneLevel1.h"
+#import "Sound.h"
 
 @interface CutSceneLevel1 () {
     
@@ -15,6 +16,9 @@
     SKSpriteNode *jack;
     BOOL endMove;
     BOOL didJump;
+    
+    AVAudioPlayer *somDoJack;
+    AVAudioPlayer *somDoBotao;
 }
 
 @end
@@ -113,11 +117,17 @@
     SKNode *node = [self nodeAtPoint:location];
     
     if (endMove && !didJump) {
+
+        [[Sound alloc] PLAY:@"jump" :@"mp3"];
+       
         didJump = YES;
         [self runAction:goodAction];
     }
     
     if ([node.name isEqualToString:@"skipTutorial"]) {
+        //Som tutorial
+        [[Sound alloc] PLAY:@"button1" :@"mp3"];
+      
         [self.scene.view presentScene:[Level1Scene unarchiveFromFile:@"Level1Scene"]
                            transition:[SKTransition doorsOpenHorizontalWithDuration:1.0]];        
     }

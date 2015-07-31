@@ -7,6 +7,7 @@
 //
 
 #import "StageSelectScene.h"
+#import "Sound.h"
 
 @implementation SKScene (Unarchive)
 
@@ -21,6 +22,7 @@
     [arch finishDecoding];
     
     return scene;
+    
 }
 
 @end
@@ -53,14 +55,19 @@
         [self.scene.view presentScene:[CutSceneLevel1 unarchiveFromFile:@"CutSceneLevel1"]
                            transition:[SKTransition doorsOpenHorizontalWithDuration:1.0]];
         
-//        [self.scene.view presentScene:[Level1Scene unarchiveFromFile:@"Level1Scene"]
-//                           transition:[SKTransition doorsOpenHorizontalWithDuration:1.0]];
-
+    //Som nivel 1
+        
+        [[Sound alloc] PLAY:@"button1" :@"mp3"];
     }
 
     //BACK CLICKED
     if ([node.name isEqualToString:@"backButton"]) {
+        
+        [[Sound alloc] PLAY:@"button1" :@"mp3"];
+    
         [self.scene.view presentScene:[StartScene unarchiveFromFile:@"StartScene"]];
+    
+      
     }
     
 }

@@ -7,10 +7,14 @@
 //
 
 #import "StartScene.h"
+@import AVFoundation;
+#import "Sound.h"
+
 
 #define NODENAME_FOODINFO       @"foodInfo"
 #define NODENAME_INITGAME       @"initGame"
 #define NODENAME_AVATAR         @"avatar"
+
 
 
 @implementation SKScene (Unarchive)
@@ -31,9 +35,17 @@
 @end
 
 
+
 @implementation StartScene
 
+AVAudioPlayer *somDoMenu;
+
 - (void)didMoveToView:(nonnull SKView *)view {
+    
+    somDoMenu = [[Sound alloc] playSound:@"jack3" :@"mp3"];
+    somDoMenu.numberOfLoops = -1;
+    [somDoMenu play];
+    
     SKLabelNode *scoreLabel = (SKLabelNode *)[self childNodeWithName:@"score"];
     
     //VERIFY IF USER HAVE SCORE, IF NOT SET THE LABEL TEXT TO 0, IF YES SET THE SCORE ON USER DEFAULTS
@@ -43,6 +55,7 @@
     } else {
         scoreLabel.text = @"Pontos 0";
     }
+    
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -52,13 +65,30 @@
     
     //PLAY CLICKED, GO TO STAGE SELECT SCENE
     if ([node.name isEqualToString:NODENAME_INITGAME]) {
+        //Som Start
+        
+        [[Sound alloc] PLAY:@"button1" :@"mp3"];
+        [somDoMenu pause];
+     
         [self.scene.view presentScene:[StageSelectScene unarchiveFromFile:@"StageSelectScene"]];
     }
     
+    
     //FOOD INFO CLICKED, GO TO TABLEVIEW SCENE
     if ([node.name isEqualToString:NODENAME_FOODINFO]) {
+      
+         somDoMenu.numberOfLoops = -1;
+        [somDoMenu play];
+        
+        [[Sound alloc] PLAY:@"button1" :@"mp3"];
+        
+        
         [self.scene.view presentScene:[FoodInfoScene unarchiveFromFile:@"FoodInfoScene"]];
+       
     }
 }
+
+
+
 
 @end

@@ -11,7 +11,8 @@
 #import "Level1Scene.h"
 #import "FoodInfoScene.h"
 #import "StageSelectScene.h"
+@import AVFoundation;
 
 @interface StartScene : SKScene
-
+@property (nonatomic) AVAudioPlayer *somdobutton;
 @end

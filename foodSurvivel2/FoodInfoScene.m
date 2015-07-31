@@ -5,7 +5,8 @@
 //  Created by Eduarda Pinheiro on 10/06/15.
 //  Copyright (c) 2015 edu FUCAPI. All rights reserved.
 //
-
+#import "Sound.h"
+@import AVFoundation;
 #import "FoodInfoScene.h"
 
 @interface FoodInfoScene ()
@@ -35,6 +36,10 @@
 @implementation FoodInfoScene
 
 - (void)didMoveToView:(SKView *)view {
+    
+  
+    
+    [[Sound alloc] PLAY:@"button1" :@"mp3"];
     
     NSString *cenouras = @"Cenouras contém vitamina A, essa vitamina ajuda melhorar a visão noturna.";
     NSString *doces = @"As vezes doces ou azedas as laranjas contém vitaminas que contribuem para evitar uma série de variedades de câncer e protege contra a gripe.";

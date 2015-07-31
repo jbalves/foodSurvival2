@@ -7,9 +7,13 @@
 //
 
 #import "Level1Scene.h"
+#import <AVFoundation/AVFoundation.h>
+#import "Sound.h"
+
 
 @interface Level1Scene () {
     BOOL jumping;
+    
     SKNode *mainCameraNode;
     SKNode *level1Node;
     SKSpriteNode *wallNode;
@@ -21,6 +25,11 @@
     SKTexture *happyFaceTexture;
     SKTexture *sadFaceTexture;
     SKLabelNode *score;
+    
+    AVAudioPlayer *somDeJogo;
+    AVAudioPlayer *somDojack;
+    AVAudioPlayer *somDoMenu;
+    
     int badFood;
     int goodFood;
 }
@@ -47,6 +56,12 @@
 @implementation Level1Scene
 
 -(void)didMoveToView:(SKView *)view {
+    
+    
+    somDeJogo = [[Sound alloc] playSound:@"jogo" :@"mp3"];
+    somDeJogo.numberOfLoops = 100;
+    [somDeJogo play];
+
     //INIT OF BOOLS
     jumping = NO;
     
@@ -98,6 +113,7 @@
                 redBall.texture = [SKTexture textureWithImageNamed:@"sandwich"];
                 countBadFood++;
             } else {
+                
                 redBall.texture = [SKTexture textureWithImageNamed:@"lolipop"];
             }
             
@@ -117,6 +133,7 @@
             }
             
         }
+        
     }
     
     //MOVE CAMERA
@@ -125,14 +142,18 @@
     //WORLD PHYSICS
     self.physicsWorld.contactDelegate = self;
     self.physicsWorld.gravity = CGVectorMake(0, -8);
-    
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     
+
+    
     UITouch *touch = [touches anyObject];
     CGPoint location = [touch locationInNode:self];
     SKNode *node = [self nodeAtPoint:location];
+    
+    self.userInteractionEnabled=YES;
+    
     
     if ([jack intersectsNode:groundNode]) {
         jumping = NO;
@@ -142,11 +163,20 @@
         self.scene.paused = YES;
         [mainCameraNode childNodeWithName:@"pauseNode"].hidden = NO;
         [mainCameraNode childNodeWithName:@"pauseButton"].hidden = YES;
+        
+        somDeJogo.numberOfLoops = 0;
+        [somDeJogo pause];
+        
     } else if ([node.name isEqualToString:@"continue"]) {
         self.scene.paused = NO;
         [mainCameraNode childNodeWithName:@"pauseNode"].hidden = YES;
         [mainCameraNode childNodeWithName:@"pauseButton"].hidden = NO;
+        
+        somDeJogo.numberOfLoops = 100;
+        [somDeJogo play];
+        
     } else if ([node.name isEqualToString:@"menu"]) {
+        
         [self.scene.view presentScene:[StartScene unarchiveFromFile:@"StartScene"]];
     } else if ([node.name isEqualToString:@"restart"]) {
         [self.scene.view presentScene:[Level1Scene unarchiveFromFile:@"Level1Scene"]];
@@ -154,7 +184,10 @@
         [self.scene.view presentScene:[Level1Scene unarchiveFromFile:@"Level1Scene"]];
     } else if (!jumping) {
         jumping = YES;
+
+        [[Sound alloc] PLAY:@"jump" :@"mp3"];
         [jack.physicsBody applyImpulse:CGVectorMake(0, 330)];
+        
     }
 
 }
@@ -166,6 +199,7 @@
 
 
 - (void)update:(NSTimeInterval)currentTime {
+    
     
     //CONTACT WITH GROUND
     if ([jack intersectsNode:groundNode]) {
@@ -213,6 +247,7 @@
     //CONTACT WITH BADFOOD
     [self enumerateChildNodesWithName:@"redBall" usingBlock:^(SKNode *node, BOOL *stop) {
         if ([node intersectsNode:jack]) {
+               [[Sound alloc] PLAY:@"itemRuim" :@"mp3"];
             [node removeFromParent];
             badFood++;
             if (badFood == 3) {
@@ -227,6 +262,9 @@
     [self enumerateChildNodesWithName:@"greenBall" usingBlock:^(SKNode *node, BOOL *stop) {
         if ([node intersectsNode:jack]) {
             [node removeFromParent];
+
+            //Som contato
+            [[Sound alloc] PLAY:@"itemBom" :@"mp3"];
             goodFood++;
             score.text = [NSString stringWithFormat:@"Pontos %d", goodFood];
             if (badFood > 0) {
@@ -279,6 +317,9 @@
         default:
             break;
     }
+    
+
+
 }
 
 //FINISHED LEVEL
@@ -310,10 +351,17 @@
         [[NSUserDefaults standardUserDefaults] setInteger:goodFood forKey:@"bestScoreLevel1"];
     }
     
+    somDeJogo.numberOfLoops = 0;
+    [somDeJogo pause];
+    
 }
+
 
 //GAMEOVER NODE
 - (void) gameOver {
+    
+    somDeJogo.numberOfLoops = 0;
+    [somDeJogo play];
     
     face1.texture = sadFaceTexture;
     face2.texture = sadFaceTexture;
