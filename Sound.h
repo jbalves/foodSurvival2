@@ -9,7 +9,11 @@
 #import <SpriteKit/SpriteKit.h>
 @import AVFoundation;
 
+
 @interface Sound : SKNode
+
     -(AVAudioPlayer *)playSound : (NSString *)fName :(NSString *) ext;
     -(void)PLAY:(NSString *)Name :(NSString *)ext;
+
+
 @end

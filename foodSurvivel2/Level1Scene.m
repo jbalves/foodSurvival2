@@ -13,6 +13,7 @@
 
 @interface Level1Scene () {
     BOOL jumping;
+    
     SKNode *mainCameraNode;
     SKSpriteNode *wallNode;
     SKSpriteNode *jack;
@@ -55,7 +56,6 @@
 
 -(void)didMoveToView:(SKView *)view {
     
-    // [[Sound alloc] playSound:@"music" :@"mp3"];
     
     somDeJogo = [[Sound alloc] playSound:@"jogo" :@"mp3"];
     somDeJogo.numberOfLoops = 100;
@@ -173,6 +173,7 @@
         [somDeJogo play];
         
     } else if ([node.name isEqualToString:@"menu"]) {
+        
         [self.scene.view presentScene:[StartScene unarchiveFromFile:@"StartScene"]];
     } else if ([node.name isEqualToString:@"restart"]) {
         [self.scene.view presentScene:[Level1Scene unarchiveFromFile:@"Level1Scene"]];
@@ -324,7 +325,7 @@
 - (void) gameOver {
     
     somDeJogo.numberOfLoops = 0;
-    [somDeJogo pause];
+    [somDeJogo play];
     
     face1.texture = sadFaceTexture;
     face2.texture = sadFaceTexture;

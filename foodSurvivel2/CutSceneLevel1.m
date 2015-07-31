@@ -117,9 +117,9 @@
     SKNode *node = [self nodeAtPoint:location];
     
     if (endMove && !didJump) {
-        //som pulo tutorial
+
         [[Sound alloc] PLAY:@"jump" :@"mp3"];
-        //[somDoJack play];
+       
         didJump = YES;
         [self runAction:goodAction];
     }

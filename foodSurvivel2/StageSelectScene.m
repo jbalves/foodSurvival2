@@ -22,6 +22,7 @@
     [arch finishDecoding];
     
     return scene;
+    
 }
 
 @end
@@ -64,9 +65,6 @@
         
         [[Sound alloc] PLAY:@"button1" :@"mp3"];
     
-     // _som = [[Sound alloc] playSound:@"button1" :@"mp3"];
-        
-     //   [_som play];
         [self.scene.view presentScene:[StartScene unarchiveFromFile:@"StartScene"]];
     
       

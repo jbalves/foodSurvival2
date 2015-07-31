@@ -38,12 +38,12 @@
 
 @implementation StartScene
 
-
 AVAudioPlayer *somDoMenu;
+
 - (void)didMoveToView:(nonnull SKView *)view {
     
     somDoMenu = [[Sound alloc] playSound:@"jack3" :@"mp3"];
-    somDoMenu.numberOfLoops = 100;
+    somDoMenu.numberOfLoops = -1;
     [somDoMenu play];
     
     SKLabelNode *scoreLabel = (SKLabelNode *)[self childNodeWithName:@"score"];
@@ -68,6 +68,7 @@ AVAudioPlayer *somDoMenu;
         //Som Start
         
         [[Sound alloc] PLAY:@"button1" :@"mp3"];
+        [somDoMenu pause];
      
         [self.scene.view presentScene:[StageSelectScene unarchiveFromFile:@"StageSelectScene"]];
     }
@@ -76,12 +77,11 @@ AVAudioPlayer *somDoMenu;
     //FOOD INFO CLICKED, GO TO TABLEVIEW SCENE
     if ([node.name isEqualToString:NODENAME_FOODINFO]) {
       
-        somDoMenu.numberOfLoops = 100;
+         somDoMenu.numberOfLoops = -1;
         [somDoMenu play];
         
         [[Sound alloc] PLAY:@"button1" :@"mp3"];
-         somDoMenu.numberOfLoops = 100;
-        [somDoMenu play];
+        
         
         [self.scene.view presentScene:[FoodInfoScene unarchiveFromFile:@"FoodInfoScene"]];
        
