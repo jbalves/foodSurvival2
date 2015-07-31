@@ -26,6 +26,7 @@
     
     AVAudioPlayer *somDeJogo;
     AVAudioPlayer *somDojack;
+    AVAudioPlayer *somDoMenu;
     
     int badFood;
     int goodFood;
@@ -209,6 +210,7 @@
     //CONTACT WITH BADFOOD
     [self enumerateChildNodesWithName:@"redBall" usingBlock:^(SKNode *node, BOOL *stop) {
         if ([node intersectsNode:jack]) {
+               [[Sound alloc] PLAY:@"itemRuim" :@"mp3"];
             [node removeFromParent];
             badFood++;
             if (badFood == 3) {
@@ -225,7 +227,7 @@
             [node removeFromParent];
 
             //Som contato
-            [[Sound alloc] PLAY:@"button1" :@"mp3"];
+            [[Sound alloc] PLAY:@"itemBom" :@"mp3"];
             goodFood++;
             score.text = [NSString stringWithFormat:@"Pontos %d", goodFood];
             if (badFood > 0) {

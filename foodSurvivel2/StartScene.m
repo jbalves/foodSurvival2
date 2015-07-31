@@ -15,7 +15,11 @@
 #define NODENAME_INITGAME       @"initGame"
 #define NODENAME_AVATAR         @"avatar"
 
+@interface StartScene (){
+    AVAudioPlayer *somDoMenu;
+}
 
+@end
 @implementation SKScene (Unarchive)
 
 + (instancetype)unarchiveFromFile:(NSString *)file {
@@ -33,9 +37,18 @@
 
 @end
 
+
+
 @implementation StartScene
 
+
+
 - (void)didMoveToView:(nonnull SKView *)view {
+    
+    somDoMenu = [[Sound alloc] playSound:@"jack3" :@"mp3"];
+    somDoMenu.numberOfLoops = 100;
+    [somDoMenu play];
+    
     SKLabelNode *scoreLabel = (SKLabelNode *)[self childNodeWithName:@"score"];
     
     //VERIFY IF USER HAVE SCORE, IF NOT SET THE LABEL TEXT TO 0, IF YES SET THE SCORE ON USER DEFAULTS
@@ -58,8 +71,7 @@
         //Som Start
         
         [[Sound alloc] PLAY:@"button1" :@"mp3"];
-       // _somdobutton =  [[Sound alloc] playSound:@"button1" :@"mp3"];
-      //  [_somdobutton play];
+     
         [self.scene.view presentScene:[StageSelectScene unarchiveFromFile:@"StageSelectScene"]];
     }
     
@@ -71,6 +83,8 @@
         //_somdobutton.volume = 100;
         
         [[Sound alloc] PLAY:@"button1" :@"mp3"];
+        somDoMenu.numberOfLoops = 100;
+        [somDoMenu play];
         
         [self.scene.view presentScene:[FoodInfoScene unarchiveFromFile:@"FoodInfoScene"]];
        
