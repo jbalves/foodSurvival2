@@ -15,11 +15,8 @@
 #define NODENAME_INITGAME       @"initGame"
 #define NODENAME_AVATAR         @"avatar"
 
-@interface StartScene (){
-    AVAudioPlayer *somDoMenu;
-}
 
-@end
+
 @implementation SKScene (Unarchive)
 
 + (instancetype)unarchiveFromFile:(NSString *)file {
@@ -42,7 +39,7 @@
 @implementation StartScene
 
 
-
+AVAudioPlayer *somDoMenu;
 - (void)didMoveToView:(nonnull SKView *)view {
     
     somDoMenu = [[Sound alloc] playSound:@"jack3" :@"mp3"];
@@ -78,12 +75,12 @@
     
     //FOOD INFO CLICKED, GO TO TABLEVIEW SCENE
     if ([node.name isEqualToString:NODENAME_FOODINFO]) {
-        //_somdobutton = [[Sound alloc] playSound:@"jogo" :@"mp3"];
-        //_somdobutton.numberOfLoops = 1;
-        //_somdobutton.volume = 100;
+      
+        somDoMenu.numberOfLoops = 100;
+        [somDoMenu play];
         
         [[Sound alloc] PLAY:@"button1" :@"mp3"];
-        somDoMenu.numberOfLoops = 100;
+         somDoMenu.numberOfLoops = 100;
         [somDoMenu play];
         
         [self.scene.view presentScene:[FoodInfoScene unarchiveFromFile:@"FoodInfoScene"]];
